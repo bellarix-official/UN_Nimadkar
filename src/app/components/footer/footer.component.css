@@ -1,0 +1,5 @@
+/* Footer component styles */
+:host {
+  display: block;
+  width: 100%;
+}

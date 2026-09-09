@@ -1,0 +1,815 @@
+<!-- Hero Section -->
+<section id="home" class="hero-section position-relative">
+  <div class="hero-bg-overlay"></div>
+
+  <div class="container position-relative py-lg-4">
+    <div class="row align-items-center g-5">
+      <!-- Left Column: Primary Headline & Advisory Value -->
+      <div class="col-lg-7">
+        <!-- Authority Pill Badge -->
+        <div class="hero-cma-badge mb-3">
+          <span class="cma-badge-pulse"></span>
+          <div class="cma-badge-text">
+            <span class="cma-badge-title">
+              <i class="bi bi-patch-check-fill text-success me-1"></i>Practicing Cost &amp; Management Accountants&nbsp;<span class="badge-org">(ICMAI)</span>
+            </span>
+            <span class="cma-badge-sep d-none d-sm-inline mx-1 opacity-50">•</span>
+            <span class="cma-badge-loc">
+              <i class="bi bi-geo-alt-fill text-warning me-1 d-inline d-sm-none"></i>Ahmedabad, Gujarat
+            </span>
+          </div>
+        </div>
+
+        <!-- Main Headline in Natural Indian Business Language -->
+        <h1 class="hero-main-title mb-3">
+          Strategic Financial Leadership &amp; 
+          <span class="hero-title-highlight">Cost Optimization</span> 
+          for Growing Indian Businesses
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="hero-lead-text mb-4">
+          Take full command over your factory and company finances. We help business owners eliminate cost leakages, calculate exact unit manufacturing costs (BOM), get monthly MIS reports by the 5th, and ensure 100% statutory compliance with zero penalties.
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="hero-actions-group d-flex flex-wrap align-items-center gap-3 pt-1">
+          <a [routerLink]="['/']" fragment="contact" class="btn btn-hero-primary" role="button">
+            <i class="bi bi-calendar2-check-fill"></i> Book Free Consultation
+          </a>
+          <div class="hero-secondary-actions">
+            <a href="https://wa.me/919824164586?text=Hello%20CMA%20Urvesh%20Nimbadkar,%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20financial/CFO%20services." target="_blank" class="btn btn-hero-whatsapp">
+              <i class="bi bi-whatsapp"></i> <span class="wa-full-text">Chat on WhatsApp</span><span class="wa-short-text d-none">WhatsApp</span>
+            </a>
+            <a href="tel:+919824164586" class="btn hero-direct-call">
+              <i class="bi bi-telephone-fill text-success"></i>
+              <span class="call-num-full">+91 98241 64586</span>
+              <span class="call-num-short d-none">Call Now</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: 4 Core CMA Services Cards -->
+      <div class="col-lg-5">
+        <div class="hero-services-card shadow-2xl">
+          <div class="card-header-bar d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom border-white border-opacity-20">
+            <div>
+              <h5 class="fw-bold text-white mb-0">Core Practice Areas</h5>
+              <small class="text-white-50">Specialized Cost Accounting Solutions</small>
+            </div>
+            <span class="badge bg-success bg-opacity-90 px-2 py-1 small rounded-pill">
+              <i class="bi bi-patch-check-fill"></i> ICMAI Practice
+            </span>
+          </div>
+
+          <div class="hero-service-list">
+            <!-- 1. Section 148 Cost Audit -->
+            <a routerLink="/services/audit-and-assurance" class="hero-service-row">
+              <div class="service-row-icon">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <div class="service-row-text">
+                <div class="title">Section 148 Statutory Cost Audit</div>
+                <div class="desc">CRA-1 cost records maintenance, statutory audit filings &amp; internal financial controls.</div>
+              </div>
+              <i class="bi bi-chevron-right service-row-arrow"></i>
+            </a>
+
+            <!-- 2. Virtual CFO & Monthly MIS -->
+            <a routerLink="/services/virtual-cfo-services" class="hero-service-row">
+              <div class="service-row-icon">
+                <i class="bi bi-graph-up-arrow"></i>
+              </div>
+              <div class="service-row-text">
+                <div class="title">Virtual CFO &amp; Monthly MIS</div>
+                <div class="desc">Monthly P&amp;L, balance sheet, cash runway forecasting &amp; accounts team supervision.</div>
+              </div>
+              <i class="bi bi-chevron-right service-row-arrow"></i>
+            </a>
+
+            <!-- 3. Factory Unit Costing -->
+            <a routerLink="/services/cost-management-advisory" class="hero-service-row">
+              <div class="service-row-icon">
+                <i class="bi bi-calculator-fill"></i>
+              </div>
+              <div class="service-row-text">
+                <div class="title">Factory Unit Product Costing</div>
+                <div class="desc">Bill of Materials (BOM) costing, machine-hour rates &amp; scrap reduction.</div>
+              </div>
+              <i class="bi bi-chevron-right service-row-arrow"></i>
+            </a>
+
+            <!-- 4. Bank Loan CMA Data & Subsidies -->
+            <a routerLink="/services/project-finance-subsidy-advisory" class="hero-service-row">
+              <div class="service-row-icon">
+                <i class="bi bi-bank2"></i>
+              </div>
+              <div class="service-row-text">
+                <div class="title">Bank CMA Data &amp; Subsidies</div>
+                <div class="desc">Working capital loan sanctions, bank project reports (DPR) &amp; subsidies.</div>
+              </div>
+              <i class="bi bi-chevron-right service-row-arrow"></i>
+            </a>
+          </div>
+
+          <div class="pt-3 mt-2 border-top border-white border-opacity-20">
+            <a routerLink="/services" class="btn btn-outline-light w-100 rounded-pill py-2 fw-semibold d-flex align-items-center justify-content-center gap-2">
+              <span>View All 10 Services Catalog</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quick Impact Strip Banner -->
+<div class="container d-none d-md-block position-relative" style="margin-top: -36px; z-index: 20;">
+  <div class="hero-strip-banner shadow-lg">
+    <div class="row g-3 align-items-center text-center text-md-start">
+      <div class="col-md-3">
+        <div class="hero-strip-item">
+          <div class="hero-strip-icon"><i class="bi bi-shield-check"></i></div>
+          <div class="hero-strip-text">
+            <div class="value">100% On-Time</div>
+            <div class="label">Section 148 &amp; Tax Filings</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="hero-strip-item">
+          <div class="hero-strip-icon"><i class="bi bi-buildings"></i></div>
+          <div class="hero-strip-text">
+            <div class="value">₹3 Cr to ₹1,000 Cr</div>
+            <div class="label">Client Turnover Handled</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="hero-strip-item">
+          <div class="hero-strip-icon"><i class="bi bi-diagram-3-fill"></i></div>
+          <div class="hero-strip-text">
+            <div class="value">12+ Industry Verticals</div>
+            <div class="label">Manufacturing, Solar, Chemicals</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="hero-strip-item">
+          <div class="hero-strip-icon"><i class="bi bi-person-check-fill"></i></div>
+          <div class="hero-strip-text">
+            <div class="value">Direct Founder Guidance</div>
+            <div class="label">No Junior Clerk Dependency</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- About Section (Simple & Professional Overview) -->
+<section id="about" class="section-padding">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <!-- Left Column: Authentic Advisory Visual & Experience Badge -->
+      <div class="col-lg-6">
+        <div class="about-image-wrapper">
+          <img src="/assets/images/cma_consultation_meeting.jpg" alt="CMA Financial Advisory Consultation" class="about-main-img">
+          <div class="about-experience-badge">
+            <i class="bi bi-patch-check-fill text-success fs-3"></i>
+            <div>
+              <div class="badge-num">9+ Years</div>
+              <div class="badge-label">Professional Practice • Ahmedabad</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Concise Story & Links to Detail Pages -->
+      <div class="col-lg-6">
+        <span class="section-tag"><i class="bi bi-bank"></i> About Our Firm</span>
+        <h2 class="section-title">Reliable Financial Guidance Built for Indian Businesses</h2>
+        
+        <p class="text-body mb-3">
+          <strong>U N Nimbadkar &amp; Associates</strong> is an Ahmedabad-based Cost &amp; Management Accounting practice founded by <strong>CMA Urvesh Nimbadkar</strong> (Associate Member of ICMAI).
+        </p>
+        
+        <p class="text-muted mb-4">
+          We partner with factory promoters, startups, and growing enterprises across India to provide hands-on Virtual CFO direction, Section 148 Cost Audits, exact unit product costing (BOM), and zero-penalty statutory compliance.
+        </p>
+
+        <!-- ICMAI Motto Box -->
+        <div class="about-motto-callout p-3 mb-4 rounded-3">
+          <p class="fst-italic text-dark mb-1 fw-semibold">
+            "Behind every successful business decision, there is always a CMA."
+          </p>
+          <small class="text-muted">— Official Motto of the Institute of Cost Accountants of India (ICMAI)</small>
+        </div>
+
+        <div class="d-flex flex-wrap align-items-center gap-3 pt-1">
+          <a routerLink="/about" class="btn btn-cma-primary">
+            Explore About Us <i class="bi bi-arrow-right"></i>
+          </a>
+          <a routerLink="/team" class="btn btn-cma-outline">
+            Meet Our Leadership <i class="bi bi-people-fill"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Excellence In Services (MK Ray & Mukesh Raj Inspired Small Cards) -->
+<section id="services" class="section-padding">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="section-tag navy-tag"><i class="bi bi-grid-fill"></i> Core Practice Focus</span>
+      <h2 class="section-title">Key Professional Services</h2>
+      <p class="section-desc mx-auto">
+        Specialized Cost &amp; Management Accounting, Virtual CFO direction, tax compliance, and statutory assurance built for Indian businesses.
+      </p>
+    </div>
+
+    <!-- 6 Small Responsive Cards Grid (5 Core Services + 6th 'More Services...' Card) -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 services-focus-grid">
+      @for (service of featuredServices; track service.slug) {
+        <div class="col">
+          <a [routerLink]="['/services', service.slug]" class="service-small-card text-decoration-none">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <div class="service-small-icon">
+                <i class="bi" [ngClass]="service.icon"></i>
+              </div>
+              <div class="service-arrow-btn">
+                <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
+            <h4 class="service-small-title">{{ service.title }}</h4>
+            <p class="service-small-desc">{{ service.desc }}</p>
+          </a>
+        </div>
+      }
+
+      <!-- 6th Card: 'More Services...' Simple & Distinctive Gateway Card -->
+      <div class="col">
+        <a routerLink="/services" class="service-small-card service-small-more text-decoration-none">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="service-small-icon more-icon">
+              <i class="bi bi-grid-3x3-gap-fill"></i>
+            </div>
+            <div class="service-arrow-btn more-arrow">
+              <i class="bi bi-arrow-right"></i>
+            </div>
+          </div>
+          <h4 class="service-small-title text-white">More Services...</h4>
+          <p class="service-small-desc text-white-50">
+            Explore our complete portfolio of 10+ practice areas, project finance, subsidies, and CMA certifications.
+          </p>
+          <div class="more-link mt-auto pt-3 d-flex align-items-center justify-content-between">
+            <span>Explore All 10+ Services</span>
+            <i class="bi bi-arrow-right more-link-icon"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Virtual CFO Spotlight -->
+<section id="virtual-cfo" class="section-padding">
+  <div class="container">
+    <div class="cfo-banner">
+      <div class="row align-items-center g-4 mb-5">
+        <div class="col-lg-8">
+          <span class="badge bg-success text-white px-3 py-2 rounded-pill mb-3">
+            <i class="bi bi-stars"></i> Ideal for Startups, MSMEs &amp; Family Businesses
+          </span>
+          <h2 class="text-white fw-bold mb-3">
+            Why Hire a Virtual CFO Instead of Just a Bookkeeper?
+          </h2>
+          <p class="text-white-50 mb-0 fs-6">
+            A traditional accountant only looks backward to prepare historical tax returns. As your <strong>Virtual CFO</strong>, we guide your future—monitoring weekly cash flow, finding ways to cut unnecessary costs, helping you price your products profitably, and keeping your business 100% compliant.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a href="assets/docs/Virtual CFO Services -  UN Nimbadkar.pdf" target="_blank" class="btn btn-cma-light btn-lg text-dark">
+            <i class="bi bi-file-earmark-pdf-fill text-danger"></i> Virtual CFO Brochure
+          </a>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="cfo-pillar-card">
+            <span class="pillar-badge">01. ACCOUNTS SUPERVISION</span>
+            <h5>Clean Books &amp; MIS</h5>
+            <p>Direct supervision of your accounts staff so you get accurate monthly profit &amp; loss statements on time.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="cfo-pillar-card">
+            <span class="pillar-badge">02. CASH MANAGEMENT</span>
+            <h5>Cash Flow &amp; Runway</h5>
+            <p>Plan vendor payments, speed up customer collections, and avoid sudden cash crunches in your business.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="cfo-pillar-card">
+            <span class="pillar-badge">03. FUNDING READINESS</span>
+            <h5>Bank &amp; Investor Models</h5>
+            <p>Prepare professional financial projections, pitch decks, and CMA data that banks and investors take seriously.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="cfo-pillar-card">
+            <span class="pillar-badge">04. PEACE OF MIND</span>
+            <h5>Zero Penalty Compliance</h5>
+            <p>Integrated GST, TDS, Income Tax, and ROC filing schedules so you never face costly penalty notices.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Industries We Serve (Dual Smooth Opposite-Direction Marquee Carousels) -->
+<section id="industries" class="section-padding overflow-hidden">
+  <div class="container mb-4">
+    <div class="text-center">
+      <span class="section-tag"><i class="bi bi-buildings"></i> Sector Exposure</span>
+      <h2 class="section-title">Industries We Proudly Serve</h2>
+      <p class="section-desc mx-auto">
+        Specialized cost accounting, Virtual CFO leadership, and statutory compliance tailored across 18+ key Indian industrial sectors.
+      </p>
+    </div>
+  </div>
+
+  <!-- Dual Infinite Marquee with Inward Blurry Feathered Corners -->
+  <div class="industries-marquee-container">
+    <!-- Row 1: Smooth Leftward Marquee (Right to Left) -->
+    <div class="marquee-row mb-3">
+      <div class="marquee-track marquee-scroll-left">
+        <div class="marquee-group">
+          @for (ind of industriesRow1; track ind.name) {
+            <div class="industry-carousel-card" [style.--ind-border]="ind.border">
+              <div class="industry-card-icon" [style.background-color]="ind.bg" [style.color]="ind.color">
+                <i class="bi" [ngClass]="ind.icon"></i>
+              </div>
+              <div class="industry-card-info">
+                <span class="industry-card-tag" [style.color]="ind.color">{{ ind.category }}</span>
+                <h6 class="industry-card-name">{{ ind.name }}</h6>
+              </div>
+            </div>
+          }
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          @for (ind of industriesRow1; track ind.name + '-dup') {
+            <div class="industry-carousel-card" [style.--ind-border]="ind.border">
+              <div class="industry-card-icon" [style.background-color]="ind.bg" [style.color]="ind.color">
+                <i class="bi" [ngClass]="ind.icon"></i>
+              </div>
+              <div class="industry-card-info">
+                <span class="industry-card-tag" [style.color]="ind.color">{{ ind.category }}</span>
+                <h6 class="industry-card-name">{{ ind.name }}</h6>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Smooth Rightward Marquee (Opposite Direction: Left to Right) -->
+    <div class="marquee-row">
+      <div class="marquee-track marquee-scroll-right">
+        <div class="marquee-group">
+          @for (ind of industriesRow2; track ind.name) {
+            <div class="industry-carousel-card" [style.--ind-border]="ind.border">
+              <div class="industry-card-icon" [style.background-color]="ind.bg" [style.color]="ind.color">
+                <i class="bi" [ngClass]="ind.icon"></i>
+              </div>
+              <div class="industry-card-info">
+                <span class="industry-card-tag" [style.color]="ind.color">{{ ind.category }}</span>
+                <h6 class="industry-card-name">{{ ind.name }}</h6>
+              </div>
+            </div>
+          }
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          @for (ind of industriesRow2; track ind.name + '-dup') {
+            <div class="industry-carousel-card" [style.--ind-border]="ind.border">
+              <div class="industry-card-icon" [style.background-color]="ind.bg" [style.color]="ind.color">
+                <i class="bi" [ngClass]="ind.icon"></i>
+              </div>
+              <div class="industry-card-info">
+                <span class="industry-card-tag" [style.color]="ind.color">{{ ind.category }}</span>
+                <h6 class="industry-card-name">{{ ind.name }}</h6>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Link to Dedicated Industries Page -->
+  <div class="container text-center mt-4 pt-2">
+    <a routerLink="/industries" class="btn btn-cma-outline">
+      Explore All Industry Case Studies &amp; Practice Details <i class="bi bi-arrow-right ms-1"></i>
+    </a>
+  </div>
+</section>
+
+
+
+<!-- Client Reviews & Customer Endorsements Arc Carousel -->
+<section id="reviews" class="section-padding reviews-arc-section" (mouseenter)="pauseReviewTimer()" (mouseleave)="resumeReviewTimer()">
+  <!-- Radiant Ambient Glow Effect (Warm aura on right side in ICMAI Emerald, Navy & Warm Amber) -->
+  <div class="reviews-ambient-aura" aria-hidden="true"></div>
+
+  <div class="container position-relative z-1">
+    <div class="row align-items-start g-5 reviews-main-row">
+      <!-- Left Column: Heading + Arc with Avatar Nodes -->
+      <div class="col-lg-5">
+        <div class="reviews-left-col">
+          <div class="reviews-accent-pill mb-2"></div>
+          <h2 class="reviews-main-title mb-4">Customer Reviews</h2>
+
+          <!-- Mobile Avatar Track (Clean, touch-friendly horizontal track on screens < 992px) -->
+          <div class="reviews-mobile-track d-lg-none mb-4">
+            <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
+              @for (rev of reviews; track rev.name; let idx = $index) {
+                <button
+                  type="button"
+                  class="mobile-avatar-btn"
+                  [class.active]="idx === activeReviewIndex"
+                  (click)="setActiveReview(idx)"
+                  [attr.aria-label]="'Select review from ' + rev.name"
+                >
+                  <span>{{ rev.initials[0] }}</span>
+                </button>
+              }
+            </div>
+            <div class="text-center">
+              <h5 class="node-active-name mb-1">{{ currentReview.name }}</h5>
+              <div class="node-active-sub d-flex align-items-center justify-content-center flex-wrap">
+                <span class="rating-stars me-1.5 text-warning fw-bold">
+                  <i class="bi bi-star-fill"></i> 5.0
+                </span>
+                <span class="node-sep mx-1 text-muted">•</span>
+                <span class="node-designation">{{ currentReview.designation }}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Circular Arc Interactive Track with Smoothly Gliding Avatars (Visible on Desktop >= 992px) -->
+          <div class="reviews-arc-track d-none d-lg-block">
+            <!-- Curved SVG Guide Line passing mathematically through top (77,35), center crest (115,160), and bottom (77,285) -->
+            <svg class="reviews-arc-svg" viewBox="0 0 160 320" fill="none" preserveAspectRatio="none">
+              <path d="M 60,10 Q 170,160 60,310" stroke="rgba(0, 52, 102, 0.18)" stroke-width="2" stroke-linecap="round" />
+            </svg>
+
+            <!-- All Review Avatars Smoothly Gliding Along the Circular Arc Path -->
+            @for (rev of reviews; track rev.name; let idx = $index) {
+              @let pos = getReviewPosition(idx);
+              <div
+                class="arc-avatar-item"
+                [class.active]="pos.isActive"
+                [style.transform]="'translate3d(' + pos.x + 'px, ' + pos.y + 'px, 0) translate(-50%, -50%) scale(' + pos.scale + ')'"
+                [style.opacity]="pos.opacity"
+                [style.visibility]="pos.opacity > 0.05 ? 'visible' : 'hidden'"
+                [style.z-index]="pos.zIndex"
+                [style.pointer-events]="pos.opacity > 0.2 ? 'auto' : 'none'"
+                (click)="setActiveReview(idx)"
+                [attr.aria-label]="'Select review from ' + rev.name"
+              >
+                <div class="arc-avatar-circle" [class.circle-active]="pos.isActive">
+                  <span class="node-initial">{{ rev.initials[0] }}</span>
+                </div>
+
+                <!-- Attached Name & Rating Label for the Active Center Reviewer -->
+                @if (pos.isActive) {
+                  <div class="node-active-meta">
+                    <h5 class="node-active-name mb-1">{{ rev.name }}</h5>
+                    <div class="node-active-sub d-flex align-items-center">
+                      <span class="rating-stars me-1.5 text-warning fw-bold">
+                        <i class="bi bi-star-fill"></i> 5.0
+                      </span>
+                      <span class="node-sep mx-1 text-muted">•</span>
+                      <span class="node-designation text-truncate">{{ rev.designation }}</span>
+                    </div>
+                  </div>
+                }
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Giant Quote Mark + Testimonial Quote + Metadata + Controls -->
+      <div class="col-lg-7">
+        <div class="reviews-right-col ps-lg-4">
+          <!-- Dedicated Stable-Height Body Holder (Absorbs varying review lengths with zero vertical shift) -->
+          <div class="reviews-body-holder">
+            <!-- Giant Translucent Brand Quote Mark -->
+            <div class="reviews-quote-mark" aria-hidden="true">
+              <i class="bi bi-quote"></i>
+            </div>
+
+            <!-- The Testimonial Italic Quote with Smooth Slide & Fade Transition -->
+            <blockquote class="reviews-quote-body">
+              “{{ currentReview.comment }}”
+            </blockquote>
+
+            <!-- Company & Service Badges with High Contrast & Smooth Crossfade -->
+            <div class="reviews-company-row d-flex flex-wrap align-items-center gap-2">
+              <span class="review-verified-badge">
+                <i class="bi bi-patch-check-fill"></i>
+                <span>Verified Client</span>
+              </span>
+              <span class="review-service-badge">
+                <i class="bi bi-briefcase-fill"></i>
+                <span>{{ currentReview.service }}</span>
+              </span>
+              <span class="review-company-badge">
+                <i class="bi bi-building"></i>
+                <span>{{ currentReview.company }}</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Bottom Navigation Controls & Pagination Dots (Anchored at Fixed Position) -->
+          <div class="reviews-controls-row d-flex align-items-center justify-content-between">
+            <!-- Review Counter & Progress Dots -->
+            <div class="d-flex align-items-center gap-2">
+              @for (rev of reviews; track rev.name; let idx = $index) {
+                <button
+                  type="button"
+                  class="review-dot-btn"
+                  [class.active]="idx === activeReviewIndex"
+                  (click)="setActiveReview(idx)"
+                  [attr.aria-label]="'Go to review ' + (idx + 1)"
+                ></button>
+              }
+              <span class="review-counter-text ms-2">
+                0{{ activeReviewIndex + 1 }} / 0{{ reviews.length }}
+              </span>
+            </div>
+
+            <!-- Arrow Buttons -->
+            <div class="d-flex align-items-center gap-2">
+              <button
+                type="button"
+                class="btn-review-nav"
+                (click)="prevReview()"
+                aria-label="Previous review"
+              >
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button
+                type="button"
+                class="btn-review-nav"
+                (click)="nextReview()"
+                aria-label="Next review"
+              >
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Frequently Asked Questions - Clean & Professional Accordion -->
+<section id="faqs" class="section-padding faqs-clean-section">
+  <div class="container">
+    <!-- Header -->
+    <div class="text-center mb-5">
+      <span class="section-tag"><i class="bi bi-question-circle"></i> Got Questions?</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-desc mx-auto">
+        Clear, straightforward answers about our Cost Audit, Virtual CFO services, and client onboarding.
+      </p>
+    </div>
+
+    <!-- Centered Professional Accordion -->
+    <div class="faq-accordion-wrapper mx-auto">
+      @for (faq of faqs; track faq.id; let i = $index) {
+        <div class="faq-clean-item" [class.faq-item-open]="openFaqId === faq.id">
+          <button
+            type="button"
+            class="faq-question-btn"
+            (click)="toggleFaq(faq.id)"
+            [attr.aria-expanded]="openFaqId === faq.id"
+          >
+            <span class="faq-q-text">{{ faq.question }}</span>
+            <span class="faq-toggle-icon">
+              <i class="bi" [ngClass]="openFaqId === faq.id ? 'bi-dash-lg' : 'bi-plus-lg'"></i>
+            </span>
+          </button>
+
+          @if (openFaqId === faq.id) {
+            <div class="faq-answer-pane">
+              <p class="mb-0">{{ faq.answer }}</p>
+            </div>
+          }
+        </div>
+      }
+    </div>
+
+    <!-- Bottom Contact Prompt -->
+    <div class="faq-footer-note text-center mt-5 pt-2">
+      <p class="text-muted small mb-2">Still have questions? We are always here to help.</p>
+      <div class="d-inline-flex align-items-center gap-3 flex-wrap justify-content-center">
+        <a
+          href="https://wa.me/919824164586?text=Hello%20CMA%20Urvesh,%20I%20have%20a%20question%20regarding%20your%20services."
+          target="_blank"
+          rel="noopener"
+          class="btn btn-sm btn-outline-success rounded-pill px-3 py-1-5 fw-semibold"
+        >
+          <i class="bi bi-whatsapp me-1"></i> Message on WhatsApp
+        </a>
+        <a
+          href="tel:+919824164586"
+          class="btn btn-sm btn-outline-navy rounded-pill px-3 py-1-5 fw-semibold"
+        >
+          <i class="bi bi-telephone-fill me-1"></i> Call +91 98241 64586
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Consultation & Contact Section (Clean & Streamlined) -->
+<section id="contact" class="section-padding">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="section-tag navy-tag"><i class="bi bi-chat-dots-fill"></i> Let's Talk</span>
+      <h2 class="section-title">Schedule a Consultation</h2>
+      <p class="section-desc mx-auto">
+        Speak directly with CMA Urvesh Nimbadkar to discuss how we can streamline your costing, compliance, or Virtual CFO requirements.
+      </p>
+    </div>
+
+    <div class="home-consultation-card mx-auto">
+      <div class="row g-0 align-items-stretch">
+        <!-- Left Column: Professional CMA Consultation Image (Hidden on Mobile) -->
+        <div class="col-lg-5 d-none d-lg-block home-contact-img-col">
+          <img
+            src="/assets/images/cma_contact_consultation.jpg"
+            alt="Consultation with CMA Urvesh Nimbadkar"
+            class="home-contact-img"
+          />
+          <div class="home-contact-img-overlay">
+            <div class="home-contact-badge-glass">
+              <div class="badge-title">
+                <i class="bi bi-patch-check-fill text-warning"></i>
+                <span>Direct CMA Advisory</span>
+              </div>
+              <p class="badge-sub mb-2">
+                Personalized guidance for Cost Audit, Virtual CFO &amp; Strategic Tax Planning.
+              </p>
+              <div class="badge-pill-cta">
+                <i class="bi bi-whatsapp"></i> Quick Response on WhatsApp
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Clean & Professional Form -->
+        <div class="col-lg-7 col-12">
+          <div class="home-contact-form-pane">
+            <div class="mb-4">
+              <h3 class="fw-bold mb-1" style="color: var(--brand-navy-dark); font-size: 1.45rem;">
+                Send an Inquiry
+              </h3>
+              <p class="text-muted small mb-0">
+                Submit your details below and we will connect with you promptly.
+              </p>
+            </div>
+
+            @if (formSubmitted) {
+              <div class="alert alert-success d-flex align-items-center mb-4 rounded-3" role="alert">
+                <i class="bi bi-check-circle-fill fs-5 me-2 text-success"></i>
+                <div class="small">
+                  Thank you! Your details have been submitted and redirected to WhatsApp for instant confirmation.
+                </div>
+              </div>
+            }
+
+            <form (submit)="$event.preventDefault()" (ngSubmit)="submitConsultation($event)">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="homeClientName"
+                      placeholder="Your Name"
+                      [(ngModel)]="formData.name"
+                      name="name"
+                      required
+                    />
+                    <label for="homeClientName">Full Name *</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="homeClientPhone"
+                      placeholder="Mobile Number"
+                      [(ngModel)]="formData.phone"
+                      name="phone"
+                      required
+                    />
+                    <label for="homeClientPhone">WhatsApp / Mobile *</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="homeClientEmail"
+                      placeholder="Email Address"
+                      [(ngModel)]="formData.email"
+                      name="email"
+                    />
+                    <label for="homeClientEmail">Email Address</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="homeCompanyName"
+                      placeholder="Business Name"
+                      [(ngModel)]="formData.company"
+                      name="company"
+                    />
+                    <label for="homeCompanyName">Business / Company Name</label>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-floating">
+                    <select
+                      class="form-select"
+                      id="homeServiceSelect"
+                      [(ngModel)]="formData.service"
+                      name="service"
+                    >
+                      <option value="Virtual CFO Services">Virtual CFO Services (Monthly MIS &amp; Cash Flow)</option>
+                      <option value="Cost Audit & Management Accounting">Cost Audit (Sec 148) &amp; Product Costing</option>
+                      <option value="GST Registration & Filing">GST Registration, Monthly Returns &amp; Notices</option>
+                      <option value="Direct Tax & Income Tax">Income Tax Return (ITR) &amp; TDS Compliance</option>
+                      <option value="Company / Startup Incorporation">Company Setup (Pvt Ltd / LLP / Startup India)</option>
+                      <option value="Project Finance & Subsidies">Bank Project Reports (DPR) &amp; Subsidies</option>
+                      <option value="Internal Audit & Stock Verification">Internal Audit &amp; Stock Verification</option>
+                      <option value="General Financial Consultation">General Business Consultation</option>
+                    </select>
+                    <label for="homeServiceSelect">Service Requirement *</label>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea
+                      class="form-control"
+                      placeholder="Briefly describe your requirements"
+                      id="homeClientMessage"
+                      style="height: 100px"
+                      [(ngModel)]="formData.message"
+                      name="message"
+                    ></textarea>
+                    <label for="homeClientMessage">Briefly describe your requirements (optional)</label>
+                  </div>
+                </div>
+
+                <div class="col-12 mt-3">
+                  <button type="button" (click)="submitConsultation($event)" class="btn btn-cma-primary btn-lg w-100 fw-semibold">
+                    <i class="bi bi-whatsapp me-2"></i> Book Consultation via WhatsApp
+                  </button>
+                  <p class="small text-muted text-center mt-2 mb-0">
+                    <i class="bi bi-shield-lock-fill text-success me-1"></i> All financial and business information is kept strictly confidential.
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

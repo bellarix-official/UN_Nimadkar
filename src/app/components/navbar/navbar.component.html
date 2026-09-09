@@ -1,0 +1,286 @@
+<div class="site-header-wrapper" [class.is-scrolled]="isScrolled">
+  <!-- Top Utility Bar -->
+  <div class="top-bar d-none d-lg-block">
+    <div class="container-fluid px-3 px-xl-5">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center gap-3 gap-xl-4">
+          <a href="tel:+919824164586" class="d-flex align-items-center gap-2 text-nowrap">
+            <i class="bi bi-telephone-fill text-success"></i> +91 98241 64586
+          </a>
+          <a href="mailto:unnimbadkarassociates@gmail.com" class="d-flex align-items-center gap-2 text-nowrap">
+            <i class="bi bi-envelope-fill text-success"></i> unnimbadkarassociates@gmail.com
+          </a>
+          <span class="d-none d-xl-inline-flex align-items-center gap-1 opacity-75 text-nowrap" title="A602, Shrushti Apartment, Behind Satej Homes, New Vatva, S P Ring Road, Ahmedabad - 382440">
+            <i class="bi bi-geo-alt-fill text-warning"></i> A602, Shrushti Apt, Behind Satej Homes, New Vatva, Ahmedabad - 382440
+          </span>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <span class="opacity-75 text-nowrap">
+            <i class="bi bi-clock-fill text-success me-1"></i> Mon - Sat: 10:00 AM - 7:00 PM
+          </span>
+          <div class="d-flex align-items-center gap-2 ms-2 ps-2 border-start border-white border-opacity-25 text-nowrap">
+            <a href="https://wa.me/919824164586" target="_blank" class="text-white opacity-75 hover-opacity" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://www.linkedin.com" target="_blank" class="text-white opacity-75 hover-opacity" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com" target="_blank" class="text-white opacity-75 hover-opacity" title="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+            <a href="mailto:unnimbadkarassociates@gmail.com" class="text-white opacity-75 hover-opacity" title="Email"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transparent / Sticky Modern Navbar (Mukesh Raj Style) -->
+  <nav class="navbar navbar-expand-lg navbar-distinct" [class.scrolled]="isScrolled">
+    <div class="container-fluid px-3 px-xl-5 d-flex align-items-center justify-content-between">
+      <!-- Brand Logo (Original Logo in Unique Executive Plaque) -->
+      <a class="navbar-brand d-flex align-items-center m-0 p-0" routerLink="/" (click)="closeMobileNav()" (mouseenter)="closeDesktopServices()">
+        <div class="brand-logo-plaque">
+          <img src="/assets/New_logos/UN_CMA_Logo_with_Text.png" alt="U N Nimbadkar & Associates Logo" class="distinct-logo-img">
+        </div>
+      </a>
+
+      <!-- Mobile Toggler Button -->
+      <button class="mobile-menu-btn d-lg-none" type="button" (click)="toggleMobileNav()" aria-label="Toggle navigation">
+        <i class="bi fs-2" [ngClass]="isMobileNavOpen ? 'bi-x-lg text-danger' : 'bi-list'"></i>
+      </button>
+
+    <!-- Desktop Navigation Menu -->
+    <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarDesktop">
+      <ul class="navbar-nav ms-auto align-items-center gap-1 gap-xl-2">
+        <!-- 1. Home -->
+        <li class="nav-item" (mouseenter)="closeDesktopServices()">
+          <a class="nav-link nav-distinct-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileNav()">
+            Home
+          </a>
+        </li>
+
+        <!-- ================================================================
+             TEMPORARILY COMMENTED OUT FOR TESTING (Only Home is active)
+             ================================================================ -->
+        <!--
+        /* 2. About Us */
+        <li class="nav-item" (mouseenter)="closeDesktopServices()">
+          <a class="nav-link nav-distinct-link" routerLink="/about" routerLinkActive="active" (click)="closeMobileNav()">
+            About Us
+          </a>
+        </li>
+
+        /* 3. Services Dropdown */
+        <li class="nav-item dropdown distinct-dropdown"
+            (mouseenter)="onServicesMouseEnter()"
+            (mouseleave)="onServicesMouseLeave()">
+          <div class="d-flex align-items-center">
+            <a class="nav-link nav-distinct-link d-flex align-items-center gap-1 services-nav-toggle"
+               role="button"
+               tabindex="0"
+               (click)="onServicesClick($event)"
+               (keydown.enter)="onServicesClick($event)"
+               (keydown.space)="onServicesClick($event)"
+               [class.active]="isServicesActive() || isDesktopServicesOpen"
+               aria-haspopup="true"
+               [attr.aria-expanded]="isDesktopServicesOpen">
+              <span>Services</span>
+              <i class="bi bi-chevron-down dropdown-chevron" [class.rotate-180]="isDesktopServicesOpen"></i>
+            </a>
+          </div>
+
+          /* Structured Mega Menu */
+          <div class="distinct-mega-menu shadow-lg"
+               [class.show]="isDesktopServicesOpen">
+            
+            <div class="mega-menu-top d-flex justify-content-between align-items-center px-4 py-3 border-bottom">
+              <div>
+                <div class="fw-bold text-navy fs-6">Practice Areas &amp; Specializations</div>
+                <div class="text-muted small">10 Dedicated Cost &amp; Management Accounting Services</div>
+              </div>
+              <a routerLink="/services" (click)="closeDesktopServices()" class="btn btn-sm btn-outline-primary py-1 px-3 fw-semibold rounded-pill">
+                View Full Catalog <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+
+            <div class="mega-services-grid p-3">
+              @for (srv of services; track srv.slug) {
+                <a [routerLink]="['/services', srv.slug]" (click)="closeDesktopServices()" class="mega-service-row">
+                  <div class="mega-icon-box">
+                    <i class="bi" [ngClass]="srv.icon"></i>
+                  </div>
+                  <div class="mega-text-content">
+                    <div class="d-flex align-items-center justify-content-between">
+                      <span class="mega-title">{{ srv.title }}</span>
+                      <i class="bi bi-arrow-right mega-arrow"></i>
+                    </div>
+                    <span class="mega-category">{{ srv.category }}</span>
+                  </div>
+                </a>
+              }
+            </div>
+
+            <div class="mega-menu-bottom d-flex justify-content-between align-items-center px-4 py-2 bg-light border-top">
+              <span class="small text-muted">
+                <i class="bi bi-shield-check text-success me-1"></i> Direct advisory by CMA Urvesh Nimbadkar &amp; Senior Associates
+              </span>
+              <a href="https://wa.me/919824164586" target="_blank" class="small text-success fw-bold text-decoration-none d-flex align-items-center gap-1">
+                <i class="bi bi-whatsapp"></i> Instant WhatsApp Consultation
+              </a>
+            </div>
+          </div>
+        </li>
+
+        /* 4. Industries */
+        <li class="nav-item" (mouseenter)="closeDesktopServices()">
+          <a class="nav-link nav-distinct-link" routerLink="/industries" routerLinkActive="active" (click)="closeMobileNav()">
+            Industries
+          </a>
+        </li>
+
+        /* 5. Our Team */
+        <li class="nav-item" (mouseenter)="closeDesktopServices()">
+          <a class="nav-link nav-distinct-link" routerLink="/team" routerLinkActive="active" (click)="closeMobileNav()">
+            Our Team
+          </a>
+        </li>
+
+        /* 6. Why Us */
+        <li class="nav-item" (mouseenter)="closeDesktopServices()">
+          <a class="nav-link nav-distinct-link" routerLink="/why-us" routerLinkActive="active" (click)="closeMobileNav()">
+            Why Us
+          </a>
+        </li>
+
+        /* 7. Book Consultation CTA */
+        <li class="nav-item ms-lg-2" (mouseenter)="closeDesktopServices()">
+          <a class="btn btn-cma-distinct" routerLink="/contact" routerLinkActive="active" (click)="closeMobileNav()">
+            <i class="bi bi-calendar2-check-fill"></i> Book Consultation
+          </a>
+        </li>
+        -->
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+
+<!-- Mobile Slide Drawer -->
+<div class="mobile-drawer d-lg-none" [class.open]="isMobileNavOpen">
+  <div class="mobile-drawer-backdrop" (click)="closeMobileNav()"></div>
+  <div class="mobile-drawer-content">
+    <!-- Mobile Drawer Header -->
+    <div class="mobile-drawer-header d-flex justify-content-between align-items-center p-3 border-bottom bg-white sticky-top">
+      <img src="/assets/New_logos/UN_CMA_Logo_with_Text.png" alt="U N Nimbadkar & Associates" class="mobile-drawer-logo">
+      <button type="button" class="btn btn-light btn-sm rounded-circle d-flex align-items-center justify-content-center p-2" (click)="closeMobileNav()" aria-label="Close menu" style="width: 38px; height: 38px;">
+        <i class="bi bi-x-lg fs-6 text-dark"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Body -->
+    <div class="mobile-drawer-body p-3">
+      <ul class="list-unstyled mb-3">
+        <!-- Home Link -->
+        <li class="mb-2">
+          <a routerLink="/" (click)="closeMobileNav()" class="mobile-nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <i class="bi bi-house-door me-2 text-primary"></i> Home
+          </a>
+        </li>
+
+        <!-- ================================================================
+             TEMPORARILY COMMENTED OUT FOR TESTING (Only Home is active)
+             ================================================================ -->
+        <!--
+        /* About Us Link */
+        <li class="mb-2">
+          <a routerLink="/about" (click)="closeMobileNav()" class="mobile-nav-link" routerLinkActive="active">
+            <i class="bi bi-building me-2 text-primary"></i> About Us
+          </a>
+        </li>
+
+        /* Services Section with Direct Toggle */
+        <li class="mb-3">
+          <div class="mobile-services-header d-flex justify-content-between align-items-center py-2 px-3 rounded bg-light border"
+               (click)="toggleMobileServices($event)"
+               role="button"
+               style="cursor: pointer;">
+            <div class="fw-bold text-navy d-flex align-items-center gap-2">
+              <i class="bi bi-grid-fill text-success"></i>
+              <span>Services (10 Areas)</span>
+            </div>
+            <i class="bi fs-5 text-muted transition-icon" [ngClass]="isMobileServicesOpen ? 'bi-chevron-up text-success' : 'bi-chevron-down'"></i>
+          </div>
+
+          /* Services List */
+          @if (isMobileServicesOpen) {
+            <div class="mobile-services-container mt-2 ps-2 pe-1">
+              <a routerLink="/services" (click)="closeMobileNav()" class="mobile-service-item text-primary fw-bold mb-1 border-bottom pb-2">
+                <i class="bi bi-arrow-right-circle-fill me-2"></i> View All Services Catalog
+              </a>
+              @for (srv of services; track srv.slug) {
+                <a [routerLink]="['/services', srv.slug]" (click)="closeMobileNav()" class="mobile-service-item">
+                  <div class="mobile-service-icon">
+                    <i class="bi" [ngClass]="srv.icon"></i>
+                  </div>
+                  <div class="mobile-service-text">
+                    <div class="mobile-service-title">{{ srv.title }}</div>
+                    <div class="mobile-service-cat">{{ srv.category }}</div>
+                  </div>
+                  <i class="bi bi-chevron-right text-muted small ms-auto"></i>
+                </a>
+              }
+            </div>
+          }
+        </li>
+
+        /* Industries Link */
+        <li class="mb-2">
+          <a routerLink="/industries" (click)="closeMobileNav()" class="mobile-nav-link" routerLinkActive="active">
+            <i class="bi bi-buildings me-2 text-primary"></i> Industries
+          </a>
+        </li>
+
+        /* Our Team Link */
+        <li class="mb-2">
+          <a routerLink="/team" (click)="closeMobileNav()" class="mobile-nav-link" routerLinkActive="active">
+            <i class="bi bi-people me-2 text-primary"></i> Our Team
+          </a>
+        </li>
+
+        /* Why Choose Us Link */
+        <li class="mb-2">
+          <a routerLink="/why-us" (click)="closeMobileNav()" class="mobile-nav-link" routerLinkActive="active">
+            <i class="bi bi-shield-check me-2 text-primary"></i> Why Choose Us
+          </a>
+        </li>
+
+        /* Contact Link */
+        <li class="mb-3">
+          <a routerLink="/contact" (click)="closeMobileNav()" class="mobile-nav-link" routerLinkActive="active">
+            <i class="bi bi-telephone-inbound me-2 text-primary"></i> Contact &amp; Consultation
+          </a>
+        </li>
+        -->
+      </ul>
+
+      <!-- CTA Buttons -->
+      <div class="d-grid gap-2 pt-3 border-top">
+        <!--
+        <a routerLink="/contact" (click)="closeMobileNav()" class="btn btn-cma-distinct w-100">
+          <i class="bi bi-calendar2-check-fill"></i> Book Free Consultation
+        </a>
+        -->
+        <a href="https://wa.me/919824164586?text=Hello%20CMA%20Urvesh%20Nimbadkar,%20I%20visited%20your%20website%20and%20would%20like%20to%20consult%20regarding%20financial/CFO%20services." target="_blank" class="btn btn-cma-secondary w-100">
+          <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+        </a>
+      </div>
+
+      <div class="mt-4 pt-3 border-top small text-muted">
+        <p class="mb-1"><i class="bi bi-clock-fill text-success me-1"></i> <strong>Hours:</strong> Mon - Sat: 10:00 AM - 7:00 PM</p>
+        <p class="mb-1"><i class="bi bi-telephone-fill text-success me-1"></i> +91 98241 64586</p>
+        <p class="mb-2"><i class="bi bi-geo-alt-fill text-warning me-1"></i> A602, Shrushti Apartment, Behind Satej Homes, New Vatva, S P Ring Road, Ahmedabad - 382440</p>
+        <div class="d-flex gap-3 pt-2">
+          <a href="https://wa.me/919824164586" target="_blank" class="text-success fs-5"><i class="bi bi-whatsapp"></i></a>
+          <a href="https://www.linkedin.com" target="_blank" class="text-primary fs-5"><i class="bi bi-linkedin"></i></a>
+          <a href="https://x.com" target="_blank" class="text-dark fs-5"><i class="bi bi-twitter-x"></i></a>
+          <a href="mailto:unnimbadkarassociates@gmail.com" class="text-danger fs-5"><i class="bi bi-envelope-fill"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,119 @@
+<!-- Page Header Banner -->
+<section class="py-5 text-white" style="background: linear-gradient(135deg, var(--brand-navy-dark) 0%, var(--brand-navy) 60%, var(--brand-green) 100%);">
+  <div class="container py-4">
+    <span class="badge bg-success bg-opacity-75 text-white px-3 py-1 rounded-pill mb-2">
+      <i class="bi bi-info-circle-fill"></i> About Us
+    </span>
+    <h1 class="fw-bold mb-2">U N Nimbadkar &amp; Associates</h1>
+    <p class="lead text-white-50 mb-0">Cost &amp; Management Accountants | Virtual CFO | Ahmedabad, Gujarat</p>
+  </div>
+</section>
+
+<!-- About Details Section -->
+<section class="section-padding">
+  <div class="container">
+    <div class="row align-items-center g-5 mb-5">
+      <div class="col-lg-6">
+        <span class="section-tag"><i class="bi bi-patch-check"></i> Firm Overview</span>
+        <h2 class="section-title">Technical Precision with Practical Business Understanding</h2>
+        <p class="text-body mb-3">
+          <strong>U N Nimbadkar &amp; Associates</strong> is an Ahmedabad-based boutique Cost &amp; Management Accounting practice founded by <strong>CMA Urvesh Nimbadkar</strong> (Associate Cost &amp; Management Accountant).
+        </p>
+        <p class="text-muted mb-3">
+          We deliver robust financial frameworks, statutory audits, and management consultancy to emerging startups, MSMEs, LLPs, and corporate entities across India.
+        </p>
+        <p class="text-muted mb-4">
+          We believe every enterprise deserves access to world-class financial leadership, rigorous internal controls, and deep costing insights that drive sustainable profitability. Our practice bridges the gap between everyday accounting data entry and executive management direction.
+        </p>
+
+        <div class="p-3 rounded-3 border-start border-4 border-success bg-white shadow-sm mb-4">
+          <h5 class="fw-bold text-dark mb-1">"Behind every successful business decision, there is always a CMA."</h5>
+          <small class="text-muted">— Official Motto of the Institute of Cost Accountants of India (ICMAI)</small>
+        </div>
+
+        <div class="d-flex gap-3">
+          <a routerLink="/services" class="btn btn-cma-primary">
+            <i class="bi bi-grid-fill"></i> View Our Services
+          </a>
+          <a routerLink="/contact" class="btn btn-cma-outline">
+            <i class="bi bi-chat-dots-fill"></i> Get In Touch
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="p-4 rounded-4 shadow-sm border bg-light">
+          <h4 class="fw-bold mb-3" style="color: var(--brand-navy-dark);">Who We Partner With</h4>
+          <p class="text-muted small mb-4">
+            Our firm supports enterprises at diverse stages of their business lifecycle:
+          </p>
+
+          <div class="d-flex align-items-start gap-3 mb-3">
+            <div class="p-2 rounded bg-white text-success shadow-sm">
+              <i class="bi bi-rocket-takeoff-fill fs-4"></i>
+            </div>
+            <div>
+              <h6 class="fw-bold mb-1">Early-Stage Startups (Seed to Series A)</h6>
+              <p class="small text-muted mb-0">Entity incorporation, Startup India recognition, investor pitch decks, valuation models, and burn-rate tracking.</p>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-start gap-3 mb-3">
+            <div class="p-2 rounded bg-white text-primary shadow-sm">
+              <i class="bi bi-building fs-4"></i>
+            </div>
+            <div>
+              <h6 class="fw-bold mb-1">MSMEs &amp; Family-Run Businesses (₹3 Cr – ₹50 Cr)</h6>
+              <p class="small text-muted mb-0">Virtual CFO services, accounts supervision, monthly MIS reports, cash flow planning, and product costing systems.</p>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-start gap-3">
+            <div class="p-2 rounded bg-white text-warning shadow-sm">
+              <i class="bi bi-diagram-3-fill fs-4"></i>
+            </div>
+            <div>
+              <h6 class="fw-bold mb-1">Corporate Enterprises &amp; Mid-Market (Up to ₹1000 Cr)</h6>
+              <p class="small text-muted mb-0">Section 148 statutory Cost Audits, internal financial control (IFC) reviews, physical stock audits, and ERP deployment.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Pillars Grid -->
+    <div class="pt-4 border-top">
+      <div class="text-center mb-5">
+        <span class="section-tag navy-tag"><i class="bi bi-columns-gap"></i> Our Guiding Principles</span>
+        <h2 class="section-title">The Four Pillars of Our Firm</h2>
+      </div>
+
+      <div class="row g-4">
+        @for (pillar of pillars; track pillar.title) {
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 p-4 border rounded-3 shadow-sm text-center">
+              <div class="service-icon-box mx-auto mb-3" [ngClass]="pillar.colorClass === 'green' ? 'green-box' : ''">
+                <i class="bi" [ngClass]="pillar.icon"></i>
+              </div>
+              <h5 class="fw-bold mb-2" style="color: var(--brand-navy-dark);">{{ pillar.title }}</h5>
+              <p class="small text-muted mb-0">{{ pillar.desc }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="py-5 border-top">
+  <div class="container text-center py-3">
+    <h3 class="fw-bold mb-2" style="color: var(--brand-navy-dark);">Ready to Bring Financial Command to Your Enterprise?</h3>
+    <p class="text-muted mx-auto mb-4" style="max-width: 600px;">
+      Schedule a direct discussion with CMA Urvesh Nimbadkar and see how our tailored costing and Virtual CFO services can protect your margins.
+    </p>
+    <a routerLink="/contact" class="btn btn-cma-secondary btn-lg">
+      <i class="bi bi-calendar-check-fill"></i> Book Free Consultation
+    </a>
+  </div>
+</section>

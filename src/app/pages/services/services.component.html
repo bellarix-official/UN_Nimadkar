@@ -1,0 +1,70 @@
+<!-- Page Header Banner -->
+<section class="py-5 text-white" style="background: linear-gradient(135deg, var(--brand-navy-dark) 0%, var(--brand-navy) 60%, var(--brand-green) 100%);">
+  <div class="container py-4">
+    <span class="badge bg-success bg-opacity-75 text-white px-3 py-1 rounded-pill mb-2">
+      <i class="bi bi-grid-fill"></i> Practice Areas
+    </span>
+    <h1 class="fw-bold mb-2">Comprehensive Service Portfolio</h1>
+    <p class="lead text-white-50 mb-0">Explore our 10 specialized practice areas for Costing, Virtual CFO, GST, Income Tax, and Corporate Compliance.</p>
+  </div>
+</section>
+
+<!-- Services Listing Section -->
+<section class="section-padding">
+  <div class="container">
+    <!-- Category Filter Tabs -->
+    <div class="services-tab-nav mb-5">
+      @for (cat of categories; track cat.key) {
+        <button class="services-tab-btn" [class.active]="activeFilter === cat.key" (click)="setFilter(cat.key)">
+          {{ cat.label }}
+        </button>
+      }
+    </div>
+
+    <!-- Services Grid -->
+    <div class="row g-4">
+      @for (service of filteredServices; track service.slug) {
+        <div class="col-lg-6">
+          <div class="service-card p-4">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div class="d-flex align-items-center gap-3">
+                <div class="service-icon-box mb-0" [ngClass]="service.category === 'Taxation' || service.category === 'Costing & Operations' ? 'green-box' : ''">
+                  <i class="bi" [ngClass]="service.icon"></i>
+                </div>
+                <div>
+                  <h4 class="mb-1 fw-bold">{{ service.title }}</h4>
+                  <span class="badge bg-light text-dark border">{{ service.category }}</span>
+                </div>
+              </div>
+              <span class="badge" style="background: var(--accent-gold); color: #fff;">{{ service.badge }}</span>
+            </div>
+
+            <p class="service-summary mb-3">{{ service.tagline }}</p>
+
+            <div class="mb-3">
+              <h6 class="fw-bold text-dark small mb-2"><i class="bi bi-check2-all text-success"></i> Key Sub-Services &amp; Scope:</h6>
+              <div class="row g-2">
+                @for (sub of service.subServices.slice(0, 4); track sub.name) {
+                  <div class="col-sm-6">
+                    <div class="p-2 rounded bg-light border small text-dark h-100">
+                      <strong>{{ sub.name }}:</strong> {{ sub.description | slice:0:60 }}...
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+
+            <div class="service-card-footer d-flex gap-2 align-items-center pt-3 border-top mt-auto">
+              <a [routerLink]="['/services', service.slug]" class="btn btn-sm btn-cma-primary flex-grow-1 text-center justify-content-center">
+                View Details &amp; Scope <i class="bi bi-arrow-right"></i>
+              </a>
+              <a href="https://wa.me/919824164586?text=Hello%20CMA%20Urvesh,%20I%20would%20like%20to%20enquire%20about%20{{ service.title }}." target="_blank" class="btn btn-sm btn-cma-outline-green text-center justify-content-center" title="Quick WhatsApp Enquiry">
+                <i class="bi bi-whatsapp"></i> WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,551 @@
+/* Home component styles */
+:host {
+  display: block;
+  width: 100%;
+  background-color: #f8fafc;
+  background-image: 
+    radial-gradient(circle at 92% 14%, rgba(0, 52, 102, 0.04) 0%, transparent 45%),
+    radial-gradient(circle at 6% 36%, rgba(10, 92, 54, 0.035) 0%, transparent 40%),
+    radial-gradient(circle at 94% 64%, rgba(0, 52, 102, 0.035) 0%, transparent 45%),
+    radial-gradient(circle at 10% 88%, rgba(10, 92, 54, 0.03) 0%, transparent 40%),
+    radial-gradient(circle, rgba(0, 52, 102, 0.04) 0.8px, transparent 0.8px),
+    linear-gradient(180deg, #fbfcfe 0%, #f4f7fb 22%, #f1f5f9 50%, #f4f7fb 78%, #fbfcfe 100%);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 28px 28px, 100% 100%;
+}
+
+/* ==========================================================================
+   Hero Section - Authentic CMA Practice Theme with Boardroom Background
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  background: linear-gradient(
+      180deg,
+      rgba(2, 22, 44, 0.88) 0%,
+      rgba(1, 16, 34, 0.84) 60%,
+      rgba(2, 26, 50, 0.94) 100%
+    ),
+    url('/assets/images/cma_hero_background.jpg') center 28%/cover no-repeat;
+  color: #ffffff;
+  padding: 165px 0 100px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Authority CMA Pill Badge */
+.hero-cma-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 30px;
+  padding: 7px 18px;
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.cma-badge-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 10px #4ade80;
+  display: inline-block;
+  flex-shrink: 0;
+  animation: pulseGreen 2s infinite;
+}
+
+.cma-badge-text {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cma-badge-title {
+  display: inline-flex;
+  align-items: center;
+}
+
+.cma-badge-loc {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+@keyframes pulseGreen {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 8px rgba(74, 222, 128, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+  }
+}
+
+/* Main Hero Typography */
+.hero-main-title {
+  font-size: 2.85rem;
+  font-weight: 800;
+  line-height: 1.22;
+  color: #ffffff;
+  letter-spacing: -0.4px;
+}
+
+.hero-title-highlight {
+  color: #4ade80;
+  text-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
+}
+
+.hero-lead-text {
+  font-size: 1.15rem;
+  line-height: 1.68;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ICMAI Motto Box */
+.hero-motto-box {
+  display: flex;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.08);
+  border-left: 4px solid #4ade80;
+  border-radius: 0 12px 12px 0;
+  padding: 13px 18px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  max-width: 620px;
+}
+
+.motto-text {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #ffffff;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.motto-sub {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.72);
+  margin-top: 3px;
+}
+
+/* Call to Action Buttons */
+.hero-actions-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-secondary-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-hero-primary {
+  background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-dark) 100%);
+  color: #ffffff !important;
+  padding: 13px 26px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 6px 20px rgba(10, 92, 54, 0.45);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-hero-primary:hover {
+  background: linear-gradient(135deg, #0e7a48 0%, #10b981 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(10, 92, 54, 0.55);
+}
+
+.btn-hero-whatsapp {
+  background: rgba(37, 211, 102, 0.18);
+  color: #4ade80 !important;
+  border: 1.5px solid #25d366;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 14.5px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-hero-whatsapp:hover {
+  background: #25d366;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.hero-direct-call {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14.5px;
+  padding: 12px 22px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.hero-direct-call:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: #4ade80;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+/* Right Column: 4 Core CMA Practice Card */
+.hero-services-card {
+  background: rgba(2, 28, 54, 0.82);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 24px 22px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.hero-service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.hero-service-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+  transition: all 0.22s ease;
+}
+
+.hero-service-row:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #4ade80;
+  transform: translateX(4px);
+}
+
+.service-row-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(74, 222, 128, 0.18);
+  color: #4ade80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.hero-service-row:hover .service-row-icon {
+  background: #4ade80;
+  color: #002b49;
+}
+
+.service-row-text {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.service-row-text .title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.service-row-text .desc {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.3;
+  margin-top: 2px;
+}
+
+.service-row-arrow {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+  margin-left: auto;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.hero-service-row:hover .service-row-arrow {
+  color: #4ade80;
+  transform: translateX(3px);
+}
+
+/* Quick Impact Strip Banner */
+.hero-strip-banner {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px 28px;
+  box-shadow: 0 12px 32px rgba(0, 52, 102, 0.14);
+  border: 1px solid rgba(0, 52, 102, 0.08);
+}
+
+.hero-strip-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero-strip-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--brand-navy-subtle);
+  color: var(--brand-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.hero-strip-item:hover .hero-strip-icon {
+  background: var(--brand-green);
+  color: #ffffff;
+}
+
+.hero-strip-text .value {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--brand-navy-dark);
+  line-height: 1.2;
+}
+
+.hero-strip-text .label {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   Clean & Simple About Us Section on Home Page
+   ========================================================================== */
+.about-image-wrapper {
+  position: relative;
+  border-radius: 18px;
+}
+
+.about-main-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 16px 36px rgba(0, 52, 102, 0.12);
+  display: block;
+}
+
+.about-experience-badge {
+  position: absolute;
+  bottom: -20px;
+  right: 24px;
+  background: #ffffff;
+  padding: 12px 20px;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0, 52, 102, 0.16);
+  border: 1px solid rgba(0, 52, 102, 0.08);
+  border-left: 4px solid var(--brand-green);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+}
+
+.about-experience-badge .badge-num {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--brand-navy-dark);
+  line-height: 1.1;
+  font-family: var(--font-heading);
+}
+
+.about-experience-badge .badge-label {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.about-motto-callout {
+  background: linear-gradient(135deg, #ffffff 0%, #f7fbf9 100%);
+  border: 1px solid rgba(10, 92, 54, 0.15);
+  border-left: 4px solid var(--brand-green) !important;
+  box-shadow: 0 4px 14px rgba(10, 92, 54, 0.04);
+  border-radius: 12px;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 991px) {
+  .about-main-img {
+    height: 320px;
+  }
+  .about-experience-badge {
+    bottom: -15px;
+    right: 15px;
+    padding: 10px 16px;
+  }
+  .hero-section {
+    padding: 115px 0 75px;
+    background-position: center;
+  }
+  .hero-main-title {
+    font-size: 2.25rem;
+  }
+  .hero-services-card {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero-section {
+    padding: 100px 0 65px;
+  }
+  .hero-main-title {
+    font-size: 1.95rem;
+  }
+  .hero-lead-text {
+    font-size: 1rem;
+  }
+  .motto-text {
+    font-size: 13px;
+  }
+
+  /* Authority Badge: Sleek executive card on mobile */
+  .hero-cma-badge {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 9px 12px;
+    border-radius: 12px;
+    background: rgba(2, 22, 44, 0.78);
+    border: 1px solid rgba(74, 222, 128, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1.15rem !important;
+  }
+
+  .cma-badge-pulse {
+    margin-top: 4px;
+  }
+
+  .cma-badge-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    width: 100%;
+  }
+
+  .cma-badge-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.35;
+  }
+
+  .cma-badge-title i {
+    font-size: 13px;
+  }
+
+  .cma-badge-loc {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  /* Hero Actions Group: Primary on top, WhatsApp & Call side-by-side */
+  .hero-actions-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .btn-hero-primary {
+    width: 100%;
+    padding: 13px 20px;
+    font-size: 14.5px;
+    border-radius: 12px;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(10, 92, 54, 0.4);
+  }
+
+  .hero-secondary-actions {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .btn-hero-whatsapp,
+  .hero-direct-call {
+    flex: 1;
+    min-width: 0;
+    padding: 11px 8px;
+    font-size: 13.5px;
+    border-radius: 12px;
+    height: 46px;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  .wa-full-text {
+    display: none !important;
+  }
+
+  .wa-short-text {
+    display: inline !important;
+  }
+
+  .hero-secondary-actions .call-num-full {
+    display: none !important;
+  }
+
+  .hero-secondary-actions .call-num-short {
+    display: inline !important;
+  }
+}

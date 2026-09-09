@@ -1,0 +1,148 @@
+@if (service) {
+  <!-- Page Header Banner -->
+  <section class="py-5 text-white" style="background: linear-gradient(135deg, var(--brand-navy-dark) 0%, var(--brand-navy) 60%, var(--brand-green) 100%);">
+    <div class="container py-3">
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-2" style="font-size: 13px;">
+          <li class="breadcrumb-item"><a routerLink="/" class="text-white-50 text-decoration-none">Home</a></li>
+          <li class="breadcrumb-item"><a routerLink="/services" class="text-white-50 text-decoration-none">Services</a></li>
+          <li class="breadcrumb-item active text-white" aria-current="page">{{ service.title }}</li>
+        </ol>
+      </nav>
+
+      <div class="d-flex flex-wrap align-items-center gap-3 mb-2">
+        <span class="badge bg-success bg-opacity-75 text-white px-3 py-1 rounded-pill">
+          {{ service.category }}
+        </span>
+        <span class="badge" style="background: var(--accent-gold); color: #fff;">
+          {{ service.badge }}
+        </span>
+      </div>
+
+      <h1 class="fw-bold mb-2">{{ service.title }}</h1>
+      <p class="lead text-white-50 mb-0" style="max-width: 780px;">{{ service.tagline }}</p>
+    </div>
+  </section>
+
+  <!-- Service Detail Main Content -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Main Column: Sub-services & Scope -->
+        <div class="col-lg-8">
+          <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border mb-4">
+            <h3 class="fw-bold mb-3" style="color: var(--brand-navy-dark);">Overview &amp; Purpose</h3>
+            <p class="text-body mb-4" style="font-size: 16px; line-height: 1.7;">{{ service.shortDesc }}</p>
+
+            <h4 class="fw-bold mb-3" style="color: var(--brand-navy-dark);"><i class="bi bi-list-check text-success"></i> Comprehensive Scope of Services:</h4>
+            <div class="row g-3 mb-5">
+              @for (sub of service.subServices; track sub.name; let i = $index) {
+                <div class="col-md-6">
+                  <div class="p-3 rounded-3 border bg-white shadow-sm h-100">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                      <span class="badge bg-navy text-white rounded-circle" style="width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; background: var(--brand-navy); font-size: 11px;">
+                        {{ i + 1 }}
+                      </span>
+                      <h6 class="fw-bold mb-0 text-dark">{{ sub.name }}</h6>
+                    </div>
+                    <p class="small text-muted mb-0" style="line-height: 1.5;">{{ sub.description }}</p>
+                  </div>
+                </div>
+              }
+            </div>
+
+            <h4 class="fw-bold mb-3" style="color: var(--brand-navy-dark);"><i class="bi bi-star-fill text-warning"></i> Key Advantages for Your Business:</h4>
+            <ul class="list-unstyled mb-4">
+              @for (ben of service.benefits; track ben) {
+                <li class="d-flex align-items-start gap-2 mb-2">
+                  <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                  <span>{{ ben }}</span>
+                </li>
+              }
+            </ul>
+
+            <div class="p-3 rounded-3 bg-white shadow-sm border-start border-4 border-success">
+              <h6 class="fw-bold text-dark mb-1"><i class="bi bi-people-fill text-success"></i> Who is this service ideal for?</h6>
+              <p class="small text-muted mb-0">{{ service.targetAudience }}</p>
+            </div>
+          </div>
+
+          <!-- Quick WhatsApp CTA Banner -->
+          <div class="p-4 rounded-4 text-white d-flex flex-column flex-md-row justify-content-between align-items-center gap-3" style="background: linear-gradient(135deg, #074327 0%, #0A5C36 100%);">
+            <div>
+              <h5 class="fw-bold mb-1">Need customized support for {{ service.title }}?</h5>
+              <p class="small text-white-50 mb-0">Get in touch directly with CMA Urvesh Nimbadkar for tailored pricing and deliverables.</p>
+            </div>
+            <a href="https://wa.me/919824164586?text=Hello%20CMA%20Urvesh,%20I%20would%20like%20to%20consult%20regarding%20{{ service.title }}." target="_blank" class="btn btn-cma-light text-success fw-bold text-nowrap">
+              <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-lg-4">
+          <!-- Consultation Card -->
+          <div class="bg-white p-4 rounded-4 shadow-sm border mb-4 sticky-top" style="top: 100px;">
+            <h5 class="fw-bold mb-2" style="color: var(--brand-navy-dark);">Enquire For This Service</h5>
+            <p class="small text-muted mb-3">Submit your contact info for an instant response directly from the founder.</p>
+
+            @if (formSubmitted) {
+              <div class="alert alert-success small mb-3">
+                <i class="bi bi-check-circle-fill me-1"></i> Opening WhatsApp with your enquiry...
+              </div>
+            }
+
+            <form (submit)="$event.preventDefault()" (ngSubmit)="submitEnquiry($event)">
+              <div class="mb-2">
+                <label class="form-label small fw-bold mb-1">Full Name *</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Your Name" [(ngModel)]="formData.name" name="name" required>
+              </div>
+
+              <div class="mb-2">
+                <label class="form-label small fw-bold mb-1">WhatsApp Mobile *</label>
+                <input type="tel" class="form-control form-control-sm" placeholder="Mobile Number" [(ngModel)]="formData.phone" name="phone" required>
+              </div>
+
+              <div class="mb-2">
+                <label class="form-label small fw-bold mb-1">Business Name</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Company Name" [(ngModel)]="formData.company" name="company">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label small fw-bold mb-1">Notes / Questions</label>
+                <textarea class="form-control form-control-sm" rows="3" placeholder="Brief requirement..." [(ngModel)]="formData.message" name="message"></textarea>
+              </div>
+
+              <button type="button" (click)="submitEnquiry($event)" class="btn btn-cma-secondary w-100">
+                <i class="bi bi-send-fill"></i> Submit &amp; Connect on WhatsApp
+              </button>
+            </form>
+
+            <hr class="my-3">
+
+            <!-- Other Practice Areas Links -->
+            <h6 class="fw-bold small text-muted text-uppercase mb-2">Other Practice Areas</h6>
+            <ul class="list-unstyled small mb-0">
+              @for (other of otherServices; track other.slug) {
+                <li class="mb-2">
+                  <a [routerLink]="['/services', other.slug]" class="text-decoration-none d-flex align-items-center gap-2 text-dark">
+                    <i class="bi bi-chevron-right text-success small"></i> {{ other.title }}
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+} @else {
+  <section class="section-padding text-center">
+    <div class="container py-5">
+      <h2 class="fw-bold mb-3">Service Not Found</h2>
+      <p class="text-muted mb-4">The practice area you requested does not exist or has been relocated.</p>
+      <a routerLink="/services" class="btn btn-cma-primary">Browse All Services</a>
+    </div>
+  </section>
+}

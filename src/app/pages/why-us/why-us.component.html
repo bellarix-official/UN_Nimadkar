@@ -1,0 +1,78 @@
+<!-- Page Header Banner -->
+<section class="py-5 text-white" style="background: linear-gradient(135deg, var(--brand-navy-dark) 0%, var(--brand-navy) 60%, var(--brand-green) 100%);">
+  <div class="container py-4">
+    <span class="badge bg-success bg-opacity-75 text-white px-3 py-1 rounded-pill mb-2">
+      <i class="bi bi-shield-check"></i> Competitive Edge
+    </span>
+    <h1 class="fw-bold mb-2">Why Businesses Partner With Us</h1>
+    <p class="lead text-white-50 mb-0">Discover the CMA Advantage: Domain depth, personalized attention, and rigorous statutory oversight.</p>
+  </div>
+</section>
+
+<!-- Advantages Grid -->
+<section class="section-padding">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="section-tag navy-tag"><i class="bi bi-star-fill"></i> Core Advantages</span>
+      <h2 class="section-title">Built Around the Real Needs of Indian Founders</h2>
+      <p class="section-desc mx-auto">
+        We bridge the gap between compliance and strategic business expansion with clear, reliable financial leadership.
+      </p>
+    </div>
+
+    <div class="row g-4 mb-5">
+      @for (adv of advantages; track adv.num) {
+        <div class="col-md-6 col-lg-4">
+          <div class="why-card">
+            <div class="why-number">{{ adv.num }}</div>
+            <h5>{{ adv.title }}</h5>
+            <p>{{ adv.desc }}</p>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="pt-5 border-top">
+      <div class="text-center mb-4">
+        <span class="section-tag"><i class="bi bi-arrow-left-right"></i> Comparison</span>
+        <h3 class="fw-bold" style="color: var(--brand-navy-dark);">Traditional Accountant vs. U N Nimbadkar &amp; Associates</h3>
+        <p class="text-muted small">See how our Virtual CFO &amp; Cost Advisory model transforms your business operations.</p>
+      </div>
+
+      <div class="table-responsive shadow-sm rounded-4 border">
+        <table class="table table-hover align-middle mb-0">
+          <thead style="background: var(--brand-navy); color: #fff;">
+            <tr>
+              <th scope="col" class="py-3 px-4">Key Aspect</th>
+              <th scope="col" class="py-3 px-4">Traditional Bookkeeper / Tax Preparer</th>
+              <th scope="col" class="py-3 px-4" style="background: var(--brand-green);">U N Nimbadkar &amp; Associates (Virtual CFO)</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (row of comparisonPoints; track row.aspect) {
+              <tr>
+                <td class="fw-bold px-4 text-dark">{{ row.aspect }}</td>
+                <td class="px-4 text-muted">{{ row.traditional }}</td>
+                <td class="px-4 fw-semibold text-success bg-light">{{ row.cmaFirm }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 border-top text-center">
+  <div class="container py-3">
+    <h3 class="fw-bold mb-2" style="color: var(--brand-navy-dark);">Experience the Difference in Your Bottom Line</h3>
+    <p class="text-muted mx-auto mb-4" style="max-width: 600px;">
+      Schedule a complimentary 30-minute consultation with CMA Urvesh Nimbadkar today.
+    </p>
+    <a routerLink="/contact" class="btn btn-cma-secondary btn-lg">
+      <i class="bi bi-calendar2-check-fill"></i> Book Free Consultation
+    </a>
+  </div>
+</section>

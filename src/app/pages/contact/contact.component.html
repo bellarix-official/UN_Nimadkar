@@ -1,0 +1,181 @@
+<!-- Page Header Banner -->
+<section class="py-5 text-white" style="background: linear-gradient(135deg, var(--brand-navy-dark) 0%, var(--brand-navy) 60%, var(--brand-green) 100%);">
+  <div class="container py-4">
+    <span class="badge bg-success bg-opacity-75 text-white px-3 py-1 rounded-pill mb-2">
+      <i class="bi bi-headset"></i> Connect With Us
+    </span>
+    <h1 class="fw-bold mb-2">Book a Consultation / Get In Touch</h1>
+    <p class="lead text-white-50 mb-0">Speak directly with CMA Urvesh Nimbadkar &amp; the associate team for professional financial guidance.</p>
+  </div>
+</section>
+
+<!-- Contact Form & Info Section -->
+<section class="section-padding">
+  <div class="container">
+    <div class="contact-wrapper">
+      <div class="row g-0">
+        <!-- Left Panel: Contact Info -->
+        <div class="col-lg-5">
+          <div class="contact-info-panel">
+            <h4 class="fw-bold text-white mb-2">Office Information</h4>
+            <p class="text-white-50 small mb-4">Direct communication with CMA Urvesh Nimbadkar and the associate team.</p>
+
+            <div class="contact-item-row">
+              <div class="contact-icon-circle">
+                <i class="bi bi-telephone-fill"></i>
+              </div>
+              <div>
+                <h6>Call / WhatsApp Direct</h6>
+                <a href="tel:+919824164586">+91 98241 64586</a>
+                <p class="small text-white-50 mt-1">Available Mon – Sat: 10:00 AM to 7:00 PM</p>
+              </div>
+            </div>
+
+            <div class="contact-item-row">
+              <div class="contact-icon-circle">
+                <i class="bi bi-envelope-fill"></i>
+              </div>
+              <div>
+                <h6>Official Email</h6>
+                <a href="mailto:unnimbadkarassociates@gmail.com">unnimbadkarassociates@gmail.com</a>
+                <p class="small text-white-50 mt-1">Replies within 24 business hours</p>
+              </div>
+            </div>
+
+            <div class="contact-item-row">
+              <div class="contact-icon-circle">
+                <i class="bi bi-geo-alt-fill"></i>
+              </div>
+              <div>
+                <h6>Office Address</h6>
+                <p class="text-white-50">
+                  <strong>U N Nimbadkar &amp; Associates</strong><br>
+                  A602, Shrushti Apartment, Behind Satej Homes, New Vatva, S P Ring Road, Ahmedabad - 382440
+                </p>
+              </div>
+            </div>
+
+            <!-- Social Media Channels -->
+            <div class="mb-3 pt-2">
+              <h6 class="text-white small fw-bold mb-2">Connect Across Social Channels:</h6>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="https://wa.me/919824164586" target="_blank" class="btn btn-sm btn-cma-outline-white">
+                  <i class="bi bi-whatsapp text-success"></i> WhatsApp
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" class="btn btn-sm btn-cma-outline-white">
+                  <i class="bi bi-linkedin text-info"></i> LinkedIn
+                </a>
+                <a href="https://x.com" target="_blank" class="btn btn-sm btn-cma-outline-white">
+                  <i class="bi bi-twitter-x"></i> Twitter / X
+                </a>
+              </div>
+            </div>
+
+            <div class="mt-auto pt-3 border-top border-white border-opacity-25">
+              <div class="d-flex gap-2">
+                <a href="https://wa.me/919824164586?text=Hello%20CMA%20Urvesh%20Nimbadkar,%20I%20would%20like%20to%20consult%20regarding%20your%20services." target="_blank" class="btn btn-sm btn-cma-secondary flex-fill text-center justify-content-center">
+                  <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+                </a>
+                <a href="tel:+919824164586" class="btn btn-sm btn-cma-outline-white flex-fill text-center justify-content-center">
+                  <i class="bi bi-telephone"></i> Call Direct
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Panel: Enquiry Form -->
+        <div class="col-lg-7 p-4 p-md-5 bg-white">
+          <div class="mb-4">
+            <h4 class="fw-bold mb-1" style="color: var(--brand-navy-dark);">Schedule a Free Initial Discussion</h4>
+            <p class="small text-muted mb-0">Fill out this quick form and connect directly on WhatsApp with CMA Urvesh Nimbadkar.</p>
+          </div>
+
+          @if (formSubmitted) {
+            <div class="alert alert-success mb-4" role="alert">
+              <i class="bi bi-check-circle-fill me-2"></i> Thank you! Your request has been prepared and redirected to WhatsApp for instant confirmation.
+            </div>
+          }
+
+          <form (submit)="$event.preventDefault()" (ngSubmit)="submitConsultation($event)">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="clientName" placeholder="Your Name" [(ngModel)]="formData.name" name="name" required>
+                  <label for="clientName">Full Name *</label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="tel" class="form-control" id="clientPhone" placeholder="Mobile Number" [(ngModel)]="formData.phone" name="phone" required>
+                  <label for="clientPhone">Mobile Number (WhatsApp) *</label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="email" class="form-control" id="clientEmail" placeholder="Email Address" [(ngModel)]="formData.email" name="email">
+                  <label for="clientEmail">Email Address</label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="companyName" placeholder="Business Name" [(ngModel)]="formData.company" name="company">
+                  <label for="companyName">Business / Company Name</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-floating">
+                  <select class="form-select" id="serviceSelect" [(ngModel)]="formData.service" name="service">
+                    <option value="Virtual CFO Services">Virtual CFO Services (Monthly MIS &amp; Cash Flow)</option>
+                    <option value="Cost Audit & Management Accounting">Cost Audit (Sec 148) &amp; Product Costing</option>
+                    <option value="GST Registration & Filing">GST Registration, Monthly Returns &amp; Notices</option>
+                    <option value="Direct Tax & Income Tax">Income Tax Return &amp; TDS Compliance</option>
+                    <option value="Company / Startup Incorporation">Company Setup (Pvt Ltd / LLP / Startup India)</option>
+                    <option value="Project Finance & Subsidies">Bank Project Reports (DPR) &amp; Subsidies</option>
+                    <option value="Internal Audit & Stock Verification">Internal Audit &amp; Stock Verification</option>
+                    <option value="General Financial Consultation">General Business Consultation</option>
+                  </select>
+                  <label for="serviceSelect">Service Requirement *</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea class="form-control" placeholder="Describe your requirement" id="clientMessage" style="height: 120px" [(ngModel)]="formData.message" name="message"></textarea>
+                  <label for="clientMessage">Briefly describe your requirements or current challenge</label>
+                </div>
+              </div>
+
+              <div class="col-12 mt-3">
+                <button type="button" (click)="submitConsultation($event)" class="btn btn-cma-primary btn-lg w-100">
+                  <i class="bi bi-send-fill"></i> Submit &amp; Connect on WhatsApp
+                </button>
+                <p class="small text-muted text-center mt-2 mb-0">
+                  <i class="bi bi-lock-fill"></i> All financial and business information is kept strictly confidential under the CMA Code of Conduct.
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google Map Embed -->
+    <div class="mt-5 rounded-4 overflow-hidden border shadow-sm bg-white p-2">
+      <iframe 
+        title="U N Nimbadkar & Associates Location"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117540.23727838578!2d72.502859!3d22.983946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e869784347717%3A0x6b87beea30a08e16!2sVatva%2C%20Ahmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+        width="100%" 
+        height="320" 
+        style="border:0; display:block;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
