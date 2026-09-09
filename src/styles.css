@@ -46,11 +46,49 @@
   --radius-lg: 20px;
 }
 
-/* Global resets & typography */
+/* ==========================================================================
+   Custom Executive Brand Scrollbar
+   ========================================================================== */
+/* Standard / Firefox */
 html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--brand-green) #f1f5f9;
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
 }
+
+/* Webkit (Chrome, Edge, Safari, Opera) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-left: 1px solid #e2e8f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--brand-navy) 0%, var(--brand-green) 100%);
+  border-radius: 20px;
+  border: 2px solid #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--brand-navy-light) 0%, var(--brand-green-light) 100%);
+  border-color: #e2e8f0;
+  box-shadow: 0 0 8px rgba(10, 92, 54, 0.4);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, var(--brand-navy-dark) 0%, var(--brand-green-dark) 100%);
+}
+
+::-webkit-scrollbar-corner {
+  background: #f1f5f9;
+}
+
+/* Global resets & typography */
 
 html, body {
   font-family: var(--font-body);
