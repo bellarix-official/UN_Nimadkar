@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +14,7 @@ import { ServicesDataService, ServiceItem } from '../../services/services-data.s
 export class ServiceDetailComponent implements OnInit {
   private readonly route = inject(ActivatedRoute);
   private readonly servicesDataService = inject(ServicesDataService);
+  private readonly cdr = inject(ChangeDetectorRef);
 
   service: ServiceItem | undefined;
   allServices: ServiceItem[] = this.servicesDataService.getAllServices();
@@ -32,7 +33,8 @@ export class ServiceDetailComponent implements OnInit {
       const slug = params.get('slug');
       if (slug) {
         this.service = this.servicesDataService.getServiceBySlug(slug);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        this.cdr.detectChanges();
+        window.scrollTo({ top: 0, behavior: 'instant' });
       }
     });
   }
@@ -52,12 +54,13 @@ export class ServiceDetailComponent implements OnInit {
     }
 
     const msg = encodeURIComponent(
-      `Hello CMA Urvesh Nimbadkar,\n\nI am interested in your service: *${this.service?.title}*.\n\n` +
-      `*Name:* ${this.formData.name}\n` +
-      `*Mobile:* ${this.formData.phone}\n` +
-      `*Company:* ${this.formData.company || 'N/A'}\n` +
-      `*Email:* ${this.formData.email || 'N/A'}\n` +
-      `*Requirement:* ${this.formData.message || 'Please connect for consultation.'}`
+      `Hello CMA Urvesh Nimbadkar,\n\nI want to enquire about: *${this.service?.title}* (${this.service?.category})\n\n` +
+      `*Service Required:* ${this.service?.title}\n` +
+      `*Client Name:* ${this.formData.name}\n` +
+      `*Mobile Number:* ${this.formData.phone}\n` +
+      `*Business / Company:* ${this.formData.company || 'N/A'}\n` +
+      `*Email Address:* ${this.formData.email || 'N/A'}\n` +
+      `*Requirement / Note:* ${this.formData.message || 'Please connect for consultation.'}`
     );
 
     window.open(`https://wa.me/919824164586?text=${msg}`, '_blank');

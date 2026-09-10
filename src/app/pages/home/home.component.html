@@ -114,10 +114,14 @@
           </div>
 
           <div class="pt-3 mt-2 border-top border-white border-opacity-20">
-            <a routerLink="/services" class="btn btn-outline-light w-100 rounded-pill py-2 fw-semibold d-flex align-items-center justify-content-center gap-2">
+            <button
+              type="button"
+              (click)="openServicesOverlay()"
+              class="btn btn-outline-light w-100 rounded-pill py-2 fw-semibold d-flex align-items-center justify-content-center gap-2"
+            >
+              <i class="bi bi-grid-3x3-gap-fill"></i>
               <span>View All 10 Services Catalog</span>
-              <i class="bi bi-arrow-right"></i>
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -251,9 +255,17 @@
         </div>
       }
 
-      <!-- 6th Card: 'More Services...' Simple & Distinctive Gateway Card -->
+      <!-- 6th Card: 'More Services...' Floating Glass Overlay Trigger -->
       <div class="col">
-        <a routerLink="/services" class="service-small-card service-small-more text-decoration-none">
+        <div
+          (click)="openServicesOverlay()"
+          role="button"
+          tabindex="0"
+          (keydown.enter)="openServicesOverlay()"
+          (keydown.space)="openServicesOverlay()"
+          class="service-small-card service-small-more text-decoration-none"
+          style="cursor: pointer;"
+        >
           <div class="d-flex align-items-center justify-content-between mb-3">
             <div class="service-small-icon more-icon">
               <i class="bi bi-grid-3x3-gap-fill"></i>
@@ -270,7 +282,7 @@
             <span>Explore All 10+ Services</span>
             <i class="bi bi-arrow-right more-link-icon"></i>
           </div>
-        </a>
+        </div>
       </div>
     </div>
   </div>
@@ -416,9 +428,10 @@
   </div>
 
   <!-- Bottom Link to Dedicated Industries Page -->
-  <div class="container text-center mt-4 pt-2">
-    <a routerLink="/industries" class="btn btn-cma-outline">
-      Explore All Industry Case Studies &amp; Practice Details <i class="bi bi-arrow-right ms-1"></i>
+  <div class="container text-center mt-4 pt-2 px-3">
+    <a routerLink="/industries" class="btn btn-cma-outline btn-industries-explore">
+      <span>Explore All Industry Case Studies &amp; Practice Details</span>
+      <i class="bi bi-arrow-right ms-1 flex-shrink-0"></i>
     </a>
   </div>
 </section>
@@ -813,3 +826,47 @@
     </div>
   </div>
 </section>
+
+<!-- Floating Services Overlay (Transparent Blur with Clean Icon + Service Name Cards) -->
+@if (isServicesOverlayOpen) {
+  <div
+    class="floating-services-overlay"
+    (click)="closeServicesOverlay()"
+    role="dialog"
+    aria-modal="true"
+    aria-label="All Services"
+  >
+    <!-- Floating Cross Close Button -->
+    <button
+      type="button"
+      class="floating-simple-close-btn"
+      (click)="closeServicesOverlay()"
+      aria-label="Close"
+    >
+      <i class="bi bi-x-lg"></i>
+    </button>
+
+    <!-- Floating Cards Container -->
+    <div class="floating-simple-container" (click)="$event.stopPropagation()">
+      <div class="row row-cols-1 row-cols-md-2 g-3">
+        @for (service of allServices; track service.slug; let i = $index) {
+          <div class="col">
+            <a
+              [routerLink]="['/services', service.slug]"
+              (click)="closeServicesOverlay()"
+              class="floating-minimal-card"
+              [style.animation-delay]="(i * 30) + 'ms'"
+            >
+              <div class="floating-minimal-icon">
+                <i class="bi" [ngClass]="service.icon"></i>
+              </div>
+              <span class="floating-minimal-title">
+                {{ service.title }}
+              </span>
+            </a>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+}

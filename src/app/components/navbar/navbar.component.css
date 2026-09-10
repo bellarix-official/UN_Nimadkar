@@ -350,15 +350,16 @@
 .distinct-mega-menu {
   position: absolute;
   top: 100%;
-  left: -200px;
-  width: 760px;
-  max-width: 90vw;
+  right: 0;
+  left: auto;
+  width: 780px;
+  max-width: calc(100vw - 36px);
   background: #ffffff;
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 0;
   margin-top: 0;
-  box-shadow: 0 20px 45px rgba(0, 52, 102, 0.18);
-  border: 1px solid var(--border-light);
+  box-shadow: 0 24px 55px rgba(0, 31, 63, 0.22);
+  border: 1.5px solid rgba(0, 52, 102, 0.12);
   display: none;
   overflow: hidden;
   z-index: 1050;

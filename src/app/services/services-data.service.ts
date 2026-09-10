@@ -26,55 +26,12 @@ export interface ServiceItem {
 export class ServicesDataService {
   private readonly services: ServiceItem[] = [
     {
-      id: 'virtual-cfo',
-      slug: 'virtual-cfo-services',
-      title: 'Virtual CFO Services',
-      category: 'Strategic Finance',
-      tagline: 'Your finance function, strengthened by strategic executive leadership.',
-      shortDesc: 'Complete financial management, monthly MIS reports, and strategic guidance customized for startups and growing MSMEs.',
-      icon: 'bi-person-workspace',
-      badge: 'Most Popular',
-      benefits: [
-        'Save up to 70% compared to hiring a full-time in-house CFO',
-        'Direct supervision of your accounts team for error-free books',
-        'Weekly & monthly MIS reports showing product margins and cash runway',
-        'Investor pitch decks, financial models, and valuation support'
-      ],
-      targetAudience: 'Startups, MSMEs, LLPs & growing family businesses across India',
-      subServices: [
-        {
-          name: 'Financial Management & Controls',
-          description: 'Building robust accounting processes, internal controls, and day-to-day accounts supervision for clean, reliable books.'
-        },
-        {
-          name: 'MIS, Analytics & Performance Management',
-          description: 'Providing customized weekly, monthly, and quarterly MIS dashboards with product-wise, segment-wise, and customer-wise margin tracking.'
-        },
-        {
-          name: 'Cash Flow & Working Capital Planning',
-          description: 'Improving business liquidity through predictive cash forecasting, receivable collection monitoring, and vendor payables scheduling.'
-        },
-        {
-          name: 'Growth Strategy & Business Planning',
-          description: 'Preparing financial models, annual operating plans, profitability targets, and expansion blueprints.'
-        },
-        {
-          name: 'Fundraising & Due Diligence Readiness',
-          description: 'Building institutional-grade financial projections, pitch decks, burn-rate monitoring, and term-sheet review.'
-        },
-        {
-          name: 'Compliance & Risk Management',
-          description: 'Oversight of GST, TDS, Income Tax, and ROC filings to ensure zero late fees and avoid department penalties.'
-        }
-      ]
-    },
-    {
       id: 'cost-management',
       slug: 'cost-management-advisory',
-      title: 'Cost & Management Advisory',
+      title: 'Cost & Management Advisory Services',
       category: 'Costing & Operations',
-      tagline: 'Transforming cost data into actionable insights for improved efficiency and profitability.',
-      shortDesc: 'Product costing systems, variance analysis, and operational cost control to stop waste and protect your profit margins.',
+      tagline: 'Transforming cost data into actionable insights for improved efficiency, profitability and sustainable business growth',
+      shortDesc: 'Product costing systems, departmental cost tracking, variance analysis, and cost reduction to protect your profit margins.',
       icon: 'bi-calculator',
       badge: 'Core Practice',
       benefits: [
@@ -83,31 +40,78 @@ export class ServicesDataService {
         'Implement departmental accountability with clear cost centers',
         'Set competitive prices with confidence while protecting profits'
       ],
-      targetAudience: 'Manufacturers, EPC contractors, process industries, and service enterprises',
+      targetAudience: 'Manufacturers, EPC contractors, process industries, and service enterprises across India',
       subServices: [
         {
           name: 'Product Costing & Costing Systems',
-          description: 'Design and implementation of product-wise costing systems to accurately track material, labour, and overhead costs and determine reliable product costs.'
+          description: 'Design and implementation of product-wise costing systems to accurately track material, labour and overhead costs and determine reliable product costs.'
         },
         {
-          name: 'Departmental Costing & Accountability',
-          description: 'Department-wise cost tracking and analysis to strengthen accountability, monitor resource usage, and improve operational efficiency.'
+          name: 'Departmental Costing & Performance Monitoring',
+          description: 'Department-wise cost tracking and analysis to strengthen accountability, monitor performance and improve operational efficiency.'
         },
         {
           name: 'Variance Analysis & Corrective Action',
-          description: 'Analysis of actual operational performance against budgets and standards to isolate cost variances, their causes, and corrective remedies.'
+          description: 'Analysis of actual performance against budgets and standards to identify cost variances, their underlying causes and appropriate corrective actions.'
         },
         {
-          name: 'Cost Control & Waste Reduction',
-          description: 'Systematic identification of cost-saving opportunities and implementation of practical cost-control measures across factory and office operations.'
+          name: 'Cost Control & Cost Reduction',
+          description: 'Identification of cost-saving opportunities and implementation of effective cost-control measures to improve operational efficiency and optimise expenditure.'
         },
         {
           name: 'Profitability & Contribution Analysis',
-          description: 'Analysis of product, service, customer, and segment profitability to identify true profit drivers and support strategic pricing.'
+          description: 'Analysis of product, service, customer and segment profitability to identify value drivers and support strategic pricing and resource-allocation decisions.'
         },
         {
-          name: 'Budgeting & Budgetary Control',
-          description: 'Preparation and rollout of annual and monthly operating budgets with periodic variance analysis to keep your team aligned with targets.'
+          name: 'Budgeting, Implementation & Performance Analysis',
+          description: 'Preparation and implementation of budgets, periodic budgetary control and performance analysis to align financial resources with business objectives.'
+        }
+      ]
+    },
+    {
+      id: 'virtual-cfo',
+      slug: 'virtual-cfo-services',
+      title: 'Virtual CFO Services',
+      category: 'Strategic Finance',
+      tagline: 'Your finance function, strengthened by strategic expertise.',
+      shortDesc: 'Complete financial leadership, monthly MIS reports, cash flow planning, and strategic guidance customized for growing businesses.',
+      icon: 'bi-person-workspace',
+      badge: 'Most Popular',
+      benefits: [
+        'Save up to 70% compared to hiring a full-time in-house CFO',
+        'Direct supervision of your accounts team for clean and error-free books',
+        'Weekly and monthly MIS reports showing product margins and cash runway',
+        'Investor pitch decks, financial models, and bank meeting support'
+      ],
+      targetAudience: 'Growing MSMEs, startups, LLPs, and family-run businesses across India',
+      subServices: [
+        {
+          name: 'Financial Management & Controls',
+          description: 'Building robust accounting processes, internal controls and financial reporting systems.'
+        },
+        {
+          name: 'MIS, Analytics & Performance Management',
+          description: 'Providing customized MIS, profitability analysis, KPI monitoring, budgeting and forecasting for informed decisions.'
+        },
+        {
+          name: 'Cash Flow & Working Capital Management',
+          description: 'Improving liquidity through cash-flow forecasting, receivables management, payables planning and working capital optimisation.'
+        },
+        {
+          name: 'Growth Strategy & Business Planning',
+          description: 'Supporting business plans, financial modelling, expansion decisions and long-term growth strategies.'
+        },
+        {
+          name: 'Fundraising & Financial Readiness',
+          description: 'Investor-ready financial models, projections, due diligence support, burn-rate monitoring and financial documentation.'
+        },
+        {
+          name: 'Compliance & Risk Management',
+          description: 'Monitoring tax and corporate compliances while identifying financial risks and strengthening governance.'
+        },
+        {
+          name: 'Investor, Banker & Stakeholder Support',
+          description: 'Supporting financial communication and representation with investors, banks and other financial institutions.'
         }
       ]
     },
@@ -116,41 +120,81 @@ export class ServicesDataService {
       slug: 'audit-and-assurance',
       title: 'Audit & Assurance Services',
       category: 'Audit & Compliance',
-      tagline: 'Independent verification to ensure internal governance, asset safety, and statutory compliance.',
-      shortDesc: 'Statutory Section 148 Cost Audit, internal audit, stock audit, and physical fixed asset verification.',
+      tagline: '',
+      shortDesc: 'Statutory Cost Audit under Section 148, internal audit, forensic audit, management review, concurrent bank audit, and stock verification.',
       icon: 'bi-shield-check',
       badge: 'Statutory Mandate',
       benefits: [
         '100% compliance with Section 148 of the Companies Act, 2013',
-        'Detect internal control weaknesses before they turn into losses',
+        'Detect internal control weaknesses before they lead to financial losses',
         'Physical verification of warehouse stock reconciled with accounting records',
         'Independent assurance for bank lenders, investors, and board members'
       ],
-      targetAudience: 'Companies covered under Section 148, banks, MSMEs, and corporate boards',
+      targetAudience: 'Manufacturing companies covered under Section 148, banks, MSMEs, and corporate boards',
       subServices: [
         {
-          name: 'Cost Audit & Cost Records (Sec 148)',
-          description: 'Statutory verification of cost records and preparation of Cost Audit reports in accordance with Cost Accounting Standards and MCA guidelines.'
+          name: 'Cost Audit & Cost Record',
+          description: 'Verification of cost records and cost statements in accordance with applicable cost accounting standards and statutory requirements.',
+          points: [
+            'Verification of cost records and cost statements in accordance with applicable cost accounting standards and statutory requirements.',
+            'Review of cost allocation, product costing, material consumption, labour and overheads.',
+            'Identification of cost inefficiencies, abnormal losses and areas for cost reduction.',
+            'Analysis of product-wise profitability, capacity utilisation and operational performance.',
+            'Ensuring accuracy, completeness and consistency of cost records and reports'
+          ]
         },
         {
-          name: 'Internal Audit & IFC Review',
-          description: 'Systematic evaluation of operational processes, internal financial controls (IFC), and governance to prevent leakages and improve reliability.'
+          name: 'Internal Audit',
+          description: 'Management oriented review of operations, internal financial controls, and performance to improve efficiency and reliability.',
+          points: [
+            'Management oriented advice on organisation and its operations.',
+            'Performance and financial services.',
+            'Promoting efficiency, economy and effectiveness of management processes.',
+            'Adding to the reliability and accuracy of operations',
+            'Internal Financial controls'
+          ]
         },
         {
-          name: 'Stock & Inventory Audit',
-          description: 'Physical count and verification of inventory, reconciliation with books, review of slow-moving/obsolete stock, and inventory loss control.'
+          name: 'Forensic Audit',
+          description: 'Specialized investigation into financial discrepancies, asset misappropriation, conflicts of interest, and fraud prevention.',
+          points: [
+            'Identifying conflicts of interest, bribery and extortion leading to corruption.',
+            'Asset misappropriation',
+            'Intentional forgery of accounting performance.',
+            'Preventing generation of NPAs.'
+          ]
         },
         {
-          name: 'Fixed Assets Verification',
-          description: 'Physical inspection and tagging of plant, machinery, and fixed assets with fixed asset register (FAR) reconciliation.'
-        },
-        {
-          name: 'Forensic Audit & Risk Assessment',
-          description: 'Specialized investigation into financial discrepancies, conflict of interest, asset misappropriation, and operational irregularities.'
+          name: 'Management Audit',
+          description: 'Comprehensive evaluation of management policies, operational processes, and resource utilization to improve efficiency and profitability.',
+          points: [
+            'Evaluation of management policies, systems and operational processes.',
+            'Review of efficiency, economy and effectiveness of business operations.',
+            'Identification of operational gaps, control weaknesses and areas for improvement.',
+            'Analysis of utilisation of resources and overall managerial performance.',
+            'Providing management-oriented recommendations for improving efficiency and profitability'
+          ]
         },
         {
           name: 'Concurrent Bank Audit',
-          description: 'Verification of loan documentation, credit utilization, drawing power verification, and monitoring potential NPA indicators.'
+          description: 'Review of procedures relating to processing loans, cash retention limits, bank vouchers, and monitoring potential NPAs.',
+          points: [
+            'Review of procedures related to processing and sanctioning loan',
+            'Keeping an eye in cash retention limit.',
+            'Maintenance of all bank vouchers',
+            'Focusing on potential NPAs'
+          ]
+        },
+        {
+          name: 'Stock Audit',
+          description: 'Physical verification and reconciliation of inventory with books and records to detect shortages, obsolete stock, and minimize losses.',
+          points: [
+            'Physical verification and reconciliation of inventory with books and records.',
+            'Review of inventory valuation, movement, ageing and slow/non-moving stock.',
+            'Identification of shortages, excesses, obsolete and damaged inventory.',
+            'Verification of stock records, internal controls and inventory management procedures.',
+            'Identifying discrepancies and strengthening controls to minimise inventory losses'
+          ]
         }
       ]
     },
@@ -159,84 +203,76 @@ export class ServicesDataService {
       slug: 'indirect-taxation-gst',
       title: 'Indirect Taxation (GST) Services',
       category: 'Taxation',
-      tagline: 'End-to-end GST compliance, monthly filings, reconciliation, and representation.',
-      shortDesc: 'Complete GST management from registration and monthly returns to GSTR-9/9C annual reconciliation and department notice replies.',
+      tagline: '',
+      shortDesc: 'Complete GST registration, monthly GSTR-1 & 3B filing, GSTR-9/9C annual returns, ITC reconciliation, and notice replies.',
       icon: 'bi-receipt-cutoff',
       badge: 'High Demand',
       benefits: [
         'Zero late fees with timely GSTR-1 and GSTR-3B filings',
-        'Prevent 100% ITC loss with continuous GSTR-2B vendor reconciliation',
-        'Clean GSTR-9 and GSTR-9C annual filings backed by CMA working sheets',
-        'Expert representation for department show-cause notices and audit queries'
+        'Prevent ITC loss with continuous GSTR-2B vendor reconciliation',
+        'Accurate GSTR-9 and GSTR-9C annual returns with complete reconciliation',
+        'Expert representation for department notices, summons, and appeals'
       ],
-      targetAudience: 'Traders, manufacturers, service providers, exporters, and ecommerce sellers',
+      targetAudience: 'Manufacturers, traders, service providers, exporters, and businesses with GST registration',
       subServices: [
         {
-          name: 'GST Registration & Amendments',
-          description: 'End-to-end GST registration for new business entities, additional place of business amendments, core field updates, and cancellations.'
+          name: 'GST Registration & Compliance',
+          description: 'GST registration, amendments, cancellation and end-to-end compliance support for businesses.'
         },
         {
-          name: 'Periodic Returns & 2B Reconciliation',
-          description: 'Accurate preparation and timely filing of GSTR-1 and GSTR-3B, with comprehensive Input Tax Credit (ITC) matching to avoid double taxation.'
+          name: 'Returns & Reconciliation',
+          description: 'Accurate preparation and filing of GST returns, including GSTR-1, GSTR-3B, GSTR-9 & GSTR-9C, with comprehensive reconciliation and review.'
         },
         {
-          name: 'Annual Return & Reconciliation (GSTR-9 & 9C)',
-          description: 'Preparation, comprehensive reconciliation, and certification of GSTR-9 annual return and GSTR-9C self-certified reconciliation statement.'
+          name: 'Refunds, Litigation & Appeals',
+          description: 'GST refund advisory and filing, notice management, departmental representation, adjudication and appellate support.'
         },
         {
-          name: 'GST Refunds & Export Documentation',
-          description: 'End-to-end processing of GST refunds on inverted duty structure, zero-rated export turnover without payment of tax (LUT), and excess cash ledger.'
-        },
-        {
-          name: 'Litigation, Notices & Appellate Support',
-          description: 'Drafting professional replies to GST scrutiny notices, summons, mismatch intimations (DRC-01 / ASMT-10), and appeal representation.'
-        },
-        {
-          name: 'GST Advisory & Supply Chain Structuring',
-          description: 'Strategic advisory on GST rates, HSN classification, valuation rules, cross-charge, reverse charge mechanism (RCM), and contract structuring.'
+          name: 'GST Advisory & Transaction Structuring',
+          description: 'Strategic GST advisory covering transaction structuring, supply-chain optimisation, classification, valuation and customs duty/GST-related certifications.'
         }
       ]
     },
     {
       id: 'direct-tax',
       slug: 'direct-taxation-income-tax',
-      title: 'Direct Taxation (Income Tax)',
+      title: 'Direct Taxation (Income Tax) Services',
       category: 'Taxation',
-      tagline: 'Holistic income tax management, planning, and filing for businesses and individuals.',
-      shortDesc: 'ITR filings, quarterly TDS/TCS compliance, corporate tax planning, and scrutiny representation.',
+      tagline: '',
+      shortDesc: 'Income Tax Return (ITR) filing, TDS/TCS compliance, 12A/80G registrations, tax planning, scrutiny assessments, and inventory valuation.',
       icon: 'bi-file-earmark-text',
       badge: 'Annual & Quarterly',
       benefits: [
-        'Accurate tax computation minimizing corporate and personal liabilities legally',
-        'Zero penalties on quarterly TDS challans and 24Q/26Q quarterly returns',
+        'Accurate tax computation minimizing tax liabilities legally',
+        'Zero penalties on quarterly TDS challans and 24Q/26Q return filings',
         '26AS and AIS/TIS matching to avoid mismatch notices from CPC',
-        'Professional handling of scrutiny assessments and faceless appeal submissions'
+        'Professional handling of scrutiny assessments and faceless appeals'
       ],
       targetAudience: 'Individuals, HUFs, Partnership Firms, LLPs, and Private Limited Companies',
       subServices: [
         {
-          name: 'Income Tax Return (ITR) Filing',
-          description: 'Preparation and filing of Income Tax Returns for individuals, firms, LLPs, and companies with thorough scrutiny of books and 26AS/AIS.'
+          name: 'Income Tax Return Filing',
+          description: 'Preparation and filing of income tax returns for individuals, HUFs, partnership firms, LLPs, companies and other entities.'
         },
         {
           name: 'TDS & TCS Compliance',
-          description: 'End-to-end TDS/TCS computation, monthly challan generation, quarterly return filing (Form 24Q, 26Q, 27Q), and Form 16/16A generation.'
+          description: 'End-to-end TDS/TCS compliance, including computation, payment, return filing, reconciliation and related compliance support.'
         },
         {
-          name: 'Section 12A & 80G Registrations',
-          description: 'Assistance with provisional and final registration under Sections 12A/12AB and 80G for eligible charitable and Section 8 entities.'
+          name: 'Tax Registration & Exemptions',
+          description: 'Assistance with registration and compliance under Sections 12A/12AB and 80G for eligible charitable and non-profit entities.'
         },
         {
-          name: 'Proactive Corporate Tax Planning',
-          description: 'Strategic tax planning to optimize deductions, depreciation allowances, and incentives while staying fully compliant with law.'
+          name: 'Tax Planning & Advisory',
+          description: 'Comprehensive tax planning and advisory services focused on tax efficiency, regulatory compliance and informed business decisions.'
         },
         {
-          name: 'Assessments, Appeals & Notice Handling',
-          description: 'Drafting precise legal responses for Income Tax notices, Section 143(1) adjustments, faceless scrutiny assessments, and CIT(Appeals).'
+          name: 'Income Tax Assessments, Appeals & Litigation',
+          description: 'Support in income tax assessments, scrutiny proceedings, notices, submissions, appeals and representation before the appropriate authorities.'
         },
         {
-          name: 'Inventory Valuation under Income Tax',
-          description: 'Certification and inventory valuation reporting in accordance with the provisions and rules of the Income Tax Act.'
+          name: 'Inventory Valuation',
+          description: 'Assistance with inventory valuation and related reporting requirements in accordance with applicable Income Tax Act provisions.'
         }
       ]
     },
@@ -245,33 +281,33 @@ export class ServicesDataService {
       slug: 'company-formation-corporate-services',
       title: 'Company Formation & Corporate Services',
       category: 'Corporate Legal',
-      tagline: 'Structuring and incorporating new business ventures with seamless statutory registrations.',
-      shortDesc: 'Private Limited, LLP, Section 8 formation, corporate conversions, secretarial documentation, and ROC filings.',
-      icon: 'bi-building-add',
+      tagline: '',
+      shortDesc: 'Incorporation support for Private Limited, Section 8, and Public companies, corporate conversions, ROC annual filings, and secretarial documentation.',
+      icon: 'bi-building',
       badge: 'Startup Ready',
       benefits: [
-        'Speedy incorporation with SPICe+ MCA approval within days',
+        'Fast company incorporation with SPICe+ MCA approval within days',
         'Complete package including DIN, PAN, TAN, MOA, AOA, and bank account setup',
         'Expert guidance on selecting the right entity type (Pvt Ltd vs LLP vs OPC)',
-        'Hassle-free conversion from proprietorship/partnership to corporate entity'
+        'Hassle-free conversion from proprietorship or partnership to corporate entity'
       ],
-      targetAudience: 'Entrepreneurs, new founders, partnership firms converting to Pvt Ltd/LLP',
+      targetAudience: 'Entrepreneurs, startup founders, partnership firms converting to corporate entities',
       subServices: [
         {
           name: 'Entity Formation & Incorporation',
-          description: 'Incorporation support for Private Limited, LLP, One Person Company (OPC), Section 8 Companies, and Public Limited entities.'
+          description: 'Incorporation support for OPCs, Section 8 Companies, Private Limited and Public Limited Companies, including statutory registrations and documentation.'
         },
         {
           name: 'Corporate Restructuring & Conversion',
-          description: 'Advisory and complete procedural filing for converting sole proprietorships and partnership firms into LLPs or Private Limited companies.'
+          description: 'Advisory and compliance support for conversion and restructuring of proprietorships, partnership firms and LLPs into suitable corporate structures.'
         },
         {
           name: 'ROC, Annual & XBRL Filings',
-          description: 'Preparation and filing of ROC annual returns (MGT-7, AOC-4), XBRL filings, director KYC (DIR-3 KYC), and event-based MCA forms.'
+          description: 'Preparation and filing of ROC forms, annual returns, XBRL filings and other statutory submissions to ensure timely corporate compliance.'
         },
         {
-          name: 'Corporate Secretarial Documentation',
-          description: 'Assistance with Director Identification Number (DIN), digital signatures, MOA & AOA alterations, share certificates, and board resolutions.'
+          name: 'Corporate Documentation & Secretarial Support',
+          description: 'Support for DIN applications, MOA, AOA and other corporate documentation required for incorporation, governance and regulatory compliance.'
         }
       ]
     },
@@ -280,37 +316,29 @@ export class ServicesDataService {
       slug: 'business-setup-registration',
       title: 'Business Setup & Registration Services',
       category: 'Registrations',
-      tagline: 'From business idea to compliant establishment — we help you get the right registrations in place.',
-      shortDesc: 'Startup India DPIIT recognition, Trademark registration, MSME Udyam, FSSAI license, IEC, and DSC.',
+      tagline: 'From business idea to compliant establishment – we help you set up the right structure and get the right registrations in place.',
+      shortDesc: 'Company incorporation, startup recognition, entity structuring, Trademark, DARPAN, FSSAI, Import Export Code (IEC), and Digital Signatures (DSC).',
       icon: 'bi-patch-check',
       badge: 'Essential Licenses',
       benefits: [
-        'Access Startup India benefits like tax exemptions and fast-track patents',
-        'Protect your brand name, logo, and intellectual property with Trademark filings',
+        'Access Startup India benefits including tax exemptions and government support',
+        'Protect your brand name, logo, and intellectual property with Trademark registration',
         'Get all essential business licenses under one roof without visiting multiple agents',
-        'Instant issuance of Digital Signature Certificates (DSC) Class-3'
+        'Instant issuance and renewal of Class-3 Digital Signature Certificates (DSC)'
       ],
-      targetAudience: 'New business starters, growing traders, exporters, food businesses',
+      targetAudience: 'New business founders, startups, traders, exporters, and food businesses',
       subServices: [
         {
-          name: 'Startup India Registration & DPIIT',
-          description: 'Official DPIIT recognition under Startup India scheme to unlock income tax exemptions under Section 80-IAC and angel tax relief.'
+          name: 'Startup & Company Incorporation',
+          description: 'Company incorporation, startup recognition and end-to-end support for establishing a new business.'
         },
         {
-          name: 'Entity Structuring & Registrations',
-          description: 'Registration of Partnership deeds, Trust deeds, HUF deeds, and proprietorship commercial registrations.'
+          name: 'Entity Formation & Structuring',
+          description: 'Advisory and registration support for companies, LLPs, partnership firms, trusts, HUFs and proprietorships, with a focus on selecting the appropriate business structure.'
         },
         {
-          name: 'Trademark & Intellectual Property',
-          description: 'Comprehensive brand search, trademark application filing, examination report replies, and registration certificate procurement.'
-        },
-        {
-          name: 'Commercial Licenses (FSSAI, IEC, DARPAN)',
-          description: 'Procurement of Import Export Code (IEC) from DGFT, FSSAI food license, MSME Udyam registration, and NITI Aayog DARPAN enrollment.'
-        },
-        {
-          name: 'Digital Signature Certificate (DSC)',
-          description: 'Issuance and renewal of Class-3 Digital Signatures with encrypted USB tokens for directors and authorized signatories.'
+          name: 'Registrations, Licences & Approvals',
+          description: 'Trademark, DARPAN, FSSAI, Import Export Code (IEC), Digital Signature Certificate (DSC) and other applicable registrations, licences and regulatory approvals.'
         }
       ]
     },
@@ -319,33 +347,33 @@ export class ServicesDataService {
       slug: 'business-advisory-value-added',
       title: 'Business Advisory & Value-Added Services',
       category: 'Management Advisory',
-      tagline: 'Transforming internal financial architecture, business processes, and workflows for high-growth firms.',
-      shortDesc: 'Financial system design, Standard Operating Procedures (SOPs), custom MIS frameworks, and ERP deployment guidance.',
+      tagline: '',
+      shortDesc: 'Design and implementation of financial systems, Standard Operating Procedures (SOPs), custom MIS frameworks, and ERP deployment support.',
       icon: 'bi-diagram-3',
-      badge: 'Efficiency Boost',
+      badge: 'Business Efficiency',
       benefits: [
-        'Standardize daily tasks with clear SOPs so your business runs without your constant presence',
-        'Select and deploy the right ERP (Tally, Zoho Books, SAP) without costly implementation failures',
+        'Standardize daily tasks with clear SOPs so your business runs smoothly',
+        'Select and implement the right ERP software (Tally, Zoho Books, SAP)',
         'Clear visibility into operational bottlenecks and employee accountability',
-        'Customized executive reporting dashboards tailored to the founder’s review style'
+        'Customized executive reporting dashboards designed for business owners'
       ],
       targetAudience: 'Growing enterprises scaling from 10 to 100+ team members',
       subServices: [
         {
-          name: 'Financial Systems Design & Review',
-          description: 'Designing and implementing structured internal financial workflows, payment authorization limits, and billing review checkpoints.'
+          name: 'Financial Systems Design & Implementation',
+          description: 'Design, review and implementation support for robust financial systems that strengthen controls, improve reporting and enhance operational efficiency.'
         },
         {
           name: 'Standard Operating Procedures (SOPs)',
-          description: 'Drafting clear, step-by-step SOPs for purchasing, inventory handling, sales billing, credit control, and accounts payable.'
+          description: 'Development and implementation of well-defined SOPs to standardize processes, strengthen internal controls and enable consistent, efficient operations.'
         },
         {
-          name: 'Management Reporting Frameworks',
-          description: 'Setting up weekly and monthly MIS reporting formats giving actionable insights into margins, collections, and cost centers.'
+          name: 'Management Reporting & MIS',
+          description: 'Design of customized MIS and management reporting frameworks providing meaningful financial and operational insights for informed decision-making and effective governance.'
         },
         {
-          name: 'ERP Selection & Deployment Support',
-          description: 'Evaluating software options, charting accounts, configuring cost centers, and overseeing smooth transition from legacy records.'
+          name: 'ERP Advisory & Implementation Support',
+          description: 'Strategic guidance on ERP selection, process mapping, customization and implementation to improve financial reporting, resource planning and overall operational efficiency.'
         }
       ]
     },
@@ -354,72 +382,76 @@ export class ServicesDataService {
       slug: 'project-finance-subsidy-advisory',
       title: 'Project Finance & Subsidy Advisory',
       category: 'Financing',
-      tagline: 'From project planning to funding — structured financial solutions that help businesses access capital.',
-      shortDesc: 'Detailed Project Reports (DPR), bank CMA data, working capital & term loan documentation, and Gujarat State subsidies.',
+      tagline: 'From project planning to funding – structured financial solutions that help businesses access capital and maximise eligible incentives.',
+      shortDesc: 'Detailed Project Reports (DPR), working capital and term loan advisory, government subsidies, credit rating liaison, and term sheet review.',
       icon: 'bi-cash-coin',
-      badge: 'Funding & Grants',
+      badge: 'Funding & Subsidies',
       benefits: [
-        'Bank-ready DPRs and CMA reports prepared to meet lender underwriting standards',
+        'Bank-ready Detailed Project Reports (DPR) and CMA data prepared to meet bank criteria',
         'Assistance in securing working capital (Cash Credit / Overdraft) and term loans',
-        'Documentation and claim processing for Gujarat State industrial capital & interest subsidies',
-        'Credit rating advisory to secure cheaper borrowing rates from banks'
+        'Support for documentation and application filing for Central and Gujarat State industrial subsidies',
+        'Credit rating guidance to negotiate lower interest rates from banks'
       ],
-      targetAudience: 'Manufacturers setting up new plants, expanding units, exporters, MSME borrowers',
+      targetAudience: 'Manufacturers setting up new plants, expanding units, exporters, and MSME borrowers',
       subServices: [
         {
           name: 'Detailed Project Reports (DPR)',
-          description: 'Preparation of comprehensive, bank-ready project reports covering technical feasibility, cost estimation, financial projections, and payback schedules.'
+          description: 'Preparation of comprehensive, bank-ready project reports covering project viability, financial projections, cost structure, funding requirements and repayment capacity.'
         },
         {
           name: 'Working Capital & Term Loan Advisory',
-          description: 'Assisting businesses in structuring credit facilities, preparing CMA data, and liaising with nationalized and private banks.'
+          description: 'Assistance with structuring working capital facilities and term loans, including financial documentation, projections and lender requirements.'
         },
         {
-          name: 'Government Subsidies & Schemes',
-          description: 'Complete documentation and filing for Central and Gujarat State industrial incentives (capital subsidy, interest subsidy, power tariff concessions).'
+          name: 'Government Subsidies & Incentives',
+          description: 'Support for documentation and applications relating to eligible Central Government and Gujarat State industrial subsidies, incentives and schemes.'
         },
         {
           name: 'Credit Rating & Bank Liaison',
-          description: 'Advisory support for credit rating agencies, financial presentation, and negotiation of banking margins and collateral terms.'
+          description: 'Advisory support for credit rating processes, financial information requirements and coordination with banks and financial institutions.'
         },
         {
           name: 'Term Sheet Review & Due Diligence',
-          description: 'Review of sanction letters, financial covenants, and loan documentation to safeguard borrower commercial interests.'
+          description: 'Review of financing term sheets and preparation of financial information and documentation to facilitate due diligence and funding decisions.'
         }
       ]
     },
     {
       id: 'cma-certifications',
       slug: 'cma-certification-compliance',
-      title: 'CMA Statutory Certifications',
+      title: 'CMA Certification & Compliance',
       category: 'Certifications',
-      tagline: 'Professional CMA certifications mandated under central, state, and banking regulations.',
-      shortDesc: 'Net worth certificates, cost accounting record certifications, Customs & DGFT turnover certificates, and grant utilization reports.',
+      tagline: '',
+      shortDesc: 'Cost accounting records certification, Net Worth certificates, Customs & DGFT turnover certificates, grant utilization reports, and DSC issuance.',
       icon: 'bi-award',
-      badge: 'Official Seal',
+      badge: 'Official UDIN Seal',
       benefits: [
         'Certified by a practicing Cost & Management Accountant with valid UDIN',
-        'Accepted by all nationalized banks, government tender portals, and embassies',
-        'Rapid turnaround for urgent tender and visa deadlines',
-        'Strict statutory adherence ensuring zero rejection risk'
+        'Accepted by all nationalized and private banks, government tender portals, and embassies',
+        'Quick turnaround for urgent tender and visa deadlines',
+        '100% compliant with statutory guidelines with zero rejection risk'
       ],
-      targetAudience: 'Bidders on government tenders, loan applicants, visa applicants, exporters, grantees',
+      targetAudience: 'Government tender bidders, bank loan applicants, visa applicants, exporters, and grant recipients',
       subServices: [
         {
           name: 'Cost Accounting Records Certification',
-          description: 'Formal certification verifying that statutory cost records have been maintained as required by the Companies Act.'
+          description: 'Certification relating to maintenance and compliance of cost accounting records as applicable.'
         },
         {
           name: 'Net Worth & Financial Certifications',
-          description: 'Issuance of Net Worth certificates for government e-tenders, bank loan processing, foreign travel/visa documentation, and franchises.'
+          description: 'Net worth and financial certifications for tenders, visas, banking and other institutional requirements.'
         },
         {
           name: 'Customs & DGFT Certifications',
-          description: 'Certification of Export-Import turnover, EPCG compliance, and related financial data for Customs and DGFT submissions.'
+          description: 'Certification of Export-Import turnover and related information for customs, DGFT and other regulatory requirements.'
         },
         {
-          name: 'Grant & Subsidy Utilisation Certificates',
-          description: 'Preparation and formal certification of fund utilization certificates for state/central government grants and schemes.'
+          name: 'Utilisation Certificates',
+          description: 'Preparation and certification of utilisation certificates for government grants, subsidies and sanctioned funds.'
+        },
+        {
+          name: 'Digital Signature Certificate (DSC) Services',
+          description: 'Assistance with DSC issuance, renewal and related documentation for statutory and online compliance requirements.'
         }
       ]
     }

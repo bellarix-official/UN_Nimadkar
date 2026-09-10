@@ -1,70 +1,157 @@
-<!-- Page Header Banner -->
-<section class="py-5 text-white" style="background: linear-gradient(135deg, var(--brand-navy-dark) 0%, var(--brand-navy) 60%, var(--brand-green) 100%);">
-  <div class="container py-4">
-    <span class="badge bg-success bg-opacity-75 text-white px-3 py-1 rounded-pill mb-2">
-      <i class="bi bi-grid-fill"></i> Practice Areas
-    </span>
-    <h1 class="fw-bold mb-2">Comprehensive Service Portfolio</h1>
-    <p class="lead text-white-50 mb-0">Explore our 10 specialized practice areas for Costing, Virtual CFO, GST, Income Tax, and Corporate Compliance.</p>
+<!-- Services Hero Section -->
+<section class="services-hero-section position-relative text-center">
+  <!-- Subtle Ambient Background Texture -->
+  <div class="services-hero-aura" aria-hidden="true"></div>
+  <div class="services-hero-mesh" aria-hidden="true"></div>
+
+  <div class="container position-relative z-2">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-xl-8">
+        <!-- Single <h1> Heading -->
+        <h1 class="services-hero-title mb-3">
+          Our Professional Services
+        </h1>
+
+        <!-- Proper Short Meaningful Description in Indian English (2 lines) -->
+        <p class="services-hero-lead mb-4">
+          Expert Cost &amp; Management Accounting, Section 148 Cost Audit, and Virtual CFO advisory tailored for Indian businesses and MSMEs to optimize costs and ensure complete regulatory compliance.
+        </p>
+
+        <!-- Clean Professional Action Buttons -->
+        <div class="services-hero-actions d-flex flex-wrap justify-content-center align-items-center gap-3">
+          <a routerLink="/contact" class="btn btn-hero-primary" role="button">
+            <i class="bi bi-calendar2-check-fill"></i> Book Free Consultation
+          </a>
+          <a href="https://wa.me/919824164586?text=Hello%20CMA%20Urvesh%20Nimbadkar,%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" class="btn btn-hero-whatsapp d-inline-flex align-items-center gap-2">
+            <i class="bi bi-whatsapp"></i>
+            <span>Chat on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- Services Listing Section -->
-<section class="section-padding">
+<section class="section-padding services-listing-section">
   <div class="container">
-    <!-- Category Filter Tabs -->
-    <div class="services-tab-nav mb-5">
-      @for (cat of categories; track cat.key) {
-        <button class="services-tab-btn" [class.active]="activeFilter === cat.key" (click)="setFilter(cat.key)">
-          {{ cat.label }}
+    <!-- Section Introduction in Simple Indian-Friendly English -->
+    <div class="text-center mb-4 pb-2">
+      <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-3 py-1.5 rounded-pill fw-semibold small mb-2">
+        <i class="bi bi-patch-check-fill me-1"></i> Our Practice Areas
+      </span>
+      <h2 class="fw-bold text-navy mb-2">All Available Services</h2>
+      <p class="text-muted mx-auto mb-0" style="max-width: 640px;">
+        Explore our complete range of Cost Accounting, Virtual CFO, Taxation, and Audit services. Click on any service to view complete details.
+      </p>
+    </div>
+
+    <!-- Category Filter Tabs with Horizontal Scroll for Mobile -->
+    <div class="services-tab-wrapper mb-4 pb-2">
+      <div class="services-tab-nav">
+        @for (cat of categories; track cat.key) {
+          <button 
+            type="button"
+            class="services-tab-btn" 
+            [class.active]="activeFilter === cat.key" 
+            (click)="setFilter(cat.key)">
+            <i class="bi" [ngClass]="cat.icon"></i>
+            <span>{{ cat.label }}</span>
+          </button>
+        }
+      </div>
+    </div>
+
+    <!-- Active Filter Status Indicator -->
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+      <div class="d-flex align-items-center gap-2">
+        <span class="text-secondary small fw-medium">Showing:</span>
+        <span class="badge bg-navy text-white px-2.5 py-1 rounded-pill small">
+          {{ filteredServices.length }} {{ filteredServices.length === 1 ? 'Service' : 'Services' }}
+        </span>
+      </div>
+      @if (activeFilter !== 'all') {
+        <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill" (click)="setFilter('all')">
+          <i class="bi bi-x-circle me-1"></i> Show All Services (10)
         </button>
       }
     </div>
 
-    <!-- Services Grid -->
+    <!-- Services Cards Grid: 3 Columns on Desktop, 2 on Tablet, 1 on Mobile -->
     <div class="row g-4">
       @for (service of filteredServices; track service.slug) {
-        <div class="col-lg-6">
-          <div class="service-card p-4">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-              <div class="d-flex align-items-center gap-3">
-                <div class="service-icon-box mb-0" [ngClass]="service.category === 'Taxation' || service.category === 'Costing & Operations' ? 'green-box' : ''">
-                  <i class="bi" [ngClass]="service.icon"></i>
-                </div>
-                <div>
-                  <h4 class="mb-1 fw-bold">{{ service.title }}</h4>
-                  <span class="badge bg-light text-dark border">{{ service.category }}</span>
-                </div>
+        <div class="col-lg-4 col-md-6 d-flex">
+          <div class="service-card p-4 w-100 d-flex flex-column">
+            <!-- Top Row: Icon + Category Badge -->
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="service-icon-box" [ngClass]="service.category === 'Taxation' || service.category === 'Costing & Operations' ? 'green-box' : ''">
+                <i class="bi" [ngClass]="service.icon"></i>
               </div>
-              <span class="badge" style="background: var(--accent-gold); color: #fff;">{{ service.badge }}</span>
+              <span class="badge badge-category-pill">{{ service.category }}</span>
             </div>
 
-            <p class="service-summary mb-3">{{ service.tagline }}</p>
-
-            <div class="mb-3">
-              <h6 class="fw-bold text-dark small mb-2"><i class="bi bi-check2-all text-success"></i> Key Sub-Services &amp; Scope:</h6>
-              <div class="row g-2">
-                @for (sub of service.subServices.slice(0, 4); track sub.name) {
-                  <div class="col-sm-6">
-                    <div class="p-2 rounded bg-light border small text-dark h-100">
-                      <strong>{{ sub.name }}:</strong> {{ sub.description | slice:0:60 }}...
-                    </div>
-                  </div>
-                }
-              </div>
-            </div>
-
-            <div class="service-card-footer d-flex gap-2 align-items-center pt-3 border-top mt-auto">
-              <a [routerLink]="['/services', service.slug]" class="btn btn-sm btn-cma-primary flex-grow-1 text-center justify-content-center">
-                View Details &amp; Scope <i class="bi bi-arrow-right"></i>
+            <!-- Service Title -->
+            <h3 class="service-card-title mb-2">
+              <a [routerLink]="['/services', service.slug]" class="text-navy text-decoration-none">
+                {{ service.title }}
               </a>
-              <a href="https://wa.me/919824164586?text=Hello%20CMA%20Urvesh,%20I%20would%20like%20to%20enquire%20about%20{{ service.title }}." target="_blank" class="btn btn-sm btn-cma-outline-green text-center justify-content-center" title="Quick WhatsApp Enquiry">
-                <i class="bi bi-whatsapp"></i> WhatsApp
+            </h3>
+
+            <!-- Short, Indian-Friendly Summary (Limited Details) -->
+            <p class="service-card-desc mb-3">
+              {{ service.shortDesc }}
+            </p>
+
+            <!-- Key Highlights (3 simple, clear points) -->
+            <div class="service-highlights mb-4 mt-auto">
+              <div class="highlights-label small fw-bold text-dark mb-2">
+                <i class="bi bi-check2-circle text-success me-1"></i> Key Highlights:
+              </div>
+              <ul class="list-unstyled mb-0 service-bullet-list">
+                @for (benefit of service.benefits.slice(0, 3); track benefit) {
+                  <li class="d-flex align-items-start gap-2 mb-1.5 small text-secondary">
+                    <i class="bi bi-check-circle-fill text-success flex-shrink-0 mt-0.5"></i>
+                    <span>{{ benefit }}</span>
+                  </li>
+                }
+              </ul>
+            </div>
+
+            <!-- Card Footer: View Details & WhatsApp Enquiry -->
+            <div class="service-card-footer pt-3 border-top d-flex align-items-center gap-2">
+              <a [routerLink]="['/services', service.slug]" class="btn btn-cma-primary btn-sm flex-grow-1 text-center justify-content-center">
+                <span>View Details</span>
+                <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+              <a href="https://wa.me/919824164586?text=Hello%20CMA%20Urvesh,%20I%20want%20to%20know%20more%20about%20{{ service.title }}." target="_blank" class="btn btn-cma-outline-green btn-sm px-2.5" title="Direct WhatsApp Enquiry">
+                <i class="bi bi-whatsapp"></i>
               </a>
             </div>
           </div>
         </div>
       }
+    </div>
+
+    <!-- Need Help Section in Simple Indian-Friendly English -->
+    <div class="services-custom-banner mt-5 p-4 p-md-5 rounded-4 shadow-sm text-center position-relative overflow-hidden">
+      <div class="position-relative z-1">
+        <span class="badge bg-success bg-opacity-75 text-white px-3 py-1.5 rounded-pill mb-3">
+          <i class="bi bi-headset me-1"></i> Direct CMA Consultation
+        </span>
+        <h3 class="fw-bold text-white mb-2">Need Help Choosing the Right Service for Your Business?</h3>
+        <p class="text-white-75 mx-auto mb-4" style="max-width: 650px;">
+          Every business has different requirements. If you are not sure which service suits your business, or need a customized monthly package, speak directly with CMA Urvesh Nimbadkar for simple and practical guidance.
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a routerLink="/contact" class="btn btn-cma-primary btn-lg px-4">
+            <i class="bi bi-calendar2-check-fill me-1"></i> Book Free Consultation
+          </a>
+          <a href="https://wa.me/919824164586?text=Hello%20CMA%20Urvesh%20Nimbadkar,%20I%20need%20help%20choosing%20the%20right%20service%20for%20my%20business." target="_blank" class="btn btn-cma-outline-white btn-lg px-4 d-inline-flex align-items-center gap-2">
+            <i class="bi bi-whatsapp"></i>
+            <span>Chat on WhatsApp</span>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

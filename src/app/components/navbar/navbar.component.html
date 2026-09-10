@@ -46,7 +46,7 @@
 
     <!-- Desktop Navigation Menu -->
     <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarDesktop">
-      <ul class="navbar-nav ms-auto align-items-center gap-1 gap-xl-2">
+      <ul class="navbar-nav ms-auto align-items-center gap-2 gap-xl-3">
         <!-- 1. Home -->
         <li class="nav-item" (mouseenter)="closeDesktopServices()">
           <a class="nav-link nav-distinct-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileNav()">
@@ -64,8 +64,9 @@
             About Us
           </a>
         </li>
+      -->
 
-        /* 3. Services Dropdown */
+        <!-- /* 3. Services Dropdown */ -->
         <li class="nav-item dropdown distinct-dropdown"
             (mouseenter)="onServicesMouseEnter()"
             (mouseleave)="onServicesMouseLeave()">
@@ -84,7 +85,7 @@
             </a>
           </div>
 
-          /* Structured Mega Menu */
+          <!-- /* Structured Mega Menu */ -->
           <div class="distinct-mega-menu shadow-lg"
                [class.show]="isDesktopServicesOpen">
             
@@ -93,9 +94,9 @@
                 <div class="fw-bold text-navy fs-6">Practice Areas &amp; Specializations</div>
                 <div class="text-muted small">10 Dedicated Cost &amp; Management Accounting Services</div>
               </div>
-              <a routerLink="/services" (click)="closeDesktopServices()" class="btn btn-sm btn-outline-primary py-1 px-3 fw-semibold rounded-pill">
+              <!-- <a routerLink="/services" (click)="closeDesktopServices()" class="btn btn-sm btn-outline-primary py-1 px-3 fw-semibold rounded-pill">
                 View Full Catalog <i class="bi bi-arrow-right"></i>
-              </a>
+              </a> -->
             </div>
 
             <div class="mega-services-grid p-3">
@@ -126,6 +127,7 @@
           </div>
         </li>
 
+        <!--
         /* 4. Industries */
         <li class="nav-item" (mouseenter)="closeDesktopServices()">
           <a class="nav-link nav-distinct-link" routerLink="/industries" routerLinkActive="active" (click)="closeMobileNav()">
@@ -191,9 +193,10 @@
           <a routerLink="/about" (click)="closeMobileNav()" class="mobile-nav-link" routerLinkActive="active">
             <i class="bi bi-building me-2 text-primary"></i> About Us
           </a>
-        </li>
+        </li> -->
 
-        /* Services Section with Direct Toggle */
+        
+        <!-- /* Services Section with Direct Toggle */ -->
         <li class="mb-3">
           <div class="mobile-services-header d-flex justify-content-between align-items-center py-2 px-3 rounded bg-light border"
                (click)="toggleMobileServices($event)"
@@ -206,12 +209,12 @@
             <i class="bi fs-5 text-muted transition-icon" [ngClass]="isMobileServicesOpen ? 'bi-chevron-up text-success' : 'bi-chevron-down'"></i>
           </div>
 
-          /* Services List */
+          <!-- /* Services List */ -->
           @if (isMobileServicesOpen) {
             <div class="mobile-services-container mt-2 ps-2 pe-1">
-              <a routerLink="/services" (click)="closeMobileNav()" class="mobile-service-item text-primary fw-bold mb-1 border-bottom pb-2">
+              <!-- <a routerLink="/services" (click)="closeMobileNav()" class="mobile-service-item text-primary fw-bold mb-1 border-bottom pb-2">
                 <i class="bi bi-arrow-right-circle-fill me-2"></i> View All Services Catalog
-              </a>
+              </a> -->
               @for (srv of services; track srv.slug) {
                 <a [routerLink]="['/services', srv.slug]" (click)="closeMobileNav()" class="mobile-service-item">
                   <div class="mobile-service-icon">
@@ -228,6 +231,7 @@
           }
         </li>
 
+        <!--
         /* Industries Link */
         <li class="mb-2">
           <a routerLink="/industries" (click)="closeMobileNav()" class="mobile-nav-link" routerLinkActive="active">

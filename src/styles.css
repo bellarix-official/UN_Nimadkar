@@ -104,7 +104,7 @@ html, body {
   background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 28px 28px, 100% 100%;
   line-height: 1.65;
   font-size: 15.5px;
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -211,6 +211,19 @@ a:hover {
   user-select: none;
   transition: all 0.22s ease-in-out;
   box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .btn-cma-primary,
+  .btn-cma-secondary,
+  .btn-cma-outline,
+  .btn-cma-outline-white,
+  .btn-cma-outline-green,
+  .btn-cma-light,
+  .btn-cma-distinct {
+    max-width: 100%;
+    white-space: normal;
+  }
 }
 
 .btn-cma-primary i,

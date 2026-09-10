@@ -17,15 +17,16 @@ export class ServicesComponent {
   activeFilter = 'all';
 
   categories = [
-    { key: 'all', label: 'All Services (10)' },
-    { key: 'Strategic Finance', label: 'Virtual CFO' },
-    { key: 'Costing & Operations', label: 'Cost Accounting' },
-    { key: 'Taxation', label: 'GST & Income Tax' },
-    { key: 'Audit & Compliance', label: 'Audit & Assurance' },
-    { key: 'Corporate Legal', label: 'Company Formation' },
-    { key: 'Financing', label: 'Project Finance & Loans' },
-    { key: 'Registrations', label: 'Business Licenses' },
-    { key: 'Certifications', label: 'CMA Certifications' }
+    { key: 'all', label: 'All Services (10)', icon: 'bi-grid-fill' },
+    { key: 'Costing & Operations', label: 'Cost Accounting', icon: 'bi-calculator' },
+    { key: 'Strategic Finance', label: 'Virtual CFO', icon: 'bi-person-workspace' },
+    { key: 'Audit & Compliance', label: 'Audit & Assurance', icon: 'bi-shield-check' },
+    { key: 'Taxation', label: 'GST & Income Tax', icon: 'bi-receipt-cutoff' },
+    { key: 'Corporate Legal', label: 'Company Formation', icon: 'bi-building' },
+    { key: 'Financing', label: 'Loans & Subsidies', icon: 'bi-bank' },
+    { key: 'Registrations', label: 'Business Licenses', icon: 'bi-file-earmark-check' },
+    { key: 'Management Advisory', label: 'Business Advisory', icon: 'bi-diagram-3' },
+    { key: 'Certifications', label: 'CMA Certifications', icon: 'bi-patch-check-fill' }
   ];
 
   get filteredServices(): ServiceItem[] {

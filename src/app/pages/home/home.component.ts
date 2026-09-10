@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy, ChangeDetectorRef, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -22,7 +22,31 @@ export class HomeComponent implements OnInit, OnDestroy {
   private readonly cdr = inject(ChangeDetectorRef);
 
   allServices: ServiceItem[] = this.servicesDataService.getAllServices();
-  
+  isServicesOverlayOpen = false;
+
+  openServicesOverlay(): void {
+    this.isServicesOverlayOpen = true;
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = 'hidden';
+    }
+    this.cdr.markForCheck();
+  }
+
+  closeServicesOverlay(): void {
+    this.isServicesOverlayOpen = false;
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = '';
+    }
+    this.cdr.markForCheck();
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscapePress(): void {
+    if (this.isServicesOverlayOpen) {
+      this.closeServicesOverlay();
+    }
+  }
+
   // 5 Most demanding core practice areas for Home Page
   featuredServices = [
     {
@@ -391,6 +415,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.stopReviewTimer();
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = '';
+    }
   }
 
   startReviewTimer() {

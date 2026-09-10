@@ -1,4 +1,546 @@
+/* ==========================================================================
+   Services Page Stylesheet - Executive CMA Theme
+   ========================================================================== */
 :host {
   display: block;
   width: 100%;
+}
+
+/* ==========================================================================
+   1. Services Hero Section
+   ========================================================================== */
+.services-hero-section {
+  position: relative;
+  background: linear-gradient(
+      180deg,
+      rgba(2, 22, 44, 0.91) 0%,
+      rgba(1, 16, 34, 0.87) 60%,
+      rgba(2, 26, 50, 0.95) 100%
+    ),
+    url('/assets/images/cma_financial_dashboard.jpg') center 25%/cover no-repeat;
+  color: #ffffff;
+  padding: 165px 0 95px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Ambient Radial Aura Glow */
+.services-hero-aura {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(10, 92, 54, 0.28) 0%, rgba(0, 52, 102, 0.15) 50%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Subtle Grid Dot Texture */
+.services-hero-mesh {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* Authority / Credential Pill Badge */
+.services-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 30px;
+  padding: 7px 18px;
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.badge-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 10px #4ade80;
+  display: inline-block;
+  flex-shrink: 0;
+  animation: pulseGreen 2s infinite;
+}
+
+.badge-pill-content {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.badge-title {
+  display: inline-flex;
+  align-items: center;
+}
+
+.badge-loc {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+@keyframes pulseGreen {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 8px rgba(74, 222, 128, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+  }
+}
+
+/* Main Hero Typography */
+.services-hero-title {
+  font-size: 2.85rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.text-hero-highlight {
+  color: #4ade80;
+}
+
+.services-hero-lead {
+  font-size: 1.15rem;
+  line-height: 1.68;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 740px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Action CTA Buttons */
+.services-hero-actions {
+  margin-top: 10px;
+}
+
+.btn-hero-primary {
+  background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-dark) 100%);
+  color: #ffffff !important;
+  padding: 13px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 4px 16px rgba(10, 92, 54, 0.4);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-hero-primary:hover {
+  background: linear-gradient(135deg, #0e7a48 0%, #10b981 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(10, 92, 54, 0.55);
+}
+
+.btn-hero-whatsapp {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 15px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-hero-whatsapp i.bi-whatsapp {
+  font-size: 1.25rem;
+  color: #25d366;
+  transition: transform 0.25s ease;
+}
+
+.btn-hero-whatsapp:hover {
+  background: #25d366;
+  border-color: #25d366;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.btn-hero-whatsapp:hover i.bi-whatsapp {
+  color: #ffffff !important;
+  transform: scale(1.1);
+}
+
+.hero-direct-call:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: #4ade80;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+/* Right Column: Practice Capabilities Showcase Card */
+.services-feature-card {
+  background: rgba(2, 28, 54, 0.84);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 24px 22px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.card-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 11px 13px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.22s ease;
+}
+
+.feature-item:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: #4ade80;
+  transform: translateX(4px);
+}
+
+.feature-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.feature-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.feature-desc {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.35;
+  margin-top: 3px;
+}
+
+/* ==========================================================================
+   2. Category Filter Navigation (Responsive Pill Tabs)
+   ========================================================================== */
+.services-tab-wrapper {
+  position: relative;
+}
+
+.services-tab-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.services-tab-btn {
+  background: #ffffff;
+  color: var(--text-body);
+  border: 1px solid var(--border-brand);
+  padding: 9px 18px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.services-tab-btn i {
+  font-size: 15px;
+  color: var(--brand-navy);
+  transition: color 0.2s ease;
+}
+
+.services-tab-btn:hover {
+  background: var(--brand-navy-subtle);
+  border-color: var(--brand-navy);
+  color: var(--brand-navy);
+  transform: translateY(-2px);
+}
+
+.services-tab-btn.active {
+  background: var(--brand-navy);
+  color: #ffffff !important;
+  border-color: var(--brand-navy);
+  box-shadow: 0 6px 18px rgba(0, 52, 102, 0.28);
+}
+
+.services-tab-btn.active i {
+  color: #4ade80 !important;
+}
+
+/* ==========================================================================
+   3. Service Cards Refinement
+   ========================================================================== */
+.service-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 52, 102, 0.09);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.28s ease;
+  box-shadow: 0 4px 18px rgba(0, 52, 102, 0.04);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 36px rgba(0, 52, 102, 0.1);
+  border-color: rgba(10, 92, 54, 0.35);
+}
+
+.service-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--brand-navy-subtle);
+  color: var(--brand-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.service-card:hover .service-icon-box {
+  background: var(--brand-navy);
+  color: #ffffff;
+}
+
+.service-icon-box.green-box {
+  background: var(--brand-green-subtle);
+  color: var(--brand-green);
+}
+
+.service-card:hover .service-icon-box.green-box {
+  background: var(--brand-green);
+  color: #ffffff;
+}
+
+.badge-category-pill {
+  background: rgba(0, 52, 102, 0.07);
+  color: var(--brand-navy);
+  border: 1px solid rgba(0, 52, 102, 0.14);
+  font-size: 11.5px;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 5px 12px;
+  letter-spacing: 0.2px;
+}
+
+.service-card-title {
+  font-size: 1.22rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.service-card-title a {
+  transition: color 0.2s ease;
+}
+
+.service-card-title a:hover {
+  color: var(--brand-green) !important;
+}
+
+.service-card-desc {
+  font-size: 13.5px;
+  color: #556270;
+  line-height: 1.6;
+  min-height: 44px;
+}
+
+.highlights-label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--brand-navy);
+}
+
+.service-bullet-list li {
+  line-height: 1.4;
+  font-size: 12.5px;
+  color: #4b5563;
+}
+
+.service-card-footer {
+  border-top: 1px solid rgba(0, 52, 102, 0.08);
+}
+
+/* ==========================================================================
+   4. Custom Scope Banner
+   ========================================================================== */
+.services-custom-banner {
+  background: linear-gradient(135deg, #001f3f 0%, #003466 50%, #0A5C36 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 16px 36px rgba(0, 31, 63, 0.2);
+}
+
+/* ==========================================================================
+   5. Responsiveness for All Devices (Mobile, Tablet, Desktop)
+   ========================================================================== */
+@media (max-width: 991px) {
+  .services-hero-section {
+    padding: 125px 0 70px;
+    background-position: center;
+  }
+
+  .services-hero-title {
+    font-size: 2.3rem;
+  }
+
+  .services-feature-card {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Smooth horizontal scroll for tabs on mobile / small screens */
+  .services-tab-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    margin-left: -12px;
+    margin-right: -12px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .services-tab-nav {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  .services-tab-btn {
+    font-size: 13px;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 680px) {
+  .services-hero-section {
+    padding: 100px 0 60px;
+  }
+
+  .services-hero-title {
+    font-size: 1.95rem;
+  }
+
+  .services-hero-lead {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  /* Badge: Clean executive card on mobile */
+  .services-hero-badge {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 9px 12px;
+    border-radius: 12px;
+    background: rgba(2, 22, 44, 0.78);
+    border: 1px solid rgba(74, 222, 128, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1.15rem !important;
+  }
+
+  .badge-pulse-dot {
+    margin-top: 4px;
+  }
+
+  .badge-pill-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    width: 100%;
+  }
+
+  .badge-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.35;
+  }
+
+  .services-hero-section {
+    padding: 125px 0 55px;
+  }
+
+  .services-hero-title {
+    font-size: 1.95rem;
+    line-height: 1.28;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .services-hero-lead {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Action Buttons: Full width on mobile */
+  .services-hero-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 0;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-whatsapp {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 14.5px;
+    border-radius: 12px;
+    justify-content: center;
+  }
 }
