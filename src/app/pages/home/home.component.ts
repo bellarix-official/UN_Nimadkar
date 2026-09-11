@@ -47,13 +47,151 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
   }
 
+  // =========================================================================
+  // Services Auto-Moving Infinite Carousel
+  // =========================================================================
+  currentServiceIndex = 0;
+  isServicesTransitionEnabled = true;
+  private servicesCarouselTimer: any = null;
+  private servicesResetTimeout: any = null;
+  isServicesCarouselPaused = false;
+  visibleCardsCount = 3;
+  private touchStartX = 0;
+  private touchEndX = 0;
+
+  get carouselServices(): ServiceItem[] {
+    return [...this.allServices, ...this.allServices];
+  }
+
+  @HostListener('window:resize')
+  onWindowResize() {
+    this.updateVisibleCards();
+  }
+
+  updateVisibleCards() {
+    if (typeof window !== 'undefined') {
+      const width = window.innerWidth;
+      if (width < 768) {
+        this.visibleCardsCount = 1;
+      } else if (width < 1140) {
+        this.visibleCardsCount = 2;
+      } else {
+        this.visibleCardsCount = 3;
+      }
+      this.cdr.markForCheck();
+    }
+  }
+
+  startServicesCarouselTimer() {
+    this.stopServicesCarouselTimer();
+    this.servicesCarouselTimer = setInterval(() => {
+      if (!this.isServicesCarouselPaused) {
+        this.nextServiceSlide();
+      }
+    }, 4500);
+  }
+
+  stopServicesCarouselTimer() {
+    if (this.servicesCarouselTimer) {
+      clearInterval(this.servicesCarouselTimer);
+      this.servicesCarouselTimer = null;
+    }
+    if (this.servicesResetTimeout) {
+      clearTimeout(this.servicesResetTimeout);
+      this.servicesResetTimeout = null;
+    }
+  }
+
+  pauseServicesCarousel() {
+    this.isServicesCarouselPaused = true;
+  }
+
+  resumeServicesCarousel() {
+    this.isServicesCarouselPaused = false;
+  }
+
+  nextServiceSlide() {
+    if (this.servicesResetTimeout) {
+      clearTimeout(this.servicesResetTimeout);
+      this.servicesResetTimeout = null;
+    }
+
+    this.isServicesTransitionEnabled = true;
+    this.currentServiceIndex++;
+    this.cdr.markForCheck();
+
+    // When sliding past the last item of the first set into the duplicate set
+    if (this.currentServiceIndex >= this.allServices.length) {
+      this.servicesResetTimeout = setTimeout(() => {
+        // Instantly snap to base set position without visible transition
+        this.isServicesTransitionEnabled = false;
+        this.currentServiceIndex = 0;
+        this.cdr.markForCheck();
+      }, 650);
+    }
+  }
+
+  prevServiceSlide() {
+    if (this.servicesResetTimeout) {
+      clearTimeout(this.servicesResetTimeout);
+      this.servicesResetTimeout = null;
+    }
+
+    if (this.currentServiceIndex <= 0) {
+      // Instantly jump to duplicate position without transition
+      this.isServicesTransitionEnabled = false;
+      this.currentServiceIndex = this.allServices.length;
+      this.cdr.markForCheck();
+
+      // Next tick: animate smoothly backwards
+      setTimeout(() => {
+        this.isServicesTransitionEnabled = true;
+        this.currentServiceIndex = this.allServices.length - 1;
+        this.cdr.markForCheck();
+      }, 25);
+    } else {
+      this.isServicesTransitionEnabled = true;
+      this.currentServiceIndex--;
+      this.cdr.markForCheck();
+    }
+  }
+
+  goToServiceSlide(index: number) {
+    if (this.servicesResetTimeout) {
+      clearTimeout(this.servicesResetTimeout);
+      this.servicesResetTimeout = null;
+    }
+    this.isServicesTransitionEnabled = true;
+    this.currentServiceIndex = index;
+    this.startServicesCarouselTimer();
+    this.cdr.markForCheck();
+  }
+
+  onServiceTouchStart(event: TouchEvent) {
+    this.touchStartX = event.changedTouches[0].screenX;
+    this.pauseServicesCarousel();
+  }
+
+  onServiceTouchEnd(event: TouchEvent) {
+    this.touchEndX = event.changedTouches[0].screenX;
+    this.resumeServicesCarousel();
+    const diff = this.touchStartX - this.touchEndX;
+    if (Math.abs(diff) > 45) {
+      if (diff > 0) {
+        this.nextServiceSlide();
+      } else {
+        this.prevServiceSlide();
+      }
+    }
+  }
+
   // 5 Most demanding core practice areas for Home Page
   featuredServices = [
     {
-      title: 'Cost Audit & Cost Records',
-      slug: 'cost-management-advisory',
-      icon: 'bi-calculator',
-      desc: 'Maintaining statutory cost records under Section 148, accurate unit BOM product costing, and factory wastage control.'
+      title: 'Auditing & Assurance',
+      slug: 'audit-and-assurance',
+      icon: 'bi-shield-check',
+      desc: 'Independent statutory audits, internal financial controls (IFC) review, physical stock audit, and asset tagging.'
     },
     {
       title: 'Virtual CFO Services',
@@ -62,22 +200,22 @@ export class HomeComponent implements OnInit, OnDestroy {
       desc: 'Hands-on financial direction, monthly MIS reports, cash flow planning, and supervision of your accounts department.'
     },
     {
-      title: 'Auditing & Assurance',
-      slug: 'audit-and-assurance',
-      icon: 'bi-shield-check',
-      desc: 'Independent statutory audits, internal financial controls (IFC) review, physical stock audit, and asset tagging.'
-    },
-    {
-      title: 'Direct Tax & Income Tax',
-      slug: 'direct-taxation-income-tax',
-      icon: 'bi-file-earmark-text',
-      desc: 'Corporate and personal ITR filing, quarterly TDS/TCS returns, proactive advance tax planning, and scrutiny handling.'
+      title: 'Cost & Management Services',
+      slug: 'cost-management-advisory',
+      icon: 'bi-calculator',
+      desc: 'Maintaining statutory cost records under Section 148, accurate unit BOM product costing, and factory wastage control.'
     },
     {
       title: 'Indirect Tax (GST)',
       slug: 'indirect-taxation-gst',
       icon: 'bi-receipt-cutoff',
       desc: 'Complete GST management, timely monthly return filings, continuous 2B ITC vendor reconciliation, and notice replies.'
+    },
+    {
+      title: 'Direct Tax & Income Tax',
+      slug: 'direct-taxation-income-tax',
+      icon: 'bi-file-earmark-text',
+      desc: 'Corporate and personal ITR filing, quarterly TDS/TCS returns, proactive advance tax planning, and scrutiny handling.'
     }
   ];
 
@@ -410,10 +548,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   isReviewPaused = false;
 
   ngOnInit() {
+    this.updateVisibleCards();
+    this.startServicesCarouselTimer();
     this.startReviewTimer();
   }
 
   ngOnDestroy() {
+    this.stopServicesCarouselTimer();
     this.stopReviewTimer();
     if (typeof document !== 'undefined') {
       document.body.style.overflow = '';

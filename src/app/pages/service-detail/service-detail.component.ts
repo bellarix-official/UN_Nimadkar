@@ -18,21 +18,27 @@ export class ServiceDetailComponent implements OnInit {
 
   service: ServiceItem | undefined;
   allServices: ServiceItem[] = this.servicesDataService.getAllServices();
-  formSubmitted = false;
 
   formData = {
+    serviceTitle: '',
     name: '',
     phone: '',
     email: '',
     company: '',
     message: ''
   };
+  formSubmitted = false;
+  formSuccessMessage = '';
+  formValidationWarning = '';
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       const slug = params.get('slug');
       if (slug) {
         this.service = this.servicesDataService.getServiceBySlug(slug);
+        if (this.service) {
+          this.formData.serviceTitle = this.service.title;
+        }
         this.cdr.detectChanges();
         window.scrollTo({ top: 0, behavior: 'instant' });
       }
@@ -43,19 +49,22 @@ export class ServiceDetailComponent implements OnInit {
     return this.allServices.filter(s => s.slug !== this.service?.slug).slice(0, 5);
   }
 
-  submitEnquiry(event?: Event) {
+  sendViaWhatsApp(event?: Event) {
     if (event) {
       event.preventDefault();
       event.stopPropagation();
     }
 
     if (!this.formData.name || !this.formData.phone) {
+      this.formValidationWarning = 'Please provide your Full Name and WhatsApp Mobile number.';
       return;
     }
+    this.formValidationWarning = '';
 
+    const selectedService = this.formData.serviceTitle || this.service?.title || 'Practice Advisory';
     const msg = encodeURIComponent(
-      `Hello CMA Urvesh Nimbadkar,\n\nI want to enquire about: *${this.service?.title}* (${this.service?.category})\n\n` +
-      `*Service Required:* ${this.service?.title}\n` +
+      `Hello CMA Urvesh Nimbadkar,\n\nI want to enquire about: *${selectedService}*\n\n` +
+      `*Service Required:* ${selectedService}\n` +
       `*Client Name:* ${this.formData.name}\n` +
       `*Mobile Number:* ${this.formData.phone}\n` +
       `*Business / Company:* ${this.formData.company || 'N/A'}\n` +
@@ -66,16 +75,54 @@ export class ServiceDetailComponent implements OnInit {
     window.open(`https://wa.me/919824164586?text=${msg}`, '_blank');
 
     this.formSubmitted = true;
-    this.formData = {
-      name: '',
-      phone: '',
-      email: '',
-      company: '',
-      message: ''
-    };
+    this.formSuccessMessage = 'Opening WhatsApp with your pre-filled inquiry...';
 
     setTimeout(() => {
       this.formSubmitted = false;
-    }, 8000);
+    }, 6000);
+  }
+
+  sendViaEmail(event?: Event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    if (!this.formData.name) {
+      this.formValidationWarning = 'Please provide your Full Name.';
+      return;
+    }
+    this.formValidationWarning = '';
+
+    const selectedService = this.formData.serviceTitle || this.service?.title || 'Practice Advisory';
+    const recipient = 'unnimbadkarassociates@gmail.com';
+    const subject = encodeURIComponent(`Service Inquiry: ${selectedService} - ${this.formData.name}`);
+    const body = encodeURIComponent(
+      `Dear CMA Urvesh Nimbadkar,\n\n` +
+      `I would like to enquire regarding: ${selectedService}\n\n` +
+      `--- CLIENT DETAILS ---\n` +
+      `Full Name: ${this.formData.name}\n` +
+      `Mobile Number: ${this.formData.phone || 'N/A'}\n` +
+      `Company / Business: ${this.formData.company || 'N/A'}\n` +
+      `Email Address: ${this.formData.email || 'N/A'}\n\n` +
+      `--- REQUIREMENT / NOTE ---\n` +
+      `${this.formData.message || 'Please connect for consultation regarding this practice area.'}\n\n` +
+      `Best regards,\n` +
+      `${this.formData.name}`
+    );
+
+    const mailtoUrl = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    window.location.href = mailtoUrl;
+
+    this.formSubmitted = true;
+    this.formSuccessMessage = 'Redirecting to your email client with all details pre-filled...';
+
+    setTimeout(() => {
+      this.formSubmitted = false;
+    }, 6000);
+  }
+
+  submitEnquiry(event?: Event) {
+    this.sendViaWhatsApp(event);
   }
 }

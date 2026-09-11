@@ -315,9 +315,11 @@
 .hero-strip-banner {
   background: #ffffff;
   border-radius: 16px;
-  padding: 22px 28px;
+  padding: 16px 24px;
   box-shadow: 0 12px 32px rgba(0, 52, 102, 0.14);
   border: 1px solid rgba(0, 52, 102, 0.08);
+  max-width: 880px;
+  margin: 0 auto;
 }
 
 .hero-strip-item {
@@ -376,36 +378,7 @@
   display: block;
 }
 
-.about-experience-badge {
-  position: absolute;
-  bottom: -20px;
-  right: 24px;
-  background: #ffffff;
-  padding: 12px 20px;
-  border-radius: 14px;
-  box-shadow: 0 12px 28px rgba(0, 52, 102, 0.16);
-  border: 1px solid rgba(0, 52, 102, 0.08);
-  border-left: 4px solid var(--brand-green);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  z-index: 2;
-}
 
-.about-experience-badge .badge-num {
-  font-size: 1.45rem;
-  font-weight: 800;
-  color: var(--brand-navy-dark);
-  line-height: 1.1;
-  font-family: var(--font-heading);
-}
-
-.about-experience-badge .badge-label {
-  font-size: 12px;
-  color: #64748b;
-  line-height: 1.25;
-  font-weight: 600;
-}
 
 .about-motto-callout {
   background: linear-gradient(135deg, #ffffff 0%, #f7fbf9 100%);
@@ -419,11 +392,6 @@
 @media (max-width: 991px) {
   .about-main-img {
     height: 320px;
-  }
-  .about-experience-badge {
-    bottom: -15px;
-    right: 15px;
-    padding: 10px 16px;
   }
   .hero-section {
     padding: 115px 0 75px;
@@ -763,5 +731,367 @@
 
   .floating-minimal-title {
     font-size: 0.98rem;
+  }
+}
+
+/* ==========================================================================
+   Services Section - Auto-Moving Executive Carousel (Rich Aesthetics)
+   ========================================================================== */
+.services-carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Floating Side Navigation Arrows */
+.carousel-side-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--brand-navy-dark);
+  border: 1.5px solid rgba(0, 52, 102, 0.14);
+  box-shadow: 0 10px 28px rgba(0, 20, 50, 0.18), 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 30;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.carousel-side-nav-btn.side-prev {
+  left: -25px;
+}
+
+.carousel-side-nav-btn.side-next {
+  right: -25px;
+}
+
+.carousel-side-nav-btn:hover {
+  background: var(--brand-navy-dark);
+  color: #4ade80;
+  border-color: var(--brand-navy-dark);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 14px 34px rgba(0, 26, 51, 0.35);
+}
+
+.carousel-side-nav-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.services-carousel-track-wrapper {
+  overflow: hidden;
+  width: 100%;
+  padding: 14px 0 24px;
+}
+
+.services-carousel-track {
+  display: flex;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.services-carousel-track.no-transition {
+  transition: none !important;
+}
+
+.services-carousel-slide {
+  box-sizing: border-box;
+  padding: 0 12px;
+  display: flex;
+}
+
+/* Service Card with Background Image & Dark Gradient Overlay */
+.service-image-card {
+  width: 100%;
+  min-height: 500px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 16px 36px rgba(0, 20, 50, 0.22);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.service-image-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 24px 50px rgba(0, 20, 50, 0.38), 0 0 24px rgba(16, 185, 129, 0.25);
+  border-color: rgba(74, 222, 128, 0.5);
+}
+
+/* Inner Parallax Image Layer */
+.card-bg-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 0;
+}
+
+.service-image-card:hover .card-bg-layer {
+  transform: scale(1.08);
+}
+
+/* Glassmorphic Sheen Overlay */
+.card-glass-sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(1, 24, 48, 0.74) 0%, rgba(1, 16, 36, 0.88) 42%, rgba(0, 10, 24, 0.97) 100%);
+  z-index: 1;
+  pointer-events: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Content Layer */
+.service-card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 22px 20px;
+}
+
+/* Header within Card */
+.service-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.service-category-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.16);
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  padding: 4px 11px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  backdrop-filter: blur(8px);
+}
+
+.service-points-counter {
+  font-size: 11px;
+  color: #e2e8f0;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  backdrop-filter: blur(8px);
+}
+
+/* Title */
+.service-card-title {
+  font-size: 1.28rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.35;
+  font-family: var(--font-heading);
+  min-height: 52px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.service-title-accent {
+  width: 42px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #4ade80 0%, rgba(74, 222, 128, 0.2) 100%);
+}
+
+/* Points List */
+.service-card-points-wrap {
+  flex-grow: 1;
+}
+
+.service-card-points {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.service-point-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9px;
+  backdrop-filter: blur(6px);
+  transition: all 0.2s ease;
+}
+
+.service-point-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(74, 222, 128, 0.35);
+  transform: translateX(3px);
+}
+
+.point-badge {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: rgba(74, 222, 128, 0.22);
+  color: #4ade80;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11.5px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.point-name {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.3;
+  font-weight: 500;
+  flex-grow: 1;
+}
+
+/* Card Footer CTA Button */
+.service-card-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 14px;
+  margin-top: auto;
+}
+
+.service-explore-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13.5px;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease;
+}
+
+.service-image-card:hover .service-explore-btn {
+  background: linear-gradient(135deg, var(--brand-green) 0%, #059669 100%);
+  border-color: var(--brand-green);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+}
+
+.explore-btn-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  transition: all 0.25s ease;
+}
+
+.service-image-card:hover .explore-btn-icon {
+  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Dots Indicators */
+.carousel-dot-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 20px;
+  background: rgba(0, 52, 102, 0.2);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot-indicator.active {
+  width: 28px;
+  background: var(--brand-green);
+  box-shadow: 0 2px 8px rgba(10, 92, 54, 0.3);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+  .carousel-side-nav-btn.side-prev {
+    left: -12px;
+  }
+  .carousel-side-nav-btn.side-next {
+    right: -12px;
+  }
+}
+
+@media (max-width: 991px) {
+  .service-image-card {
+    min-height: 460px;
+  }
+  .service-card-content {
+    padding: 22px 18px 18px;
+  }
+  .service-card-title {
+    font-size: 1.18rem;
+    min-height: auto;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-side-nav-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 17px;
+  }
+  .carousel-side-nav-btn.side-prev {
+    left: -6px;
+  }
+  .carousel-side-nav-btn.side-next {
+    right: -6px;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-image-card {
+    min-height: 430px;
+  }
+  .service-card-content {
+    padding: 18px 14px 14px;
+  }
+  .services-carousel-slide {
+    padding: 0 6px;
+  }
+  .service-card-points {
+    gap: 6px;
+  }
+  .service-point-item {
+    padding: 5px 8px;
+  }
+  .point-name {
+    font-size: 12px;
   }
 }

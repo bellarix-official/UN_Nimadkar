@@ -15,6 +15,7 @@ export interface ServiceItem {
   shortDesc: string;
   icon: string;
   badge: string;
+  heroImage: string;
   subServices: SubService[];
   benefits: string[];
   targetAudience: string;
@@ -26,96 +27,6 @@ export interface ServiceItem {
 export class ServicesDataService {
   private readonly services: ServiceItem[] = [
     {
-      id: 'cost-management',
-      slug: 'cost-management-advisory',
-      title: 'Cost & Management Advisory Services',
-      category: 'Costing & Operations',
-      tagline: 'Transforming cost data into actionable insights for improved efficiency, profitability and sustainable business growth',
-      shortDesc: 'Product costing systems, departmental cost tracking, variance analysis, and cost reduction to protect your profit margins.',
-      icon: 'bi-calculator',
-      badge: 'Core Practice',
-      benefits: [
-        'Know the exact unit-level cost of every product or service',
-        'Identify hidden factory losses, scrap leakages, and overhead waste',
-        'Implement departmental accountability with clear cost centers',
-        'Set competitive prices with confidence while protecting profits'
-      ],
-      targetAudience: 'Manufacturers, EPC contractors, process industries, and service enterprises across India',
-      subServices: [
-        {
-          name: 'Product Costing & Costing Systems',
-          description: 'Design and implementation of product-wise costing systems to accurately track material, labour and overhead costs and determine reliable product costs.'
-        },
-        {
-          name: 'Departmental Costing & Performance Monitoring',
-          description: 'Department-wise cost tracking and analysis to strengthen accountability, monitor performance and improve operational efficiency.'
-        },
-        {
-          name: 'Variance Analysis & Corrective Action',
-          description: 'Analysis of actual performance against budgets and standards to identify cost variances, their underlying causes and appropriate corrective actions.'
-        },
-        {
-          name: 'Cost Control & Cost Reduction',
-          description: 'Identification of cost-saving opportunities and implementation of effective cost-control measures to improve operational efficiency and optimise expenditure.'
-        },
-        {
-          name: 'Profitability & Contribution Analysis',
-          description: 'Analysis of product, service, customer and segment profitability to identify value drivers and support strategic pricing and resource-allocation decisions.'
-        },
-        {
-          name: 'Budgeting, Implementation & Performance Analysis',
-          description: 'Preparation and implementation of budgets, periodic budgetary control and performance analysis to align financial resources with business objectives.'
-        }
-      ]
-    },
-    {
-      id: 'virtual-cfo',
-      slug: 'virtual-cfo-services',
-      title: 'Virtual CFO Services',
-      category: 'Strategic Finance',
-      tagline: 'Your finance function, strengthened by strategic expertise.',
-      shortDesc: 'Complete financial leadership, monthly MIS reports, cash flow planning, and strategic guidance customized for growing businesses.',
-      icon: 'bi-person-workspace',
-      badge: 'Most Popular',
-      benefits: [
-        'Save up to 70% compared to hiring a full-time in-house CFO',
-        'Direct supervision of your accounts team for clean and error-free books',
-        'Weekly and monthly MIS reports showing product margins and cash runway',
-        'Investor pitch decks, financial models, and bank meeting support'
-      ],
-      targetAudience: 'Growing MSMEs, startups, LLPs, and family-run businesses across India',
-      subServices: [
-        {
-          name: 'Financial Management & Controls',
-          description: 'Building robust accounting processes, internal controls and financial reporting systems.'
-        },
-        {
-          name: 'MIS, Analytics & Performance Management',
-          description: 'Providing customized MIS, profitability analysis, KPI monitoring, budgeting and forecasting for informed decisions.'
-        },
-        {
-          name: 'Cash Flow & Working Capital Management',
-          description: 'Improving liquidity through cash-flow forecasting, receivables management, payables planning and working capital optimisation.'
-        },
-        {
-          name: 'Growth Strategy & Business Planning',
-          description: 'Supporting business plans, financial modelling, expansion decisions and long-term growth strategies.'
-        },
-        {
-          name: 'Fundraising & Financial Readiness',
-          description: 'Investor-ready financial models, projections, due diligence support, burn-rate monitoring and financial documentation.'
-        },
-        {
-          name: 'Compliance & Risk Management',
-          description: 'Monitoring tax and corporate compliances while identifying financial risks and strengthening governance.'
-        },
-        {
-          name: 'Investor, Banker & Stakeholder Support',
-          description: 'Supporting financial communication and representation with investors, banks and other financial institutions.'
-        }
-      ]
-    },
-    {
       id: 'audit-assurance',
       slug: 'audit-and-assurance',
       title: 'Audit & Assurance Services',
@@ -124,6 +35,7 @@ export class ServicesDataService {
       shortDesc: 'Statutory Cost Audit under Section 148, internal audit, forensic audit, management review, concurrent bank audit, and stock verification.',
       icon: 'bi-shield-check',
       badge: 'Statutory Mandate',
+      heroImage: '/assets/images/services/audit-and-assurance.jpg',
       benefits: [
         '100% compliance with Section 148 of the Companies Act, 2013',
         'Detect internal control weaknesses before they lead to financial losses',
@@ -198,7 +110,99 @@ export class ServicesDataService {
         }
       ]
     },
-    {
+{
+      id: 'virtual-cfo',
+      slug: 'virtual-cfo-services',
+      title: 'Virtual CFO Services',
+      category: 'Strategic Finance',
+      tagline: 'Your finance function, strengthened by strategic expertise.',
+      shortDesc: 'Complete financial leadership, monthly MIS reports, cash flow planning, and strategic guidance customized for growing businesses.',
+      icon: 'bi-person-workspace',
+      badge: 'Most Popular',
+      heroImage: '/assets/images/services/virtual-cfo-services.jpg',
+      benefits: [
+        'Save up to 70% compared to hiring a full-time in-house CFO',
+        'Direct supervision of your accounts team for clean and error-free books',
+        'Weekly and monthly MIS reports showing product margins and cash runway',
+        'Investor pitch decks, financial models, and bank meeting support'
+      ],
+      targetAudience: 'Growing MSMEs, startups, LLPs, and family-run businesses across India',
+      subServices: [
+        {
+          name: 'Financial Management & Controls',
+          description: 'Building robust accounting processes, internal controls and financial reporting systems.'
+        },
+        {
+          name: 'MIS, Analytics & Performance Management',
+          description: 'Providing customized MIS, profitability analysis, KPI monitoring, budgeting and forecasting for informed decisions.'
+        },
+        {
+          name: 'Cash Flow & Working Capital Management',
+          description: 'Improving liquidity through cash-flow forecasting, receivables management, payables planning and working capital optimisation.'
+        },
+        {
+          name: 'Growth Strategy & Business Planning',
+          description: 'Supporting business plans, financial modelling, expansion decisions and long-term growth strategies.'
+        },
+        {
+          name: 'Fundraising & Financial Readiness',
+          description: 'Investor-ready financial models, projections, due diligence support, burn-rate monitoring and financial documentation.'
+        },
+        {
+          name: 'Compliance & Risk Management',
+          description: 'Monitoring tax and corporate compliances while identifying financial risks and strengthening governance.'
+        },
+        {
+          name: 'Investor, Banker & Stakeholder Support',
+          description: 'Supporting financial communication and representation with investors, banks and other financial institutions.'
+        }
+      ]
+    },
+{
+      id: 'cost-management',
+      slug: 'cost-management-advisory',
+      title: 'Cost & Management Advisory Services',
+      category: 'Costing & Operations',
+      tagline: 'Transforming cost data into actionable insights for improved efficiency, profitability and sustainable business growth',
+      shortDesc: 'Product costing systems, departmental cost tracking, variance analysis, and cost reduction to protect your profit margins.',
+      icon: 'bi-calculator',
+      badge: 'Core Practice',
+      heroImage: '/assets/images/services/cost-management-advisory.jpg',
+      benefits: [
+        'Know the exact unit-level cost of every product or service',
+        'Identify hidden factory losses, scrap leakages, and overhead waste',
+        'Implement departmental accountability with clear cost centers',
+        'Set competitive prices with confidence while protecting profits'
+      ],
+      targetAudience: 'Manufacturers, EPC contractors, process industries, and service enterprises across India',
+      subServices: [
+        {
+          name: 'Product Costing & Costing Systems',
+          description: 'Design and implementation of product-wise costing systems to accurately track material, labour and overhead costs and determine reliable product costs.'
+        },
+        {
+          name: 'Departmental Costing & Performance Monitoring',
+          description: 'Department-wise cost tracking and analysis to strengthen accountability, monitor performance and improve operational efficiency.'
+        },
+        {
+          name: 'Variance Analysis & Corrective Action',
+          description: 'Analysis of actual performance against budgets and standards to identify cost variances, their underlying causes and appropriate corrective actions.'
+        },
+        {
+          name: 'Cost Control & Cost Reduction',
+          description: 'Identification of cost-saving opportunities and implementation of effective cost-control measures to improve operational efficiency and optimise expenditure.'
+        },
+        {
+          name: 'Profitability & Contribution Analysis',
+          description: 'Analysis of product, service, customer and segment profitability to identify value drivers and support strategic pricing and resource-allocation decisions.'
+        },
+        {
+          name: 'Budgeting, Implementation & Performance Analysis',
+          description: 'Preparation and implementation of budgets, periodic budgetary control and performance analysis to align financial resources with business objectives.'
+        }
+      ]
+    },
+{
       id: 'gst-services',
       slug: 'indirect-taxation-gst',
       title: 'Indirect Taxation (GST) Services',
@@ -207,6 +211,7 @@ export class ServicesDataService {
       shortDesc: 'Complete GST registration, monthly GSTR-1 & 3B filing, GSTR-9/9C annual returns, ITC reconciliation, and notice replies.',
       icon: 'bi-receipt-cutoff',
       badge: 'High Demand',
+      heroImage: '/assets/images/services/indirect-taxation-gst.jpg',
       benefits: [
         'Zero late fees with timely GSTR-1 and GSTR-3B filings',
         'Prevent ITC loss with continuous GSTR-2B vendor reconciliation',
@@ -233,7 +238,7 @@ export class ServicesDataService {
         }
       ]
     },
-    {
+{
       id: 'direct-tax',
       slug: 'direct-taxation-income-tax',
       title: 'Direct Taxation (Income Tax) Services',
@@ -242,6 +247,7 @@ export class ServicesDataService {
       shortDesc: 'Income Tax Return (ITR) filing, TDS/TCS compliance, 12A/80G registrations, tax planning, scrutiny assessments, and inventory valuation.',
       icon: 'bi-file-earmark-text',
       badge: 'Annual & Quarterly',
+      heroImage: '/assets/images/services/direct-taxation-income-tax.jpg',
       benefits: [
         'Accurate tax computation minimizing tax liabilities legally',
         'Zero penalties on quarterly TDS challans and 24Q/26Q return filings',
@@ -276,73 +282,7 @@ export class ServicesDataService {
         }
       ]
     },
-    {
-      id: 'company-formation',
-      slug: 'company-formation-corporate-services',
-      title: 'Company Formation & Corporate Services',
-      category: 'Corporate Legal',
-      tagline: '',
-      shortDesc: 'Incorporation support for Private Limited, Section 8, and Public companies, corporate conversions, ROC annual filings, and secretarial documentation.',
-      icon: 'bi-building',
-      badge: 'Startup Ready',
-      benefits: [
-        'Fast company incorporation with SPICe+ MCA approval within days',
-        'Complete package including DIN, PAN, TAN, MOA, AOA, and bank account setup',
-        'Expert guidance on selecting the right entity type (Pvt Ltd vs LLP vs OPC)',
-        'Hassle-free conversion from proprietorship or partnership to corporate entity'
-      ],
-      targetAudience: 'Entrepreneurs, startup founders, partnership firms converting to corporate entities',
-      subServices: [
-        {
-          name: 'Entity Formation & Incorporation',
-          description: 'Incorporation support for OPCs, Section 8 Companies, Private Limited and Public Limited Companies, including statutory registrations and documentation.'
-        },
-        {
-          name: 'Corporate Restructuring & Conversion',
-          description: 'Advisory and compliance support for conversion and restructuring of proprietorships, partnership firms and LLPs into suitable corporate structures.'
-        },
-        {
-          name: 'ROC, Annual & XBRL Filings',
-          description: 'Preparation and filing of ROC forms, annual returns, XBRL filings and other statutory submissions to ensure timely corporate compliance.'
-        },
-        {
-          name: 'Corporate Documentation & Secretarial Support',
-          description: 'Support for DIN applications, MOA, AOA and other corporate documentation required for incorporation, governance and regulatory compliance.'
-        }
-      ]
-    },
-    {
-      id: 'business-setup',
-      slug: 'business-setup-registration',
-      title: 'Business Setup & Registration Services',
-      category: 'Registrations',
-      tagline: 'From business idea to compliant establishment – we help you set up the right structure and get the right registrations in place.',
-      shortDesc: 'Company incorporation, startup recognition, entity structuring, Trademark, DARPAN, FSSAI, Import Export Code (IEC), and Digital Signatures (DSC).',
-      icon: 'bi-patch-check',
-      badge: 'Essential Licenses',
-      benefits: [
-        'Access Startup India benefits including tax exemptions and government support',
-        'Protect your brand name, logo, and intellectual property with Trademark registration',
-        'Get all essential business licenses under one roof without visiting multiple agents',
-        'Instant issuance and renewal of Class-3 Digital Signature Certificates (DSC)'
-      ],
-      targetAudience: 'New business founders, startups, traders, exporters, and food businesses',
-      subServices: [
-        {
-          name: 'Startup & Company Incorporation',
-          description: 'Company incorporation, startup recognition and end-to-end support for establishing a new business.'
-        },
-        {
-          name: 'Entity Formation & Structuring',
-          description: 'Advisory and registration support for companies, LLPs, partnership firms, trusts, HUFs and proprietorships, with a focus on selecting the appropriate business structure.'
-        },
-        {
-          name: 'Registrations, Licences & Approvals',
-          description: 'Trademark, DARPAN, FSSAI, Import Export Code (IEC), Digital Signature Certificate (DSC) and other applicable registrations, licences and regulatory approvals.'
-        }
-      ]
-    },
-    {
+{
       id: 'business-advisory',
       slug: 'business-advisory-value-added',
       title: 'Business Advisory & Value-Added Services',
@@ -351,6 +291,7 @@ export class ServicesDataService {
       shortDesc: 'Design and implementation of financial systems, Standard Operating Procedures (SOPs), custom MIS frameworks, and ERP deployment support.',
       icon: 'bi-diagram-3',
       badge: 'Business Efficiency',
+      heroImage: '/assets/images/services/business-advisory-value-added.jpg',
       benefits: [
         'Standardize daily tasks with clear SOPs so your business runs smoothly',
         'Select and implement the right ERP software (Tally, Zoho Books, SAP)',
@@ -377,7 +318,75 @@ export class ServicesDataService {
         }
       ]
     },
-    {
+{
+      id: 'company-formation',
+      slug: 'company-formation-corporate-services',
+      title: 'Company Formation & Corporate Services',
+      category: 'Corporate Legal',
+      tagline: '',
+      shortDesc: 'Incorporation support for Private Limited, Section 8, and Public companies, corporate conversions, ROC annual filings, and secretarial documentation.',
+      icon: 'bi-building',
+      badge: 'Startup Ready',
+      heroImage: '/assets/images/services/company-formation-corporate-services.jpg',
+      benefits: [
+        'Fast company incorporation with SPICe+ MCA approval within days',
+        'Complete package including DIN, PAN, TAN, MOA, AOA, and bank account setup',
+        'Expert guidance on selecting the right entity type (Pvt Ltd vs LLP vs OPC)',
+        'Hassle-free conversion from proprietorship or partnership to corporate entity'
+      ],
+      targetAudience: 'Entrepreneurs, startup founders, partnership firms converting to corporate entities',
+      subServices: [
+        {
+          name: 'Entity Formation & Incorporation',
+          description: 'Incorporation support for OPCs, Section 8 Companies, Private Limited and Public Limited Companies, including statutory registrations and documentation.'
+        },
+        {
+          name: 'Corporate Restructuring & Conversion',
+          description: 'Advisory and compliance support for conversion and restructuring of proprietorships, partnership firms and LLPs into suitable corporate structures.'
+        },
+        {
+          name: 'ROC, Annual & XBRL Filings',
+          description: 'Preparation and filing of ROC forms, annual returns, XBRL filings and other statutory submissions to ensure timely corporate compliance.'
+        },
+        {
+          name: 'Corporate Documentation & Secretarial Support',
+          description: 'Support for DIN applications, MOA, AOA and other corporate documentation required for incorporation, governance and regulatory compliance.'
+        }
+      ]
+    },
+{
+      id: 'business-setup',
+      slug: 'business-setup-registration',
+      title: 'Business Setup & Registration Services',
+      category: 'Registrations',
+      tagline: 'From business idea to compliant establishment – we help you set up the right structure and get the right registrations in place.',
+      shortDesc: 'Company incorporation, startup recognition, entity structuring, Trademark, DARPAN, FSSAI, Import Export Code (IEC), and Digital Signatures (DSC).',
+      icon: 'bi-patch-check',
+      badge: 'Essential Licenses',
+      heroImage: '/assets/images/services/business-setup-registration.jpg',
+      benefits: [
+        'Access Startup India benefits including tax exemptions and government support',
+        'Protect your brand name, logo, and intellectual property with Trademark registration',
+        'Get all essential business licenses under one roof without visiting multiple agents',
+        'Instant issuance and renewal of Class-3 Digital Signature Certificates (DSC)'
+      ],
+      targetAudience: 'New business founders, startups, traders, exporters, and food businesses',
+      subServices: [
+        {
+          name: 'Startup & Company Incorporation',
+          description: 'Company incorporation, startup recognition and end-to-end support for establishing a new business.'
+        },
+        {
+          name: 'Entity Formation & Structuring',
+          description: 'Advisory and registration support for companies, LLPs, partnership firms, trusts, HUFs and proprietorships, with a focus on selecting the appropriate business structure.'
+        },
+        {
+          name: 'Registrations, Licences & Approvals',
+          description: 'Trademark, DARPAN, FSSAI, Import Export Code (IEC), Digital Signature Certificate (DSC) and other applicable registrations, licences and regulatory approvals.'
+        }
+      ]
+    },
+{
       id: 'project-finance',
       slug: 'project-finance-subsidy-advisory',
       title: 'Project Finance & Subsidy Advisory',
@@ -386,6 +395,7 @@ export class ServicesDataService {
       shortDesc: 'Detailed Project Reports (DPR), working capital and term loan advisory, government subsidies, credit rating liaison, and term sheet review.',
       icon: 'bi-cash-coin',
       badge: 'Funding & Subsidies',
+      heroImage: '/assets/images/services/project-finance-subsidy-advisory.jpg',
       benefits: [
         'Bank-ready Detailed Project Reports (DPR) and CMA data prepared to meet bank criteria',
         'Assistance in securing working capital (Cash Credit / Overdraft) and term loans',
@@ -416,7 +426,7 @@ export class ServicesDataService {
         }
       ]
     },
-    {
+{
       id: 'cma-certifications',
       slug: 'cma-certification-compliance',
       title: 'CMA Certification & Compliance',
@@ -425,6 +435,7 @@ export class ServicesDataService {
       shortDesc: 'Cost accounting records certification, Net Worth certificates, Customs & DGFT turnover certificates, grant utilization reports, and DSC issuance.',
       icon: 'bi-award',
       badge: 'Official UDIN Seal',
+      heroImage: '/assets/images/services/cma-certification-compliance.jpg',
       benefits: [
         'Certified by a practicing Cost & Management Accountant with valid UDIN',
         'Accepted by all nationalized and private banks, government tender portals, and embassies',

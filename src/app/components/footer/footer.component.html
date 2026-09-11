@@ -1,34 +1,6 @@
 <!-- Corporate Footer - Executive Dark Theme (Brand Navy & Forest Green) -->
 <footer class="corporate-footer">
-  <!-- Top Brand Accent Strip -->
-  <div class="footer-top-strip d-none d-md-block">
-    <div class="container">
-      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 py-3 border-bottom border-white border-opacity-10">
-        <div class="d-flex flex-wrap align-items-center gap-3 gap-md-4">
-          <div class="footer-trust-item">
-            <i class="bi bi-shield-check text-success"></i>
-            <span>Statutory Cost Audit (Sec 148)</span>
-          </div>
-          <div class="footer-trust-item d-none d-sm-flex">
-            <i class="bi bi-person-workspace text-info"></i>
-            <span>Virtual CFO Advisory</span>
-          </div>
-          <div class="footer-trust-item">
-            <i class="bi bi-patch-check-fill text-warning"></i>
-            <span>ICMAI Reg. Firm • ACMA Qualified</span>
-          </div>
-        </div>
-
-        <div class="d-flex align-items-center gap-2 ms-auto">
-          <span class="footer-status-pill">
-            <span class="status-dot"></span> Direct Partner Desk Active
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container pt-4 pb-2">
+  <div class="container pt-5 pb-2">
     <!-- Main Footer Grid -->
     <div class="row g-4 g-lg-5 justify-content-between">
       <!-- Col 1: Brand & Bio -->
@@ -133,33 +105,38 @@
         </h6>
         <ul class="footer-menu-links">
           <li>
+            <a [routerLink]="['/services', 'audit-and-assurance']">
+              <i class="bi bi-chevron-right"></i> Audit &amp; Assurance
+            </a>
+          </li>
+          <li>
             <a [routerLink]="['/services', 'virtual-cfo-services']">
-              <i class="bi bi-chevron-right"></i> Virtual CFO Advisory
+              <i class="bi bi-chevron-right"></i> Virtual CFO Services
             </a>
           </li>
           <li>
             <a [routerLink]="['/services', 'cost-management-advisory']">
-              <i class="bi bi-chevron-right"></i> Cost Audit (Sec 148)
+              <i class="bi bi-chevron-right"></i> Cost &amp; Management
             </a>
           </li>
           <li>
             <a [routerLink]="['/services', 'indirect-taxation-gst']">
-              <i class="bi bi-chevron-right"></i> GST Filing &amp; ITC
+              <i class="bi bi-chevron-right"></i> Indirect Taxation (GST)
             </a>
           </li>
           <li>
             <a [routerLink]="['/services', 'direct-taxation-income-tax']">
-              <i class="bi bi-chevron-right"></i> Income Tax &amp; TDS
+              <i class="bi bi-chevron-right"></i> Direct Taxation
             </a>
           </li>
           <li>
-            <a [routerLink]="['/services', 'project-finance-subsidy-advisory']">
-              <i class="bi bi-chevron-right"></i> Bank Project DPR
+            <a [routerLink]="['/services', 'business-advisory-value-added']">
+              <i class="bi bi-chevron-right"></i> Value Added Services
             </a>
           </li>
           <li>
             <a [routerLink]="['/services', 'company-formation-corporate-services']">
-              <i class="bi bi-chevron-right"></i> Company Incorporation
+              <i class="bi bi-chevron-right"></i> Company Formation
             </a>
           </li>
         </ul>

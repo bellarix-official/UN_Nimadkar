@@ -1181,28 +1181,19 @@ a:hover {
   flex-direction: column;
 }
 
-.industry-card-tag {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  margin-bottom: 2px;
-  line-height: 1.2;
-}
-
 .industry-card-name {
-  font-size: 0.96rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--brand-navy-dark);
   margin-bottom: 0;
   white-space: nowrap;
-  line-height: 1.35;
+  line-height: 1.3;
 }
 
 @media (max-width: 768px) {
   .industry-carousel-card {
-    min-width: 260px;
-    padding: 11px 16px;
+    min-width: 240px;
+    padding: 10px 16px;
     gap: 12px;
   }
   .industry-card-icon {
@@ -1211,7 +1202,7 @@ a:hover {
     font-size: 17px;
   }
   .industry-card-name {
-    font-size: 0.88rem;
+    font-size: 0.95rem;
   }
   .industries-marquee-container::before,
   .industries-marquee-container::after {
@@ -1602,11 +1593,11 @@ a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 18px 8px 16px;
+  padding: 4px 12px 4px 10px;
   background: linear-gradient(135deg, #ffffff 0%, #f6fafd 55%, #edf8f2 100%);
-  border-radius: 14px;
+  border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.9);
-  border-left: 5px solid var(--brand-green);
+  border-left: 4px solid var(--brand-green);
   box-shadow: 0 6px 22px rgba(0, 10, 30, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.9);
   transition: all 0.25s ease;
 }
@@ -1617,9 +1608,9 @@ a:hover {
 }
 
 .footer-logo-img {
-  height: 58px;
-  max-height: 58px;
-  max-width: 300px;
+  height: 50px;
+  max-height: 50px;
+  max-width: 260px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -2036,6 +2027,9 @@ a:hover {
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border-light);
   margin-top: -32px;
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   z-index: 5;
 }

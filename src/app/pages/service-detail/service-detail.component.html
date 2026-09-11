@@ -1,6 +1,7 @@
 @if (service) {
   <!-- Service Detail Hero Section -->
-  <section class="service-hero-banner position-relative overflow-hidden">
+  <section class="service-hero-banner position-relative overflow-hidden"
+    [style.backgroundImage]="'linear-gradient(140deg, rgba(0, 24, 48, 0.90) 0%, rgba(0, 31, 63, 0.86) 50%, rgba(10, 92, 54, 0.80) 100%), url(' + (service.heroImage || '/assets/images/services/' + service.slug + '.jpg') + ')'">
     <!-- Ambient Lighting & Subtle Dot Mesh Pattern -->
     <div class="hero-ambient-glow" aria-hidden="true"></div>
     <div class="hero-mesh-pattern" aria-hidden="true"></div>
@@ -23,9 +24,9 @@
         </ol>
       </nav>
 
-      <div class="row align-items-center g-4 justify-content-between">
+      <div class="row align-items-center">
         <!-- Main Info Column -->
-        <div class="col-lg-8 col-xl-9">
+        <div class="col-12 col-lg-11 col-xl-10">
           <!-- Badges Row -->
           <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
             <span class="badge hero-category-badge">
@@ -51,17 +52,6 @@
             </div>
           }
         </div>
-
-        <!-- Distinctive Visual Element: Executive Service Emblem using only service.icon -->
-        <div class="col-lg-4 col-xl-3 d-none d-lg-flex justify-content-end">
-          <div class="service-hero-emblem shadow-lg">
-            <div class="emblem-inner-glow"></div>
-            <div class="emblem-icon-container">
-              <i class="bi" [ngClass]="service.icon"></i>
-            </div>
-            <span class="emblem-category-label">{{ service.category }}</span>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -69,235 +59,270 @@
   <!-- Service Detail Main Content -->
   <section class="section-padding service-detail-main-section">
     <div class="container">
-      <div class="row g-5">
-        <!-- Main Column: Service Details & Scope -->
-        <div class="col-lg-8">
-          <!-- 1. Executive Overview & Purpose Card (Distinct Luxury Briefing Style) -->
-          <div class="service-overview-card p-4 p-md-4 rounded-4 shadow-sm mb-4 position-relative overflow-hidden">
-            <div class="overview-ambient-texture" aria-hidden="true"></div>
-            <div class="position-relative z-1">
-              <!-- Top Metadata Row -->
-              <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
-                <div class="d-flex align-items-center gap-2">
-                  <span class="overview-pill-badge">
-                    <i class="bi bi-shield-fill-check me-1.5"></i> Executive Overview
-                  </span>
-                  <span class="overview-category-pill">
-                    {{ service.category }}
-                  </span>
-                </div>
-                <span class="overview-purpose-tag d-none d-sm-inline-flex">
-                  <i class="bi bi-bullseye me-1.5 text-success"></i> Strategic Objective
-                </span>
-              </div>
-
-              <!-- Main Content with Executive Emblem -->
-              <div class="d-flex align-items-start gap-3 gap-md-4">
-                <div class="overview-emblem-box flex-shrink-0 d-none d-sm-flex">
-                  <i class="bi" [ngClass]="service.icon"></i>
-                </div>
-                <div class="flex-grow-1">
-                  <h3 class="overview-title fw-bold mb-2">
-                    Practice Overview &amp; Purpose
-                  </h3>
-                  <p class="overview-description mb-0">
-                    {{ service.shortDesc }}
-                  </p>
-                </div>
-              </div>
+      <!-- 1. Executive Overview & Purpose Card -->
+      <div class="service-overview-card p-4 p-md-4 rounded-4 shadow-sm mb-4 mb-lg-5 position-relative overflow-hidden">
+        <div class="overview-ambient-texture" aria-hidden="true"></div>
+        <div class="position-relative z-1">
+          <!-- Top Metadata Row -->
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+            <div class="d-flex align-items-center gap-2">
+              <span class="overview-pill-badge">
+                <i class="bi bi-shield-fill-check me-1.5"></i> Executive Overview
+              </span>
+              <span class="overview-category-pill">
+                {{ service.category }}
+              </span>
             </div>
+            <span class="overview-purpose-tag d-none d-sm-inline-flex">
+              <i class="bi bi-bullseye me-1.5 text-success"></i> Strategic Objective
+            </span>
           </div>
 
-          <!-- 2. Detailed Scope of Practice (Unified Practice Area Container) -->
-          <div class="service-scope-container p-3 p-md-4 rounded-4 border mb-4">
-            <!-- Container Header -->
-            <div class="mb-3 mb-md-4 pb-3 border-bottom">
-              <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
-                <span class="badge scope-header-badge">
-                  <i class="bi bi-list-check me-1"></i> Core Scope
-                </span>
-                <span class="badge scope-count-badge">
-                  <i class="bi bi-check2-all me-1"></i> {{ service.subServices.length }} Practice Areas Included
-                </span>
-              </div>
-              <h4 class="fw-bold text-navy mb-0">Detailed Scope of Practice</h4>
-            </div>
+          <!-- Main Content -->
+          <div>
+            <h3 class="overview-title fw-bold mb-2">
+              Practice Overview &amp; Purpose
+            </h3>
+            <p class="overview-description mb-0">
+              {{ service.shortDesc }}
+            </p>
+          </div>
+        </div>
+      </div>
 
-            <!-- Inset Practice Area Cards inside the Unified Container -->
-            <div class="scope-cards-wrapper d-flex flex-column gap-3">
-              @for (sub of service.subServices; track sub.name; let i = $index) {
-                <div class="scope-practice-card p-3 p-md-3.5 rounded-3 bg-white border shadow-sm">
-                  <!-- Mobile Header Row: 01 Badge on Left, Area Badge on Right Corner -->
-                  <div class="d-flex d-sm-none align-items-center justify-content-between w-100 mb-2.5">
-                    <div class="scope-number-badge flex-shrink-0">
-                      <span>{{ (i + 1) < 10 ? '0' + (i + 1) : (i + 1) }}</span>
-                    </div>
-                    <span class="scope-sub-pill">
-                      Area {{ i + 1 }}
-                    </span>
+      <!-- 2. Detailed Scope of Practice (3 Points In Each Row) -->
+      <div class="service-scope-container p-3 p-md-4 rounded-4 border mb-4 mb-lg-5">
+        <!-- Container Header -->
+        <div class="mb-4 pb-3 border-bottom">
+          <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
+            <span class="badge scope-header-badge">
+              <i class="bi bi-list-check me-1"></i> Core Scope
+            </span>
+            <span class="badge scope-count-badge">
+              <i class="bi bi-check2-all me-1"></i> {{ service.subServices.length }} Practice Areas Included
+            </span>
+          </div>
+          <h4 class="fw-bold text-navy mb-0">Detailed Scope of Practice</h4>
+        </div>
+
+        <!-- 3 Points per row on Desktop (col-lg-4) -->
+        <div class="row g-3 g-lg-4">
+          @for (sub of service.subServices; track sub.name; let i = $index) {
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+              <div class="scope-practice-card p-3 p-md-4 rounded-4 bg-white border shadow-sm w-100 d-flex flex-column h-100">
+                <!-- Card Header: Number Badge on Left, Area Badge on Right -->
+                <div class="d-flex align-items-center justify-content-between w-100 mb-3">
+                  <div class="scope-number-badge flex-shrink-0">
+                    <span>{{ (i + 1) < 10 ? '0' + (i + 1) : (i + 1) }}</span>
                   </div>
+                  <span class="scope-sub-pill">
+                    Area {{ i + 1 }}
+                  </span>
+                </div>
 
-                  <div class="d-flex flex-column flex-sm-row align-items-start gap-3 gap-md-4">
-                    <!-- Desktop Number Badge -->
-                    <div class="scope-number-badge flex-shrink-0 d-none d-sm-flex">
-                      <span>{{ (i + 1) < 10 ? '0' + (i + 1) : (i + 1) }}</span>
+                <!-- Title -->
+                <h5 class="scope-card-title fw-bold text-navy mb-2">
+                  {{ sub.name }}
+                </h5>
+
+                <!-- Description -->
+                <p class="scope-card-desc mb-3 flex-grow-1">
+                  {{ sub.description }}
+                </p>
+
+                <!-- Sub-points / Deliverables if available -->
+                @if (sub.points && sub.points.length > 0) {
+                  <div class="scope-deliverables-box mt-auto pt-3 border-top">
+                    <div class="deliverables-heading small fw-bold text-uppercase text-muted mb-2">
+                      <i class="bi bi-arrow-right-circle-fill text-success me-1"></i> Key Deliverables
                     </div>
-
-                    <!-- Right: Content Area -->
-                    <div class="flex-grow-1 w-100">
-                      <!-- Title & Practice Badge -->
-                      <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
-                        <h5 class="scope-card-title fw-bold text-navy mb-0">
-                          {{ sub.name }}
-                        </h5>
-                        <span class="scope-sub-pill d-none d-sm-inline-flex">
-                          Area {{ i + 1 }}
-                        </span>
-                      </div>
-
-                      <!-- Description -->
-                      <p class="scope-card-desc mb-0">
-                        {{ sub.description }}
-                      </p>
-
-                      <!-- Sub-points / Deliverables if available -->
-                      @if (sub.points && sub.points.length > 0) {
-                        <div class="scope-deliverables-box mt-3 pt-3 border-top">
-                          <div class="deliverables-heading small fw-bold text-uppercase text-muted mb-2">
-                            <i class="bi bi-arrow-right-circle-fill text-success me-1"></i> Key Deliverables &amp; Focus
-                          </div>
-                          <div class="row g-2">
-                            @for (pt of sub.points; track pt) {
-                              <div class="col-md-6">
-                                <div class="d-flex align-items-start gap-2">
-                                  <i class="bi bi-check2 text-success flex-shrink-0 mt-0.5 fs-6 fw-bold"></i>
-                                  <span class="point-text">{{ pt }}</span>
-                                </div>
-                              </div>
-                            }
-                          </div>
+                    <div class="d-flex flex-column gap-1.5">
+                      @for (pt of sub.points; track pt) {
+                        <div class="d-flex align-items-start gap-2">
+                          <i class="bi bi-check2 text-success flex-shrink-0 mt-0.5 fs-6 fw-bold"></i>
+                          <span class="point-text small">{{ pt }}</span>
                         </div>
                       }
                     </div>
                   </div>
-                </div>
-              }
-            </div>
-          </div>
-
-          <!-- 3. Key Advantages for Your Business -->
-          <div class="service-advantages-card bg-white p-3 p-md-4 rounded-4 shadow-sm border mb-4">
-            <div class="d-flex align-items-center gap-2 mb-2.5">
-              <span class="advantages-pill-badge">
-                <i class="bi bi-stars me-1.5"></i> Tangible Business Value
-              </span>
-            </div>
-            <h4 class="fw-bold text-navy mb-3">
-              Key Advantages for Your Business
-            </h4>
-
-            <div class="row g-2 g-md-3">
-              @for (ben of service.benefits; track ben) {
-                <div class="col-md-6">
-                  <div class="advantage-box h-100 p-3 rounded-3 d-flex align-items-start gap-3">
-                    <div class="advantage-icon-badge flex-shrink-0">
-                      <i class="bi bi-check-lg"></i>
-                    </div>
-                    <span class="advantage-text">{{ ben }}</span>
-                  </div>
-                </div>
-              }
-            </div>
-          </div>
-
-          <!-- 4. Who is this service ideal for? (Executive Dark Navy Card) -->
-          <div class="service-audience-card p-3 p-md-4 rounded-4 shadow-sm text-white mb-4 position-relative overflow-hidden">
-            <div class="audience-ambient-glow" aria-hidden="true"></div>
-            <div class="position-relative z-1">
-              <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="badge audience-pill-badge">
-                  <i class="bi bi-bullseye me-1"></i> Best Suited For
-                </span>
+                }
               </div>
-              <h5 class="audience-title fw-bold text-white mb-2">Who Is This Practice Ideal For?</h5>
-              <p class="audience-description mb-0">
-                {{ service.targetAudience }}
-              </p>
             </div>
-          </div>
-
-          <!-- 5. Quick WhatsApp CTA Banner -->
-          <div class="service-cta-banner p-3 p-md-4 rounded-4 text-white d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 shadow-sm position-relative overflow-hidden">
-            <div class="cta-mesh-pattern" aria-hidden="true"></div>
-            <div class="position-relative z-1 text-center text-md-start">
-              <h5 class="cta-banner-title fw-bold mb-1 text-white">Need customized support for {{ service.title }}?</h5>
-              <p class="cta-banner-subtitle text-white-75 mb-0">Get in touch directly with CMA Urvesh Nimbadkar for tailored deliverables and cost roadmap.</p>
-            </div>
-            <a href="https://wa.me/919824164586?text=Hello%20CMA%20Urvesh,%20I%20would%20like%20to%20consult%20regarding%20{{ service.title }}." target="_blank" class="btn btn-cta-whatsapp text-nowrap position-relative z-1">
-              <span class="whatsapp-icon-circle">
-                <i class="bi bi-whatsapp"></i>
-              </span>
-              <span class="whatsapp-btn-text">Chat on WhatsApp</span>
-            </a>
-          </div>
+          }
         </div>
+      </div>
 
-        <!-- Sidebar Column -->
-        <div class="col-lg-4">
-          <!-- Sticky Sidebar Wrapper -->
-          <div class="sticky-sidebar-wrapper">
-            <!-- Consultation Card -->
-            <div class="service-enquiry-card bg-white p-3 p-lg-4 rounded-4 shadow-sm border mb-4">
-              <h5 class="fw-bold mb-1" style="color: var(--brand-navy-dark);">Enquire For This Service</h5>
-              <p class="small text-muted mb-3">Submit your contact info for an instant response directly from the founder.</p>
+      <!-- 3. Key Advantages for Your Business -->
+      <div class="service-advantages-card bg-white p-3 p-md-4 rounded-4 shadow-sm border mb-4 mb-lg-5">
+        <div class="d-flex align-items-center gap-2 mb-2.5">
+          <span class="advantages-pill-badge">
+            <i class="bi bi-stars me-1.5"></i> Tangible Business Value
+          </span>
+        </div>
+        <h4 class="fw-bold text-navy mb-3">
+          Key Advantages for Your Business
+        </h4>
+
+        <div class="row g-3">
+          @for (ben of service.benefits; track ben) {
+            <div class="col-12 col-sm-6 col-lg-3 d-flex">
+              <div class="advantage-box w-100 h-100 p-3 rounded-3 d-flex align-items-start gap-3">
+                <div class="advantage-icon-badge flex-shrink-0">
+                  <i class="bi bi-check-lg"></i>
+                </div>
+                <span class="advantage-text">{{ ben }}</span>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- 4. Who is this service ideal for? (Executive Dark Navy Card) -->
+      <div class="service-audience-card p-4 rounded-4 shadow-sm text-white mb-4 mb-lg-5 position-relative overflow-hidden">
+        <div class="audience-ambient-glow" aria-hidden="true"></div>
+        <div class="position-relative z-1">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge audience-pill-badge">
+              <i class="bi bi-bullseye me-1"></i> Best Suited For
+            </span>
+          </div>
+          <h5 class="audience-title fw-bold text-white mb-2">Who Is This Practice Ideal For?</h5>
+          <p class="audience-description mb-0">
+            {{ service.targetAudience }}
+          </p>
+        </div>
+      </div>
+
+      <!-- 5. Bottom Enquiry & Direct Consultation Section -->
+      <div class="service-enquiry-section bg-white p-4 p-md-5 rounded-4 shadow-sm border mb-4 position-relative overflow-hidden">
+        <div class="row g-4 g-lg-5 align-items-center">
+          <!-- Left Briefing & Founder Direct Perks -->
+          <div class="col-lg-5">
+            <span class="badge scope-header-badge mb-2">
+              <i class="bi bi-chat-dots-fill me-1"></i> Direct Consultation
+            </span>
+            <h3 class="fw-bold text-navy mb-2">Enquire For This Service</h3>
+            <p class="text-muted mb-4">
+              Connect directly with CMA Urvesh Nimbadkar for tailored deliverables, compliance timelines, and strategic pricing.
+            </p>
+
+            <div class="enquiry-perks-list d-flex flex-column gap-3 mb-0">
+              <div class="d-flex align-items-center gap-3">
+                <div class="perk-icon-circle">
+                  <i class="bi bi-person-check-fill text-success"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold mb-0 text-navy">Direct Founder Access</h6>
+                  <small class="text-muted">Direct discussion with CMA Urvesh Nimbadkar</small>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-3">
+                <div class="perk-icon-circle">
+                  <i class="bi bi-shield-check text-success"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold mb-0 text-navy">100% Confidential</h6>
+                  <small class="text-muted">Strict NDA &amp; professional compliance assurance</small>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-3">
+                <div class="perk-icon-circle">
+                  <i class="bi bi-clock-history text-success"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold mb-0 text-navy">Prompt Turnaround</h6>
+                  <small class="text-muted">Response typically within 2-4 business hours</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Form -->
+          <div class="col-lg-7">
+            <div class="enquiry-form-card p-3 p-md-4 rounded-4 bg-light border">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="fw-bold text-navy mb-0">Submit Your Enquiry</h5>
+                <span class="badge bg-success-subtle text-success border border-success-subtle px-2.5 py-1">Quick Response</span>
+              </div>
+
+              @if (formValidationWarning) {
+                <div class="alert alert-warning py-2 small d-flex align-items-center gap-2 mb-3">
+                  <i class="bi bi-exclamation-triangle-fill fs-6 text-warning"></i>
+                  <div>{{ formValidationWarning }}</div>
+                </div>
+              }
 
               @if (formSubmitted) {
-                <div class="alert alert-success small mb-3">
-                  <i class="bi bi-check-circle-fill me-1"></i> Opening WhatsApp with your enquiry...
+                <div class="alert alert-success py-2 small d-flex align-items-center gap-2 mb-3">
+                  <i class="bi bi-check-circle-fill fs-6"></i>
+                  <div>{{ formSuccessMessage }}</div>
                 </div>
               }
 
-              <form (submit)="$event.preventDefault()" (ngSubmit)="submitEnquiry($event)">
-                <!-- Pre-filled Current Service Name Field -->
-                <div class="mb-2">
-                  <label class="form-label small fw-bold mb-1 text-muted">Service Required</label>
-                  <div class="input-group input-group-sm">
-                    <span class="input-group-text bg-light text-success border-end-0">
+              <form (submit)="$event.preventDefault()">
+                <!-- Service Required Dropdown -->
+                <div class="mb-3">
+                  <label class="form-label small fw-bold text-muted mb-1">Service Required</label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-white text-success border-end-0">
                       <i class="bi bi-bookmark-check-fill"></i>
                     </span>
-                    <input 
-                      type="text" 
-                      class="form-control form-control-sm bg-light text-navy fw-bold border-start-0" 
-                      [value]="service.title" 
-                      readonly 
-                      tabindex="-1"
-                      aria-label="Service Name">
+                    <select 
+                      class="form-select bg-white text-navy fw-bold border-start-0 shadow-none" 
+                      [(ngModel)]="formData.serviceTitle" 
+                      name="serviceTitle"
+                      aria-label="Select Service Required">
+                      @for (srv of allServices; track srv.id) {
+                        <option [value]="srv.title">{{ srv.title }}</option>
+                      }
+                    </select>
                   </div>
                 </div>
 
-                <div class="mb-2">
-                  <label class="form-label small fw-bold mb-1">Full Name *</label>
-                  <input type="text" class="form-control form-control-sm" placeholder="Your Name" [(ngModel)]="formData.name" name="name" required>
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold mb-1">Full Name *</label>
+                    <input type="text" class="form-control" placeholder="Your Name" [(ngModel)]="formData.name" name="name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold mb-1">WhatsApp Mobile *</label>
+                    <input type="tel" class="form-control" placeholder="Mobile Number" [(ngModel)]="formData.phone" name="phone" required>
+                  </div>
                 </div>
 
-                <div class="mb-2">
-                  <label class="form-label small fw-bold mb-1">WhatsApp Mobile *</label>
-                  <input type="tel" class="form-control form-control-sm" placeholder="Mobile Number" [(ngModel)]="formData.phone" name="phone" required>
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold mb-1">Business / Company Name</label>
+                    <input type="text" class="form-control" placeholder="Company Name" [(ngModel)]="formData.company" name="company">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold mb-1">Email Address</label>
+                    <input type="email" class="form-control" placeholder="name@company.com" [(ngModel)]="formData.email" name="email">
+                  </div>
                 </div>
 
-                <div class="mb-2">
-                  <label class="form-label small fw-bold mb-1">Business Name</label>
-                  <input type="text" class="form-control form-control-sm" placeholder="Company Name" [(ngModel)]="formData.company" name="company">
+                <div class="mb-3">
+                  <label class="form-label small fw-bold mb-1">Specific Requirements / Notes</label>
+                  <textarea class="form-control" rows="3" placeholder="Tell us briefly about your business requirement..." [(ngModel)]="formData.message" name="message"></textarea>
                 </div>
 
-                <div class="mb-2.5">
-                  <label class="form-label small fw-bold mb-1">Notes / Questions</label>
-                  <textarea class="form-control form-control-sm" rows="2" placeholder="Brief requirement..." [(ngModel)]="formData.message" name="message"></textarea>
+                <!-- Two Action Buttons: WhatsApp and Email -->
+                <div class="d-flex flex-column flex-sm-row gap-3 mt-3 pt-1">
+                  <button 
+                    type="button" 
+                    (click)="sendViaWhatsApp($event)" 
+                    class="btn btn-cma-secondary flex-grow-1 py-2.5 px-3 fw-bold shadow-sm d-flex align-items-center justify-content-center gap-2">
+                    <i class="bi bi-whatsapp fs-5"></i>
+                    <span>Send on WhatsApp</span>
+                  </button>
+                  <button 
+                    type="button" 
+                    (click)="sendViaEmail($event)" 
+                    class="btn btn-cma-email flex-grow-1 py-2.5 px-3 fw-bold shadow-sm d-flex align-items-center justify-content-center gap-2">
+                    <i class="bi bi-envelope-fill fs-5"></i>
+                    <span>Send via Email</span>
+                  </button>
                 </div>
-
-                <button type="button" (click)="submitEnquiry($event)" class="btn btn-cma-secondary w-100 py-2 mt-1">
-                  <i class="bi bi-send-fill me-1"></i> Submit &amp; Connect on WhatsApp
-                </button>
               </form>
             </div>
           </div>
