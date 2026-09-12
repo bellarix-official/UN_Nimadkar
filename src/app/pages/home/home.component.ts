@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, OnDestroy, ChangeDetectorRef, HostListener } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy, ChangeDetectorRef, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -48,24 +48,52 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   // =========================================================================
-  // Services Auto-Moving Infinite Carousel
+  // Services Continuous Smooth Infinite Carousel (Ticker / Marquee)
   // =========================================================================
+  @ViewChild('carouselTrackWrapper') carouselTrackWrapper?: ElementRef<HTMLElement>;
+  @ViewChild('carouselTrack') carouselTrack?: ElementRef<HTMLElement>;
+
+  carouselServices: ServiceItem[] = [];
   currentServiceIndex = 0;
-  isServicesTransitionEnabled = true;
-  private servicesCarouselTimer: any = null;
-  private servicesResetTimeout: any = null;
   isServicesCarouselPaused = false;
   visibleCardsCount = 3;
-  private touchStartX = 0;
-  private touchEndX = 0;
 
-  get carouselServices(): ServiceItem[] {
-    return [...this.allServices, ...this.allServices];
+  private continuousAnimationId: number | null = null;
+  private lastTimestamp = 0;
+  private currentScrollX = 0;
+  private targetScrollX: number | null = null;
+  private readonly scrollSpeed = 50; // pixels per second — smooth, elegant, steady motion
+
+  private touchStartX = 0;
+  private touchLastX = 0;
+  private isTouching = false;
+
+  initCarouselServices() {
+    const formatted = this.allServices.map(srv => {
+      if (srv.id === 'virtual-cfo' || srv.slug === 'virtual-cfo-services') {
+        return {
+          ...srv,
+          subServices: srv.subServices.filter(sub => !sub.name.toLowerCase().includes('investor, banker'))
+        };
+      }
+      return srv;
+    });
+    // Duplicate 3 times for seamless, glitch-free continuous loop
+    this.carouselServices = [...formatted, ...formatted, ...formatted];
   }
 
   @HostListener('window:resize')
   onWindowResize() {
     this.updateVisibleCards();
+    const cardWidth = this.getCardWidth();
+    if (cardWidth > 0) {
+      const activeIdx = this.currentServiceIndex % this.allServices.length;
+      this.currentScrollX = activeIdx * cardWidth;
+      this.targetScrollX = null;
+      if (this.carouselTrack?.nativeElement) {
+        this.carouselTrack.nativeElement.style.transform = `translate3d(-${this.currentScrollX}px, 0, 0)`;
+      }
+    }
   }
 
   updateVisibleCards() {
@@ -82,107 +110,181 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
   }
 
-  startServicesCarouselTimer() {
-    this.stopServicesCarouselTimer();
-    this.servicesCarouselTimer = setInterval(() => {
-      if (!this.isServicesCarouselPaused) {
-        this.nextServiceSlide();
-      }
-    }, 4500);
+  private interactionTimeout: any = null;
+  private isMouseHovering = false;
+
+  getCardWidth(): number {
+    if (this.carouselTrack?.nativeElement?.firstElementChild) {
+      const firstSlide = this.carouselTrack.nativeElement.firstElementChild as HTMLElement;
+      const width = firstSlide.getBoundingClientRect().width;
+      if (width > 0) return width;
+    }
+    if (this.carouselTrackWrapper?.nativeElement) {
+      const wrapperWidth = this.carouselTrackWrapper.nativeElement.offsetWidth;
+      if (wrapperWidth > 0) return wrapperWidth / this.visibleCardsCount;
+    }
+    if (typeof window !== 'undefined') {
+      return window.innerWidth / this.visibleCardsCount;
+    }
+    return 400;
   }
 
-  stopServicesCarouselTimer() {
-    if (this.servicesCarouselTimer) {
-      clearInterval(this.servicesCarouselTimer);
-      this.servicesCarouselTimer = null;
-    }
-    if (this.servicesResetTimeout) {
-      clearTimeout(this.servicesResetTimeout);
-      this.servicesResetTimeout = null;
+  getSingleSetWidth(): number {
+    return this.getCardWidth() * this.allServices.length;
+  }
+
+  startContinuousScroll() {
+    this.stopContinuousScroll();
+    if (typeof window === 'undefined') return;
+
+    this.lastTimestamp = performance.now();
+
+    const animate = (timestamp: number) => {
+      const rawDelta = (timestamp - this.lastTimestamp) / 1000;
+      const delta = Math.min(rawDelta, 0.1);
+      this.lastTimestamp = timestamp;
+
+      const singleSetWidth = this.getSingleSetWidth();
+
+      if (this.targetScrollX !== null) {
+        const diff = this.targetScrollX - this.currentScrollX;
+        if (Math.abs(diff) < 0.6) {
+          this.currentScrollX = this.targetScrollX;
+          this.targetScrollX = null;
+        } else {
+          this.currentScrollX += diff * 0.14;
+        }
+      } else if (!this.isServicesCarouselPaused && !this.isTouching) {
+        this.currentScrollX += this.scrollSpeed * delta;
+      }
+
+      if (singleSetWidth > 0) {
+        if (this.currentScrollX >= singleSetWidth) {
+          this.currentScrollX -= singleSetWidth;
+          if (this.targetScrollX !== null) this.targetScrollX -= singleSetWidth;
+        } else if (this.currentScrollX < 0) {
+          this.currentScrollX += singleSetWidth;
+          if (this.targetScrollX !== null) this.targetScrollX += singleSetWidth;
+        }
+      }
+
+      if (this.carouselTrack?.nativeElement) {
+        this.carouselTrack.nativeElement.style.transform = `translate3d(-${this.currentScrollX}px, 0, 0)`;
+      }
+
+      const cardWidth = this.getCardWidth();
+      if (cardWidth > 0) {
+        const currentIdx = Math.floor((this.currentScrollX + cardWidth * 0.4) / cardWidth) % this.allServices.length;
+        if (this.currentServiceIndex !== currentIdx) {
+          this.currentServiceIndex = currentIdx;
+          this.cdr.markForCheck();
+        }
+      }
+
+      this.continuousAnimationId = requestAnimationFrame(animate);
+    };
+
+    this.continuousAnimationId = requestAnimationFrame(animate);
+  }
+
+  stopContinuousScroll() {
+    if (this.continuousAnimationId !== null) {
+      cancelAnimationFrame(this.continuousAnimationId);
+      this.continuousAnimationId = null;
     }
   }
 
   pauseServicesCarousel() {
+    this.isMouseHovering = true;
     this.isServicesCarouselPaused = true;
   }
 
   resumeServicesCarousel() {
-    this.isServicesCarouselPaused = false;
+    this.isMouseHovering = false;
+    if (!this.interactionTimeout) {
+      this.isServicesCarouselPaused = false;
+    }
+  }
+
+  pauseForUserInteraction(durationMs = 5000) {
+    this.isServicesCarouselPaused = true;
+    if (this.interactionTimeout) {
+      clearTimeout(this.interactionTimeout);
+      this.interactionTimeout = null;
+    }
+    this.interactionTimeout = setTimeout(() => {
+      this.interactionTimeout = null;
+      if (!this.isMouseHovering && !this.isTouching) {
+        this.isServicesCarouselPaused = false;
+      }
+    }, durationMs);
   }
 
   nextServiceSlide() {
-    if (this.servicesResetTimeout) {
-      clearTimeout(this.servicesResetTimeout);
-      this.servicesResetTimeout = null;
-    }
-
-    this.isServicesTransitionEnabled = true;
-    this.currentServiceIndex++;
-    this.cdr.markForCheck();
-
-    // When sliding past the last item of the first set into the duplicate set
-    if (this.currentServiceIndex >= this.allServices.length) {
-      this.servicesResetTimeout = setTimeout(() => {
-        // Instantly snap to base set position without visible transition
-        this.isServicesTransitionEnabled = false;
-        this.currentServiceIndex = 0;
-        this.cdr.markForCheck();
-      }, 650);
-    }
+    const cardWidth = this.getCardWidth();
+    if (cardWidth <= 0) return;
+    const currentBase = this.targetScrollX ?? this.currentScrollX;
+    const currentIdx = currentBase / cardWidth;
+    const targetIdx = Math.floor(currentIdx + 0.08) + 1;
+    this.targetScrollX = targetIdx * cardWidth;
+    this.pauseForUserInteraction(5000);
   }
 
   prevServiceSlide() {
-    if (this.servicesResetTimeout) {
-      clearTimeout(this.servicesResetTimeout);
-      this.servicesResetTimeout = null;
-    }
-
-    if (this.currentServiceIndex <= 0) {
-      // Instantly jump to duplicate position without transition
-      this.isServicesTransitionEnabled = false;
-      this.currentServiceIndex = this.allServices.length;
-      this.cdr.markForCheck();
-
-      // Next tick: animate smoothly backwards
-      setTimeout(() => {
-        this.isServicesTransitionEnabled = true;
-        this.currentServiceIndex = this.allServices.length - 1;
-        this.cdr.markForCheck();
-      }, 25);
-    } else {
-      this.isServicesTransitionEnabled = true;
-      this.currentServiceIndex--;
-      this.cdr.markForCheck();
-    }
+    const cardWidth = this.getCardWidth();
+    if (cardWidth <= 0) return;
+    const currentBase = this.targetScrollX ?? this.currentScrollX;
+    const currentIdx = currentBase / cardWidth;
+    const targetIdx = Math.ceil(currentIdx - 0.08) - 1;
+    this.targetScrollX = targetIdx * cardWidth;
+    this.pauseForUserInteraction(5000);
   }
 
   goToServiceSlide(index: number) {
-    if (this.servicesResetTimeout) {
-      clearTimeout(this.servicesResetTimeout);
-      this.servicesResetTimeout = null;
-    }
-    this.isServicesTransitionEnabled = true;
-    this.currentServiceIndex = index;
-    this.startServicesCarouselTimer();
-    this.cdr.markForCheck();
+    const cardWidth = this.getCardWidth();
+    const singleSetWidth = this.getSingleSetWidth();
+    if (singleSetWidth <= 0 || cardWidth <= 0) return;
+    const currentBase = Math.floor((this.targetScrollX ?? this.currentScrollX) / singleSetWidth) * singleSetWidth;
+    this.targetScrollX = currentBase + (index * cardWidth);
+    this.pauseForUserInteraction(5000);
   }
 
   onServiceTouchStart(event: TouchEvent) {
-    this.touchStartX = event.changedTouches[0].screenX;
+    this.isTouching = true;
     this.pauseServicesCarousel();
+    this.touchStartX = event.touches[0].clientX;
+    this.touchLastX = this.touchStartX;
+  }
+
+  onServiceTouchMove(event: TouchEvent) {
+    if (!this.isTouching) return;
+    const currentX = event.touches[0].clientX;
+    const deltaX = this.touchLastX - currentX;
+    this.currentScrollX += deltaX;
+    this.touchLastX = currentX;
+
+    const singleSetWidth = this.getSingleSetWidth();
+    if (singleSetWidth > 0) {
+      if (this.currentScrollX >= singleSetWidth) {
+        this.currentScrollX -= singleSetWidth;
+      } else if (this.currentScrollX < 0) {
+        this.currentScrollX += singleSetWidth;
+      }
+    }
+
+    if (this.carouselTrack?.nativeElement) {
+      this.carouselTrack.nativeElement.style.transform = `translate3d(-${this.currentScrollX}px, 0, 0)`;
+    }
   }
 
   onServiceTouchEnd(event: TouchEvent) {
-    this.touchEndX = event.changedTouches[0].screenX;
-    this.resumeServicesCarousel();
-    const diff = this.touchStartX - this.touchEndX;
-    if (Math.abs(diff) > 45) {
-      if (diff > 0) {
-        this.nextServiceSlide();
-      } else {
-        this.prevServiceSlide();
-      }
+    this.isTouching = false;
+    const cardWidth = this.getCardWidth();
+    if (cardWidth > 0) {
+      const nearestIdx = Math.round(this.currentScrollX / cardWidth);
+      this.targetScrollX = nearestIdx * cardWidth;
     }
+    this.pauseForUserInteraction(5000);
   }
 
   // 5 Most demanding core practice areas for Home Page
@@ -548,14 +650,19 @@ export class HomeComponent implements OnInit, OnDestroy {
   isReviewPaused = false;
 
   ngOnInit() {
+    this.initCarouselServices();
     this.updateVisibleCards();
-    this.startServicesCarouselTimer();
+    this.startContinuousScroll();
     this.startReviewTimer();
   }
 
   ngOnDestroy() {
-    this.stopServicesCarouselTimer();
+    this.stopContinuousScroll();
     this.stopReviewTimer();
+    if (this.interactionTimeout) {
+      clearTimeout(this.interactionTimeout);
+      this.interactionTimeout = null;
+    }
     if (typeof document !== 'undefined') {
       document.body.style.overflow = '';
     }

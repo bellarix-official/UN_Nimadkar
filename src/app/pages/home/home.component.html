@@ -249,11 +249,18 @@
         <i class="bi bi-chevron-right"></i>
       </button>
 
-      <div class="services-carousel-track-wrapper">
+      <div 
+        #carouselTrackWrapper
+        class="services-carousel-track-wrapper"
+        (mouseenter)="pauseServicesCarousel()"
+        (mouseleave)="resumeServicesCarousel()"
+        (touchstart)="onServiceTouchStart($event)"
+        (touchmove)="onServiceTouchMove($event)"
+        (touchend)="onServiceTouchEnd($event)"
+      >
         <div
+          #carouselTrack
           class="services-carousel-track"
-          [class.no-transition]="!isServicesTransitionEnabled"
-          [style.transform]="'translateX(-' + (currentServiceIndex * (100 / visibleCardsCount)) + '%)'"
         >
           @for (service of carouselServices; track idx; let idx = $index) {
             <div class="services-carousel-slide" [style.flex]="'0 0 ' + (100 / visibleCardsCount) + '%'">

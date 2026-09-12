@@ -46,66 +46,68 @@ export class ServicesDataService {
       subServices: [
         {
           name: 'Cost Audit & Cost Record',
-          description: 'Verification of cost records and cost statements in accordance with applicable cost accounting standards and statutory requirements.',
+          description: 'Verification of cost records and cost statements in accordance with applicable cost accounting standards and statutory requirements under Section 148.',
           points: [
-            'Verification of cost records and cost statements in accordance with applicable cost accounting standards and statutory requirements.',
-            'Review of cost allocation, product costing, material consumption, labour and overheads.',
-            'Identification of cost inefficiencies, abnormal losses and areas for cost reduction.',
-            'Analysis of product-wise profitability, capacity utilisation and operational performance.',
-            'Ensuring accuracy, completeness and consistency of cost records and reports'
+            'Verification of cost records and cost statements in accordance with applicable cost accounting standards and statutory requirements under Section 148.',
+            'Review of cost allocation, BOM product costing, material consumption, labour, and overheads.',
+            'Identification of operational cost inefficiencies, abnormal scrap losses, and reduction avenues.',
+            'Product-wise profitability analysis, unit contribution margins, and capacity utilization.',
+            'Ensuring full statutory compliance with CRA-1 cost records and CRA-3 audit report filing.'
           ]
         },
         {
           name: 'Internal Audit',
-          description: 'Management oriented review of operations, internal financial controls, and performance to improve efficiency and reliability.',
+          description: 'Management-oriented review of business operations, internal financial controls (IFC), and risk governance to improve efficiency and reliability.',
           points: [
-            'Management oriented advice on organisation and its operations.',
-            'Performance and financial services.',
-            'Promoting efficiency, economy and effectiveness of management processes.',
-            'Adding to the reliability and accuracy of operations',
-            'Internal Financial controls'
+            'Management-oriented review of business operations, internal financial controls (IFC), and risk governance.',
+            'Independent review and testing of Internal Financial Controls (IFC) and standard operating workflows.',
+            'Evaluation of organizational processes to promote economy, operational efficiency, and resource optimization.',
+            'Detection of process bottlenecks, revenue leakages, and operational risk vulnerabilities.',
+            'Providing actionable management recommendations to enhance financial accuracy and reporting governance.'
           ]
         },
         {
           name: 'Forensic Audit',
-          description: 'Specialized investigation into financial discrepancies, asset misappropriation, conflicts of interest, and fraud prevention.',
+          description: 'Specialized investigation into financial discrepancies, asset misappropriation, conflicts of interest, and fraud prevention for corporate governance.',
           points: [
-            'Identifying conflicts of interest, bribery and extortion leading to corruption.',
-            'Asset misappropriation',
-            'Intentional forgery of accounting performance.',
-            'Preventing generation of NPAs.'
+            'Specialized investigation into financial discrepancies, asset misappropriation, conflicts of interest, and fraud prevention.',
+            'Thorough investigation of financial statement manipulation, accounting discrepancies, and suspicious transactions.',
+            'Tracing asset misappropriation, circular transactions, and unauthorized diversion of funds.',
+            'Identifying conflicts of interest, procurement irregularities, and anti-fraud policy violations.',
+            'Comprehensive forensic audit documentation and factual reporting for board and legal review.'
           ]
         },
         {
           name: 'Management Audit',
-          description: 'Comprehensive evaluation of management policies, operational processes, and resource utilization to improve efficiency and profitability.',
+          description: 'Comprehensive evaluation of managerial policies, operational processes, and resource utilization to improve enterprise profitability.',
           points: [
-            'Evaluation of management policies, systems and operational processes.',
-            'Review of efficiency, economy and effectiveness of business operations.',
-            'Identification of operational gaps, control weaknesses and areas for improvement.',
-            'Analysis of utilisation of resources and overall managerial performance.',
-            'Providing management-oriented recommendations for improving efficiency and profitability'
+            'Comprehensive evaluation of managerial policies, operational processes, and resource utilization.',
+            'Evaluation of management policies, corporate objectives, and operational execution systems.',
+            'Analysis of department-wise resource utilization, workforce productivity, and cost centers.',
+            'Identification of operational gaps, control deficiencies, and inter-departmental workflow delays.',
+            'Structured strategic recommendations for boosting operational profitability and capital efficiency.'
           ]
         },
         {
           name: 'Concurrent Bank Audit',
-          description: 'Review of procedures relating to processing loans, cash retention limits, bank vouchers, and monitoring potential NPAs.',
+          description: 'Systematic real-time audit of banking transactions, loan processing procedures, cash retention limits, and potential NPA monitoring.',
           points: [
-            'Review of procedures related to processing and sanctioning loan',
-            'Keeping an eye in cash retention limit.',
-            'Maintenance of all bank vouchers',
-            'Focusing on potential NPAs'
+            'Systematic real-time audit of banking transactions, loan processing procedures, and cash retention limits.',
+            'Verification of loan sanctioning procedures, pre-disbursement documentation, and security creation.',
+            'Daily review of cash retention limits, vault balances, and teller transaction vouchers.',
+            'Continuous monitoring of borrower accounts to detect early warning signals and NPA prevention.',
+            'Ensuring full compliance with RBI prudential guidelines, KYC/AML norms, and internal circulars.'
           ]
         },
         {
           name: 'Stock Audit',
-          description: 'Physical verification and reconciliation of inventory with books and records to detect shortages, obsolete stock, and minimize losses.',
+          description: 'Physical verification and reconciliation of warehouse inventory with books of accounts to detect shortages, obsolete items, and minimize losses.',
           points: [
-            'Physical verification and reconciliation of inventory with books and records.',
-            'Review of inventory valuation, movement, ageing and slow/non-moving stock.',
-            'Identification of shortages, excesses, obsolete and damaged inventory.',
-            'Verification of stock records, internal controls and inventory management procedures.',
-            'Identifying discrepancies and strengthening controls to minimise inventory losses'
+            'Physical verification and reconciliation of warehouse inventory with books of accounts to detect shortages and minimize losses.',
+            'On-site physical count and verification of raw materials, WIP, finished goods, and scrap inventory.',
+            'Review of inventory valuation methods, stock aging schedules, and non-moving inventories.',
+            'Identification and documentation of stock shortages, excess inventory, and damaged goods.',
+            'Reconciliation of physical stock with ERP books of accounts for bank compliance and year-end audits.'
           ]
         }
       ]

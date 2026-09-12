@@ -486,6 +486,21 @@
   transform: translateX(0);
 }
 
+.mega-contact-link {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.mega-contact-link:hover {
+  opacity: 0.82;
+  transform: translateY(-1px);
+}
+
+.mega-menu-bottom {
+  padding: 14px 24px !important;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
 .transition-icon {
   transition: transform 0.25s ease;
 }

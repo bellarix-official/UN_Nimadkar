@@ -786,29 +786,26 @@
 .services-carousel-track-wrapper {
   overflow: hidden;
   width: 100%;
-  padding: 14px 0 24px;
+  padding: 10px 0 18px;
 }
 
 .services-carousel-track {
   display: flex;
-  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
-}
-
-.services-carousel-track.no-transition {
-  transition: none !important;
 }
 
 .services-carousel-slide {
   box-sizing: border-box;
   padding: 0 12px;
   display: flex;
+  align-self: stretch;
 }
 
 /* Service Card with Background Image & Dark Gradient Overlay */
 .service-image-card {
   width: 100%;
-  min-height: 500px;
+  height: 100%;
+  min-height: 440px;
   border-radius: 20px;
   position: relative;
   overflow: hidden;
@@ -857,7 +854,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 26px 22px 20px;
+  padding: 24px 22px 20px;
 }
 
 /* Header within Card */
@@ -1049,7 +1046,7 @@
 
 @media (max-width: 991px) {
   .service-image-card {
-    min-height: 460px;
+    min-height: 420px;
   }
   .service-card-content {
     padding: 22px 18px 18px;
@@ -1063,27 +1060,30 @@
 
 @media (max-width: 768px) {
   .carousel-side-nav-btn {
-    width: 42px;
-    height: 42px;
-    font-size: 17px;
+    width: 38px;
+    height: 38px;
+    font-size: 15px;
   }
   .carousel-side-nav-btn.side-prev {
-    left: -6px;
+    left: 2px;
   }
   .carousel-side-nav-btn.side-next {
-    right: -6px;
+    right: 2px;
+  }
+  .services-carousel-slide {
+    padding: 0 16px;
   }
 }
 
 @media (max-width: 576px) {
   .service-image-card {
-    min-height: 430px;
+    min-height: 390px;
   }
   .service-card-content {
     padding: 18px 14px 14px;
   }
   .services-carousel-slide {
-    padding: 0 6px;
+    padding: 0 14px;
   }
   .service-card-points {
     gap: 6px;
