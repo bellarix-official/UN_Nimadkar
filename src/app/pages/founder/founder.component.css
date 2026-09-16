@@ -2,3 +2,419 @@
   display: block;
   width: 100%;
 }
+
+/* ==========================================================================
+   Founder Page Clean & Prestigious Hero Section (Matches Brand Architecture)
+   ========================================================================== */
+.founder-hero-section {
+  background: 
+    linear-gradient(135deg, rgba(0, 16, 36, 0.89) 0%, rgba(0, 31, 63, 0.85) 50%, rgba(4, 38, 24, 0.84) 100%),
+    url('/assets/images/about_hero_bg.jpg') center 28% / cover no-repeat;
+  padding: 145px 0 75px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Atmospheric Glow */
+.hero-ambient-glow {
+  position: absolute;
+  top: -80px;
+  right: -50px;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.18) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subtle Geometric Dot Grid */
+.hero-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.08) 1px, transparent 0);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Centered Content Container */
+.founder-hero-content {
+  max-width: 860px;
+}
+
+/* Credential Badge */
+.founder-hero-pill {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #e2e8f0;
+  font-size: 0.88rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Main Title */
+.founder-hero-title {
+  font-size: clamp(2.1rem, 4.2vw, 3rem);
+  font-weight: 800;
+  line-height: 1.22;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  letter-spacing: -0.4px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+}
+
+.text-gradient-green {
+  background: linear-gradient(135deg, #4ade80 0%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+/* Sub-description */
+.founder-hero-desc {
+  font-size: clamp(1rem, 1.3vw, 1.125rem);
+  line-height: 1.68;
+  color: #cbd5e1;
+  max-width: 740px;
+}
+
+/* ==========================================================================
+   Founder Portrait Frame & Spotlight Card (Natural 3:4 aspect ratio)
+   ========================================================================== */
+.founder-spotlight-section {
+  background-color: #ffffff;
+}
+
+.founder-portrait-frame {
+  max-width: 380px;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  max-height: 490px;
+  border: 1px solid rgba(0, 31, 63, 0.12);
+  background: #001f3f;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.founder-portrait-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(0, 31, 63, 0.22) !important;
+}
+
+.founder-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+}
+
+/* Top Credential Badge over image */
+.founder-badge-top {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+}
+
+.glass-badge {
+  background: rgba(0, 16, 36, 0.72) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 0.8rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Bottom Glass Identity Bar */
+.founder-glass-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 16, 36, 0.95) 0%, rgba(0, 31, 63, 0.82) 75%, transparent 100%);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 2;
+}
+
+.shadow-xs {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-2xs {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Quick Credentials Under Photo */
+.founder-quick-creds {
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #e2e8f0;
+}
+
+/* Bio Content Styling */
+.founder-heading {
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+}
+
+.founder-lead {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.founder-body {
+  font-size: 0.95rem;
+  line-height: 1.68;
+}
+
+.direct-access-card {
+  border-left: 4px solid #10b981 !important;
+  background: #f8fafc;
+}
+
+/* WhatsApp button with green hover */
+.btn-founder-wa {
+  transition: all 0.25s ease;
+}
+
+.btn-founder-wa:hover {
+  background-color: #25d366 !important;
+  border-color: #25d366 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35) !important;
+}
+
+.btn-founder-wa:hover i {
+  color: #ffffff !important;
+}
+
+
+/* ==========================================================================
+   Founder Executive Advisory & Consultation CTA Suite (Symmetrical 3-Channel)
+   ========================================================================== */
+.founder-cta-section {
+  padding: 60px 0;
+  background-color: #f8fafc;
+}
+
+.executive-cta-card {
+  background: 
+    linear-gradient(135deg, rgba(0, 16, 36, 0.98) 0%, rgba(0, 31, 63, 0.95) 55%, rgba(4, 46, 26, 0.95) 100%),
+    url('/assets/images/about_hero_bg.jpg') center / cover no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 24px;
+  box-shadow: 0 20px 45px -10px rgba(0, 16, 36, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient glow & dot grid inside card */
+.cta-ambient-glow {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.2) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cta-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Status Pill with Pulsing Green Dot */
+.cta-status-pill {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #e2e8f0;
+  font-size: 0.82rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.live-pulse-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #4ade80;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+  animation: live-pulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+@keyframes live-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(74, 222, 128, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+  }
+}
+
+/* High Contrast Headings & Content */
+.cta-main-heading {
+  color: #ffffff !important;
+  font-size: clamp(1.6rem, 2.7vw, 2.3rem);
+  font-weight: 800;
+  line-height: 1.28;
+  letter-spacing: -0.3px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.cta-description {
+  color: #cbd5e1 !important;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* 3-Column Channel Interactive Cards */
+.cta-channel-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 1.25rem;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.cta-channel-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(74, 222, 128, 0.45);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* Channel Icons */
+.channel-icon-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.bg-emerald {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.bg-whatsapp {
+  background: #25d366;
+}
+
+.bg-sky {
+  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+}
+
+.text-emerald {
+  color: #34d399 !important;
+}
+
+.text-whatsapp {
+  color: #4ade80 !important;
+}
+
+.text-sky {
+  color: #38bdf8 !important;
+}
+
+.channel-action-link i {
+  transition: transform 0.2s ease;
+}
+
+.cta-channel-card:hover .channel-action-link i {
+  transform: translateX(3px);
+}
+
+/* Bottom Information Strip (High Contrast, Crisp & Pure White) */
+.cta-bottom-bar {
+  font-size: 0.95rem;
+  color: #ffffff !important;
+}
+
+.cta-bottom-bar span,
+.cta-bottom-bar a,
+.cta-bottom-bar div {
+  color: #ffffff !important;
+  letter-spacing: 0.1px;
+}
+
+.cta-bottom-bar a:hover {
+  color: #4ade80 !important;
+  text-decoration: underline !important;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .founder-hero-section {
+    padding: 120px 0 60px;
+  }
+
+  .founder-portrait-frame {
+    max-height: 440px;
+    margin-bottom: 1.5rem;
+  }
+
+  .founder-cta-section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .founder-hero-section {
+    padding: 105px 0 50px;
+  }
+
+  .founder-hero-pill {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.75rem !important;
+  }
+
+  .founder-portrait-frame {
+    max-width: 320px;
+    max-height: 400px;
+  }
+
+  .founder-heading {
+    font-size: 1.35rem;
+  }
+
+  .cta-main-heading {
+    font-size: 1.45rem;
+  }
+
+  .cta-status-pill {
+    font-size: 0.76rem;
+  }
+
+  .cta-booking-box {
+    padding: 1.25rem !important;
+  }
+}

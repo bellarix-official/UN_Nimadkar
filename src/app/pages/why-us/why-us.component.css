@@ -2,3 +2,363 @@
   display: block;
   width: 100%;
 }
+
+/* ==========================================================================
+   Clean, Prestigious & Responsive Why Us Page Hero Section
+   ========================================================================== */
+.why-us-hero-section {
+  background: 
+    linear-gradient(135deg, rgba(0, 16, 36, 0.90) 0%, rgba(0, 31, 63, 0.86) 50%, rgba(4, 38, 24, 0.85) 100%),
+    url('/assets/images/about_hero_bg.jpg') center 28% / cover no-repeat;
+  padding: 145px 0 75px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Soft ambient atmospheric glow */
+.hero-ambient-glow {
+  position: absolute;
+  top: -80px;
+  right: -50px;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.18) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subtle Geometric Dot Grid */
+.hero-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.08) 1px, transparent 0);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Centered Content Container */
+.why-us-hero-content {
+  max-width: 860px;
+}
+
+/* Credential Badge */
+.why-us-hero-pill {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #e2e8f0;
+  font-size: 0.88rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Title */
+.why-us-hero-title {
+  font-size: clamp(2.1rem, 4.2vw, 3rem);
+  font-weight: 800;
+  line-height: 1.22;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  letter-spacing: -0.4px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+}
+
+.text-gradient-green {
+  background: linear-gradient(135deg, #4ade80 0%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+/* Subtitle Description */
+.why-us-hero-desc {
+  font-size: clamp(1.02rem, 1.3vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.72;
+  max-width: 780px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================================
+   Clean & Modern Advantage Cards (Big Watermark Number Design)
+   ========================================================================== */
+.advantage-card {
+  border-color: #e2e8f0 !important;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+.advantage-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 34, 68, 0.08) !important;
+  border-color: rgba(16, 185, 129, 0.45) !important;
+}
+
+.advantage-watermark-num {
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+  font-size: clamp(5.8rem, 7vw, 8rem);
+  font-weight: 900;
+  font-family: var(--font-heading);
+  color: var(--brand-navy-dark, #002244);
+  opacity: 0.055;
+  line-height: 0.78;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+  letter-spacing: -2px;
+  transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.advantage-card:hover .advantage-watermark-num {
+  opacity: 0.10;
+  transform: translateY(-2px);
+  color: #059669;
+}
+
+.advantage-title {
+  color: var(--brand-navy-dark);
+  font-size: 1.16rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+.advantage-desc {
+  font-size: 0.95rem;
+  line-height: 1.68;
+  color: #334155 !important;
+  font-weight: 450;
+}
+
+/* ==========================================================================
+   Modern & Responsive Comparison Table & Cards
+   ========================================================================== */
+.comparison-section {
+  position: relative;
+}
+
+.comparison-table-card {
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 10px 30px rgba(0, 34, 68, 0.05) !important;
+}
+
+.comparison-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.comparison-table th {
+  padding: 18px 20px !important;
+  vertical-align: middle;
+}
+
+.comp-th-aspect {
+  background-color: #f8fafc !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+}
+
+.comp-th-traditional {
+  background-color: #f1f5f9 !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+}
+
+.comp-th-firm {
+  background: linear-gradient(135deg, #001f3f 0%, #064e3b 100%) !important;
+  border-bottom: 2px solid #059669 !important;
+}
+
+.comp-row:hover td {
+  background-color: #fafbfc;
+}
+
+.comp-row:hover .comp-td-firm {
+  background-color: #ecfdf5 !important;
+}
+
+.comp-td-aspect {
+  color: var(--brand-navy-dark, #002244);
+  font-size: 0.96rem;
+  border-bottom: 1px solid #f1f5f9 !important;
+}
+
+.comp-td-traditional {
+  color: #64748b;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  border-bottom: 1px solid #f1f5f9 !important;
+}
+
+.comp-td-firm {
+  background-color: #f0fdf4 !important;
+  border-left: 1px solid rgba(16, 185, 129, 0.15) !important;
+  border-right: 1px solid rgba(16, 185, 129, 0.15) !important;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.15) !important;
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.letter-spacing-1 {
+  letter-spacing: 0.08em;
+}
+
+.shadow-2xs {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* ==========================================================================
+   Executive Why Us Call-to-Action Card
+   ========================================================================== */
+.why-us-cta-section {
+  background-color: #f8fafc;
+}
+
+.why-us-cta-card {
+  background: linear-gradient(135deg, #001628 0%, #002847 50%, #033824 100%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  max-width: 880px;
+  border-radius: 20px !important;
+}
+
+.cta-glow-circle {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.22) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cta-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.why-cta-title {
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  letter-spacing: -0.3px;
+}
+
+.why-cta-desc {
+  font-size: clamp(0.96rem, 1.2vw, 1.05rem);
+  line-height: 1.68;
+}
+
+.text-white-90 {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+/* Button Styles for CTA Card */
+.btn-cta-emerald {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid #10b981 !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-cta-emerald:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.35) !important;
+  color: #ffffff !important;
+}
+
+.btn-cta-whatsapp {
+  background: transparent !important;
+  border: 1.5px solid #25D366 !important;
+  color: #ffffff !important;
+  transition: all 0.25s ease;
+}
+
+.btn-cta-whatsapp i {
+  color: #25D366 !important;
+  transition: color 0.25s ease;
+}
+
+.btn-cta-whatsapp:hover {
+  background-color: #25D366 !important;
+  border-color: #25D366 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35) !important;
+}
+
+.btn-cta-whatsapp:hover i {
+  color: #ffffff !important;
+}
+
+.btn-cta-outline-white {
+  background: transparent !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
+  color: #ffffff !important;
+  transition: all 0.2s ease;
+}
+
+.btn-cta-outline-white:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 991px) {
+  .why-us-hero-section {
+    padding: 130px 0 60px;
+    background-position: center 35%;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-us-hero-section {
+    padding: 115px 0 45px;
+    background-position: center 30%;
+  }
+
+  .why-us-hero-title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+
+  .why-us-hero-pill {
+    font-size: 0.78rem;
+    padding: 5px 12px;
+  }
+
+  .why-us-hero-desc {
+    font-size: 0.96rem;
+    line-height: 1.62;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-us-hero-section {
+    padding: 105px 0 35px;
+  }
+
+  .why-us-hero-title {
+    font-size: 1.65rem;
+  }
+
+  .why-us-hero-desc {
+    font-size: 0.92rem;
+  }
+}

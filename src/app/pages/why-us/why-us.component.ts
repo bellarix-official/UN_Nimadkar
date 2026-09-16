@@ -12,34 +12,34 @@ import { RouterModule } from '@angular/router';
 export class WhyUsComponent {
   advantages = [
     {
-      num: '01',
+      num: '1',
       title: 'Direct Founder Access & Involvement',
       desc: 'You deal directly with CMA Urvesh Nimbadkar (Founder & Lead Partner). Your financial numbers are reviewed by an experienced expert, not delegated to inexperienced trainees.'
     },
     {
-      num: '02',
+      num: '2',
       title: 'Plain Indian Business Language',
       desc: 'We speak the language of business owners. We explain your balance sheet, profit margins, and tax responsibilities in simple, actionable terms without unnecessary jargon.'
     },
     {
-      num: '03',
+      num: '3',
       title: '100% On-Time Statutory Compliance',
       desc: 'From monthly GSTR-3B filings to quarterly TDS returns and annual MCA compliances, our proactive compliance tracker prevents costly late fees and notices.'
     },
     {
-      num: '04',
+      num: '4',
       title: 'Cost Control & Margin Optimization',
       desc: 'Most accounting firms only check taxes. As Cost Accountants, we analyze product costs, raw material scrap, factory overheads, and vendor prices to increase your net profit.'
     },
     {
-      num: '05',
+      num: '5',
       title: 'High Cost & Time Efficiency',
       desc: 'Get full executive financial leadership, weekly cash flow monitoring, and investor-grade models at a fraction of the cost of hiring a full-time in-house CFO.'
     },
     {
-      num: '06',
-      title: 'Seamless Scalability (₹3 Cr to ₹1000 Cr)',
-      desc: 'Whether you are raising seed capital or operating a multi-crore manufacturing enterprise, our financial processes scale effortlessly with your revenue growth.'
+      num: '6',
+      title: 'Enterprise Scalability & Adaptability',
+      desc: 'Whether you are an emerging startup or an established manufacturing enterprise, our financial processes scale effortlessly with your business expansion.'
     }
   ];
 

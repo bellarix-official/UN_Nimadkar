@@ -14,19 +14,9 @@ export class FounderComponent {
     { title: 'ACMA Qualified', desc: 'Associate Member of the Institute of Cost Accountants of India (ICMAI)' },
     { title: 'Practicing CMA', desc: 'Comprehensive statutory cost auditing, corporate finance, and business consulting practice' },
     { title: 'B.Com (Hons)', desc: 'Rigorous academic background in commerce, auditing, and corporate accounting' },
-    { title: '9+ Years Experience', desc: 'Hands-on executive financial leadership spanning startups to ₹1000 Cr corporate groups' }
+    { title: 'Strategic Advisory', desc: 'Hands-on executive financial direction for startups, MSMEs, and corporate enterprises' }
   ];
 
-  practiceAreas = [
-    'Virtual CFO Engagements',
-    'Section 148 Statutory Cost Audits',
-    'MIS Reporting & Margin Optimization',
-    'ERP Selection & Process Mapping',
-    'Direct & Indirect Taxation (GST / ITR)',
-    'Detailed Project Reports & Bank Finance',
-    'Internal Financial Controls (IFC)',
-    'Startup Valuation & Investor Pitch Modeling'
-  ];
 
   specialistUnits = [
     {

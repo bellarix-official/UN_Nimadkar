@@ -15,8 +15,8 @@ export const routes: Routes = [
   { path: 'services', component: ServicesComponent },
   { path: 'services/:slug', component: ServiceDetailComponent },
   { path: 'industries', component: IndustriesComponent },
-  { path: 'team', component: FounderComponent },
-  { path: 'founder', redirectTo: 'team', pathMatch: 'full' },
+  { path: 'founder', component: FounderComponent },
+  { path: 'team', redirectTo: 'founder', pathMatch: 'full' },
   { path: 'why-us', component: WhyUsComponent },
   { path: 'contact', component: ContactComponent },
   { path: '**', redirectTo: '' }

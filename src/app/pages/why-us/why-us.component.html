@@ -1,78 +1,178 @@
-<!-- Page Header Banner -->
-<section class="py-5 text-white" style="background: linear-gradient(135deg, var(--brand-navy-dark) 0%, var(--brand-navy) 60%, var(--brand-green) 100%);">
-  <div class="container py-4">
-    <span class="badge bg-success bg-opacity-75 text-white px-3 py-1 rounded-pill mb-2">
-      <i class="bi bi-shield-check"></i> Competitive Edge
-    </span>
-    <h1 class="fw-bold mb-2">Why Businesses Partner With Us</h1>
-    <p class="lead text-white-50 mb-0">Discover the CMA Advantage: Domain depth, personalized attention, and rigorous statutory oversight.</p>
+<!-- =========================================================================
+     Why Us Page Hero Section (Matching Brand Executive Pattern)
+     ========================================================================= -->
+<section class="why-us-hero-section text-white position-relative">
+  <!-- Subtle ambient lighting & pattern -->
+  <div class="hero-ambient-glow"></div>
+  <div class="hero-grid-pattern"></div>
+
+  <div class="container position-relative z-2">
+    <div class="why-us-hero-content text-center mx-auto">
+      
+      <!-- Sub-tag / Credential Pill -->
+      <div class="d-inline-flex align-items-center gap-2 px-3 py-1.5 rounded-pill why-us-hero-pill mb-3">
+        <i class="bi bi-patch-check-fill text-success"></i>
+        <span class="fw-semibold">The CMA Practice Advantage • Ahmedabad, Gujarat</span>
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="why-us-hero-title mb-3">
+        Why Partner With <span class="text-gradient-green">Our Firm</span>
+      </h1>
+
+      <!-- Executive Description -->
+      <p class="why-us-hero-desc mx-auto mb-0">
+        Discover the institutional advantage: deep cost engineering expertise, direct founder stewardship, and zero-penalty statutory compliance designed for ambitious Indian enterprises.
+      </p>
+
+    </div>
   </div>
 </section>
 
 <!-- Advantages Grid -->
-<section class="section-padding">
+<section class="section-padding bg-light bg-opacity-50">
   <div class="container">
     <div class="text-center mb-5">
-      <span class="section-tag navy-tag"><i class="bi bi-star-fill"></i> Core Advantages</span>
+      <span class="section-tag"><i class="bi bi-star-fill"></i> Core Advantages</span>
       <h2 class="section-title">Built Around the Real Needs of Indian Founders</h2>
-      <p class="section-desc mx-auto">
+      <p class="text-muted mx-auto" style="max-width: 650px;">
         We bridge the gap between compliance and strategic business expansion with clear, reliable financial leadership.
       </p>
     </div>
 
     <div class="row g-4 mb-5">
       @for (adv of advantages; track adv.num) {
-        <div class="col-md-6 col-lg-4">
-          <div class="why-card">
-            <div class="why-number">{{ adv.num }}</div>
-            <h5>{{ adv.title }}</h5>
-            <p>{{ adv.desc }}</p>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="advantage-card h-100 p-3.5 p-md-4 rounded-4 bg-white border shadow-2xs position-relative overflow-hidden">
+            <!-- Content Layered Over Watermark -->
+            <div class="position-relative z-2">
+              <h5 class="advantage-title fw-bold mb-2">{{ adv.title }}</h5>
+              <p class="advantage-desc text-muted mb-0">{{ adv.desc }}</p>
+            </div>
+
+            <!-- Big Low-Opacity Watermark Number at Bottom Right -->
+            <div class="advantage-watermark-num" aria-hidden="true">{{ adv.num }}</div>
           </div>
         </div>
       }
     </div>
 
-    <!-- Comparison Table -->
-    <div class="pt-5 border-top">
-      <div class="text-center mb-4">
-        <span class="section-tag"><i class="bi bi-arrow-left-right"></i> Comparison</span>
-        <h3 class="fw-bold" style="color: var(--brand-navy-dark);">Traditional Accountant vs. U N Nimbadkar &amp; Associates</h3>
-        <p class="text-muted small">See how our Virtual CFO &amp; Cost Advisory model transforms your business operations.</p>
+    <!-- Comparison Section -->
+    <div class="pt-5 border-top comparison-section">
+      <div class="text-center mb-4 pb-2">
+        <span class="section-tag"><i class="bi bi-arrow-left-right"></i> Practice Comparison</span>
+        <h3 class="section-title mb-2">Traditional Accountant vs. U N Nimbadkar &amp; Associates</h3>
+        <p class="text-muted mx-auto" style="max-width: 600px;">
+          See how our hands-on Cost Advisory &amp; Virtual CFO model transforms your business operations compared to conventional bookkeeping.
+        </p>
       </div>
 
-      <div class="table-responsive shadow-sm rounded-4 border">
-        <table class="table table-hover align-middle mb-0">
-          <thead style="background: var(--brand-navy); color: #fff;">
+      <!-- Desktop & Tablet Comparison Table (md and up) -->
+      <div class="d-none d-md-block comparison-table-card rounded-4 border shadow-sm overflow-hidden bg-white">
+        <table class="table comparison-table align-middle mb-0">
+          <thead>
             <tr>
-              <th scope="col" class="py-3 px-4">Key Aspect</th>
-              <th scope="col" class="py-3 px-4">Traditional Bookkeeper / Tax Preparer</th>
-              <th scope="col" class="py-3 px-4" style="background: var(--brand-green);">U N Nimbadkar &amp; Associates (Virtual CFO)</th>
+              <th scope="col" class="py-3.5 px-4 comp-th-aspect" style="width: 25%;">
+                <span class="fw-bold text-uppercase text-xs letter-spacing-1 text-muted">Key Aspect</span>
+              </th>
+              <th scope="col" class="py-3.5 px-4 comp-th-traditional" style="width: 37%;">
+                <div class="d-flex align-items-center justify-content-between">
+                  <span class="fw-bold text-dark">Traditional Bookkeeper / Tax Preparer</span>
+                  <span class="badge bg-secondary bg-opacity-10 text-secondary rounded-pill px-2.5 py-1 text-xs">Conventional</span>
+                </div>
+              </th>
+              <th scope="col" class="py-3.5 px-4 comp-th-firm" style="width: 38%;">
+                <div class="d-flex align-items-center justify-content-between">
+                  <span class="fw-bold text-white">U N Nimbadkar &amp; Associates</span>
+                  <span class="badge bg-success text-white rounded-pill px-2.5 py-1 text-xs">Virtual CFO Practice</span>
+                </div>
+              </th>
             </tr>
           </thead>
           <tbody>
             @for (row of comparisonPoints; track row.aspect) {
-              <tr>
-                <td class="fw-bold px-4 text-dark">{{ row.aspect }}</td>
-                <td class="px-4 text-muted">{{ row.traditional }}</td>
-                <td class="px-4 fw-semibold text-success bg-light">{{ row.cmaFirm }}</td>
+              <tr class="comp-row">
+                <td class="px-4 py-3.5 fw-bold comp-td-aspect">
+                  {{ row.aspect }}
+                </td>
+                <td class="px-4 py-3.5 comp-td-traditional">
+                  <div class="d-flex align-items-start gap-2 text-muted">
+                    <i class="bi bi-x-circle text-danger flex-shrink-0 mt-0.5 opacity-75"></i>
+                    <span>{{ row.traditional }}</span>
+                  </div>
+                </td>
+                <td class="px-4 py-3.5 comp-td-firm">
+                  <div class="d-flex align-items-start gap-2">
+                    <i class="bi bi-check-circle-fill text-success flex-shrink-0 mt-0.5"></i>
+                    <span class="fw-semibold text-dark">{{ row.cmaFirm }}</span>
+                  </div>
+                </td>
               </tr>
             }
           </tbody>
         </table>
       </div>
+
+      <!-- Mobile Comparison Cards (< 768px) -->
+      <div class="d-md-none d-flex flex-column gap-3">
+        @for (row of comparisonPoints; track row.aspect) {
+          <div class="card p-3.5 rounded-4 border shadow-2xs bg-white">
+            <h6 class="fw-bold text-navy mb-3 pb-2 border-bottom">
+              <i class="bi bi-bookmark-check-fill text-success me-1"></i> {{ row.aspect }}
+            </h6>
+
+            <!-- Traditional approach -->
+            <div class="p-2.5 rounded-3 bg-light border border-light-subtle mb-2.5">
+              <div class="text-xs text-muted fw-bold text-uppercase mb-1">
+                <i class="bi bi-x-circle text-danger me-1"></i> Traditional Bookkeeper
+              </div>
+              <p class="small text-muted mb-0 lh-base">{{ row.traditional }}</p>
+            </div>
+
+            <!-- CMA Firm approach -->
+            <div class="p-2.5 rounded-3 bg-success bg-opacity-10 border border-success border-opacity-25">
+              <div class="text-xs text-success fw-bold text-uppercase mb-1">
+                <i class="bi bi-check-circle-fill text-success me-1"></i> U N Nimbadkar &amp; Associates
+              </div>
+              <p class="small fw-semibold text-dark mb-0 lh-base">{{ row.cmaFirm }}</p>
+            </div>
+          </div>
+        }
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Call to Action -->
-<section class="py-5 border-top text-center">
+<!-- Executive Call to Action Banner -->
+<section class="py-5 border-top bg-light why-us-cta-section">
   <div class="container py-3">
-    <h3 class="fw-bold mb-2" style="color: var(--brand-navy-dark);">Experience the Difference in Your Bottom Line</h3>
-    <p class="text-muted mx-auto mb-4" style="max-width: 600px;">
-      Schedule a complimentary 30-minute consultation with CMA Urvesh Nimbadkar today.
-    </p>
-    <a routerLink="/contact" class="btn btn-cma-secondary btn-lg">
-      <i class="bi bi-calendar2-check-fill"></i> Book Free Consultation
-    </a>
+    <div class="why-us-cta-card rounded-4 p-4 p-md-5 text-white position-relative overflow-hidden text-center mx-auto shadow-lg">
+      <!-- Ambient Glow and Pattern -->
+      <div class="cta-glow-circle"></div>
+      <div class="cta-grid-pattern"></div>
+
+      <div class="position-relative z-2">
+        <h2 class="why-cta-title fw-bold mb-3 text-white">
+          Experience the Difference in Your <span class="text-gradient-green">Bottom Line</span>
+        </h2>
+
+        <p class="why-cta-desc mx-auto mb-4 text-white-90" style="max-width: 620px;">
+          Partner with <strong>U N Nimbadkar &amp; Associates</strong> to uncover hidden factory cost leakages, streamline statutory compliance, and bring executive financial clarity to your business.
+        </p>
+
+        <!-- Action Buttons (Balanced & High Contrast) -->
+        <div class="d-flex justify-content-center align-items-center flex-wrap gap-3">
+          <a routerLink="/contact" class="btn btn-cta-emerald btn-lg px-4 py-2.5 shadow-sm fw-semibold">
+            <i class="bi bi-calendar-check-fill me-2"></i> Book Free Consultation
+          </a>
+          <a href="https://wa.me/919824164586" target="_blank" rel="noopener" class="btn btn-cta-whatsapp btn-lg px-4 py-2.5 fw-semibold">
+            <i class="bi bi-whatsapp me-2"></i> Message on WhatsApp
+          </a>
+          <a routerLink="/founder" class="btn btn-cta-outline-white btn-lg px-4 py-2.5 fw-semibold">
+            <i class="bi bi-person-badge-fill me-2"></i> Meet Our Founder
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

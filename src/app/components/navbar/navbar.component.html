@@ -54,17 +54,12 @@
           </a>
         </li>
 
-        <!-- ================================================================
-             TEMPORARILY COMMENTED OUT FOR TESTING (Only Home is active)
-             ================================================================ -->
-        <!--
-        /* 2. About Us */
+        <!-- 2. About Us -->
         <li class="nav-item" (mouseenter)="closeDesktopServices()">
           <a class="nav-link nav-distinct-link" routerLink="/about" routerLinkActive="active" (click)="closeMobileNav()">
             About Us
           </a>
         </li>
-      -->
 
         <!-- /* 3. Services Dropdown */ -->
         <li class="nav-item dropdown distinct-dropdown"
@@ -133,35 +128,33 @@
           </div>
         </li>
 
-        <!--
-        /* 4. Industries */
-        <li class="nav-item" (mouseenter)="closeDesktopServices()">
+        <!-- 4. Industries -->
+        <!-- <li class="nav-item" (mouseenter)="closeDesktopServices()">
           <a class="nav-link nav-distinct-link" routerLink="/industries" routerLinkActive="active" (click)="closeMobileNav()">
             Industries
           </a>
-        </li>
+        </li> -->
 
-        /* 5. Our Team */
+        <!-- 5. Founder -->
         <li class="nav-item" (mouseenter)="closeDesktopServices()">
-          <a class="nav-link nav-distinct-link" routerLink="/team" routerLinkActive="active" (click)="closeMobileNav()">
-            Our Team
+          <a class="nav-link nav-distinct-link" routerLink="/founder" routerLinkActive="active" (click)="closeMobileNav()">
+            Founder
           </a>
         </li>
 
-        /* 6. Why Us */
+        <!-- 6. Why Us -->
         <li class="nav-item" (mouseenter)="closeDesktopServices()">
           <a class="nav-link nav-distinct-link" routerLink="/why-us" routerLinkActive="active" (click)="closeMobileNav()">
             Why Us
           </a>
         </li>
 
-        /* 7. Book Consultation CTA */
+        <!-- 7. Book Consultation CTA -->
         <li class="nav-item ms-lg-2" (mouseenter)="closeDesktopServices()">
           <a class="btn btn-cma-distinct" routerLink="/contact" routerLinkActive="active" (click)="closeMobileNav()">
             <i class="bi bi-calendar2-check-fill"></i> Book Consultation
           </a>
         </li>
-        -->
       </ul>
     </div>
   </div>
@@ -190,16 +183,12 @@
           </a>
         </li>
 
-        <!-- ================================================================
-             TEMPORARILY COMMENTED OUT FOR TESTING (Only Home is active)
-             ================================================================ -->
-        <!--
-        /* About Us Link */
+        <!-- About Us Link -->
         <li class="mb-2">
           <a routerLink="/about" (click)="closeMobileNav()" class="mobile-nav-link" routerLinkActive="active">
             <i class="bi bi-building me-2 text-primary"></i> About Us
           </a>
-        </li> -->
+        </li>
 
         
         <!-- /* Services Section with Direct Toggle */ -->
@@ -237,44 +226,40 @@
           }
         </li>
 
-        <!--
-        /* Industries Link */
-        <li class="mb-2">
+        <!-- Industries Link -->
+        <!-- <li class="mb-2">
           <a routerLink="/industries" (click)="closeMobileNav()" class="mobile-nav-link" routerLinkActive="active">
             <i class="bi bi-buildings me-2 text-primary"></i> Industries
           </a>
-        </li>
+        </li> -->
 
-        /* Our Team Link */
+        <!-- Founder Link -->
         <li class="mb-2">
-          <a routerLink="/team" (click)="closeMobileNav()" class="mobile-nav-link" routerLinkActive="active">
-            <i class="bi bi-people me-2 text-primary"></i> Our Team
+          <a routerLink="/founder" (click)="closeMobileNav()" class="mobile-nav-link" routerLinkActive="active">
+            <i class="bi bi-person-badge me-2 text-primary"></i> Founder
           </a>
         </li>
 
-        /* Why Choose Us Link */
+        <!-- Why Choose Us Link -->
         <li class="mb-2">
           <a routerLink="/why-us" (click)="closeMobileNav()" class="mobile-nav-link" routerLinkActive="active">
             <i class="bi bi-shield-check me-2 text-primary"></i> Why Choose Us
           </a>
         </li>
 
-        /* Contact Link */
+        <!-- Contact Link -->
         <li class="mb-3">
           <a routerLink="/contact" (click)="closeMobileNav()" class="mobile-nav-link" routerLinkActive="active">
             <i class="bi bi-telephone-inbound me-2 text-primary"></i> Contact &amp; Consultation
           </a>
         </li>
-        -->
       </ul>
 
       <!-- CTA Buttons -->
       <div class="d-grid gap-2 pt-3 border-top">
-        <!--
         <a routerLink="/contact" (click)="closeMobileNav()" class="btn btn-cma-distinct w-100">
           <i class="bi bi-calendar2-check-fill"></i> Book Free Consultation
         </a>
-        -->
         <a href="https://wa.me/919824164586?text=Hello%20CMA%20Urvesh%20Nimbadkar,%20I%20visited%20your%20website%20and%20would%20like%20to%20consult%20regarding%20financial/CFO%20services." target="_blank" class="btn btn-cma-secondary w-100">
           <i class="bi bi-whatsapp"></i> Chat on WhatsApp
         </a>

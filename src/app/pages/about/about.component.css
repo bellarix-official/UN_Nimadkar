@@ -2,3 +2,293 @@
   display: block;
   width: 100%;
 }
+
+/* ==========================================================================
+   Clean, Prestigious & Responsive About Page Hero Section
+   ========================================================================== */
+.about-hero-section {
+  background: 
+    linear-gradient(135deg, rgba(0, 16, 36, 0.90) 0%, rgba(0, 31, 63, 0.86) 50%, rgba(4, 38, 24, 0.85) 100%),
+    url('/assets/images/about_hero_bg.jpg') center 28% / cover no-repeat;
+  padding: 145px 0 75px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Soft ambient atmospheric glow */
+.hero-ambient-glow {
+  position: absolute;
+  top: -80px;
+  right: -50px;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.18) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subtle Geometric Dot Grid */
+.hero-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.08) 1px, transparent 0);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Centered Content Container */
+.about-hero-content {
+  max-width: 860px;
+}
+
+/* Credential Badge */
+.about-hero-pill {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #e2e8f0;
+  font-size: 0.88rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Title */
+.about-hero-title {
+  font-size: clamp(2.1rem, 4.2vw, 3rem);
+  font-weight: 800;
+  line-height: 1.22;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  letter-spacing: -0.4px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+}
+
+.text-gradient-green {
+  background: linear-gradient(135deg, #4ade80 0%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+/* Subtitle Description */
+.about-hero-desc {
+  font-size: clamp(1.02rem, 1.3vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.72;
+  max-width: 780px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================================
+   Firm Overview & Professional Identity
+   ========================================================================== */
+.firm-profile-section {
+  position: relative;
+  background-color: #ffffff;
+  padding: 65px 0 50px;
+}
+
+/* Visual Frame */
+.firm-visual-frame {
+  max-width: 440px;
+  width: 100%;
+  height: 350px;
+  background-color: #051426;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 45px rgba(5, 20, 38, 0.16) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.firm-visual-frame:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 50px rgba(5, 20, 38, 0.22) !important;
+}
+
+.firm-visual-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Floating Badge */
+.firm-badge-top {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 3;
+}
+
+.glass-badge {
+  background: rgba(7, 25, 47, 0.88) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff !important;
+  font-size: 0.78rem;
+  letter-spacing: 0.2px;
+}
+
+/* Bottom Glass Identification Bar */
+.firm-glass-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background: linear-gradient(to top, rgba(3, 14, 28, 0.95) 0%, rgba(5, 22, 42, 0.82) 75%, transparent 100%);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Narrative Typography */
+.firm-lead {
+  font-size: 1.12rem;
+  line-height: 1.76;
+}
+
+.firm-body {
+  font-size: 1.02rem;
+  line-height: 1.72;
+}
+
+.text-navy {
+  color: var(--brand-navy-dark) !important;
+}
+
+.shadow-2xs {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* ==========================================================================
+   Vision & Mission Purpose Showcase (Dual Ambient Cards)
+   ========================================================================== */
+.purpose-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.purpose-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18) !important;
+}
+
+.vision-purpose-card {
+  background: linear-gradient(145deg, #052319 0%, #064e3b 55%, #033324 100%);
+  border: 1px solid rgba(16, 185, 129, 0.25) !important;
+  color: #ffffff !important;
+}
+
+.mission-purpose-card {
+  background: linear-gradient(145deg, #071933 0%, #1e3a8a 55%, #0b2244 100%);
+  border: 1px solid rgba(59, 130, 246, 0.25) !important;
+  color: #ffffff !important;
+}
+
+.text-white-90 {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+.purpose-watermark-icon {
+  position: absolute;
+  bottom: -20px;
+  right: 15px;
+  font-size: 7.5rem;
+  color: #ffffff;
+  opacity: 0.07;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   ICMAI Regulatory Compliance Strip
+   ========================================================================== */
+.regulatory-commitment-strip {
+  background: linear-gradient(135deg, #041830 0%, #0b2d4d 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.regulatory-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 991px) {
+  .about-hero-section {
+    padding: 130px 0 60px;
+    background-position: center 35%;
+  }
+
+  .firm-visual-frame {
+    max-width: 400px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero-section {
+    padding: 115px 0 45px;
+    background-position: center 30%;
+  }
+
+  .about-hero-title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+
+  .about-hero-pill {
+    font-size: 0.78rem;
+    padding: 5px 12px;
+  }
+
+  .about-hero-desc {
+    font-size: 0.96rem;
+    line-height: 1.62;
+  }
+
+  .firm-profile-section {
+    padding: 45px 0 35px;
+  }
+
+  .firm-visual-frame {
+    max-width: 360px;
+    height: 320px;
+  }
+
+  .purpose-card {
+    padding: 1.5rem 1.25rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero-section {
+    padding: 105px 0 35px;
+  }
+
+  .about-hero-title {
+    font-size: 1.65rem;
+  }
+
+  .about-hero-desc {
+    font-size: 0.92rem;
+  }
+
+  .firm-visual-frame {
+    max-width: 100%;
+    height: 260px;
+  }
+}

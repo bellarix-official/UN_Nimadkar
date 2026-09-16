@@ -2,3 +2,231 @@
   display: block;
   width: 100%;
 }
+
+/* ==========================================================================
+   Clean, Prestigious & Responsive Contact / Book Consultation Hero Section
+   ========================================================================== */
+.contact-hero-section {
+  background: 
+    linear-gradient(135deg, rgba(0, 16, 36, 0.90) 0%, rgba(0, 31, 63, 0.86) 50%, rgba(4, 38, 24, 0.85) 100%),
+    url('/assets/images/about_hero_bg.jpg') center 28% / cover no-repeat;
+  padding: 145px 0 75px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Soft ambient atmospheric glow */
+.hero-ambient-glow {
+  position: absolute;
+  top: -80px;
+  right: -50px;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.18) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subtle Geometric Dot Grid */
+.hero-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.08) 1px, transparent 0);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Centered Content Container */
+.contact-hero-content {
+  max-width: 860px;
+}
+
+/* Credential Badge */
+.contact-hero-pill {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #e2e8f0;
+  font-size: 0.88rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Title */
+.contact-hero-title {
+  font-size: clamp(2.1rem, 4.2vw, 3rem);
+  font-weight: 800;
+  line-height: 1.22;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  letter-spacing: -0.4px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+}
+
+.text-gradient-green {
+  background: linear-gradient(135deg, #4ade80 0%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+/* Subtitle Description */
+.contact-hero-desc {
+  font-size: clamp(1.02rem, 1.3vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.72;
+  max-width: 780px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 991px) {
+  .contact-hero-section {
+    padding: 130px 0 60px;
+    background-position: center 35%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero-section {
+    padding: 115px 0 45px;
+    background-position: center 30%;
+  }
+
+  .contact-hero-title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+
+  .contact-hero-pill {
+    font-size: 0.78rem;
+    padding: 5px 12px;
+  }
+
+  .contact-hero-desc {
+    font-size: 0.96rem;
+    line-height: 1.62;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero-section {
+    padding: 105px 0 35px;
+  }
+
+  .contact-hero-title {
+    font-size: 1.65rem;
+  }
+
+  .contact-hero-desc {
+    font-size: 0.92rem;
+  }
+}
+
+/* ==========================================================================
+   Dual Submit Button Styles (Send on WhatsApp & Send on Email)
+   ========================================================================== */
+.btn-submit-whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 12px;
+  padding: 0.85rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-submit-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4) !important;
+  color: #ffffff !important;
+}
+
+.btn-submit-email {
+  background: linear-gradient(135deg, #002244 0%, #003366 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 12px;
+  padding: 0.85rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0, 34, 68, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-submit-email:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 34, 68, 0.35) !important;
+  color: #ffffff !important;
+}
+
+/* Floating labels & input focus enhancement */
+.form-floating > .form-control:focus,
+.form-floating > .form-select:focus {
+  border-color: #10b981 !important;
+  box-shadow: 0 0 0 0.25rem rgba(16, 185, 129, 0.15) !important;
+}
+
+.form-floating > label {
+  color: #64748b;
+  font-size: 0.9rem;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 1.5rem;
+}
+
+.form-floating > .form-select {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-right: 2.5rem;
+}
+
+.contact-wrapper {
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 12px 35px rgba(0, 34, 68, 0.06) !important;
+}
+
+.contact-info-panel {
+  background: linear-gradient(145deg, #001628 0%, #002540 50%, #033522 100%) !important;
+}
+
+/* Corporate Office Pill Badge */
+.contact-office-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  color: #34d399;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 13px;
+  border-radius: 9999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  margin-bottom: 14px;
+}
+
+.contact-office-badge i {
+  font-size: 0.82rem;
+  color: #34d399;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+}
+
+.shadow-2xs {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
